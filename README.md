@@ -21,6 +21,8 @@ also remember that this is a work in progress, if anything important is missing,
 
 neovim> vim-plug
 
+zsh> oh-my-zsh
+
 fonts> JetBrains Mono, Ubuntu, Siji, Powerline Fonts, Symbols Nerd Fonts, etc
 
 alacritty
