@@ -121,7 +121,7 @@ label-urgent = !
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = _
+label-empty = 
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
