@@ -19,15 +19,15 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 ;background = #75000000
-background = #181719
+background = #181729
 ;background-alt = #4000000
-background-alt = #292c30
+background-alt = #222132
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
 ;primary = #9d5dd8
 primary = #d095f4
-secondary = #e60053
+secondary = #ddb6f2
 alert = #bd2c40
 
 [bar/main]
@@ -121,7 +121,7 @@ label-urgent = !
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = 
+label-empty = ~ 
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 

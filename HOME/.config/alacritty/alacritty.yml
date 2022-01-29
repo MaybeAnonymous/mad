@@ -181,39 +181,77 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors ( Tomorrow Night )
+## Colors ( Tomorrow Night )
+#colors:
+  ## Default colors
+  #primary:
+    #background: '0x1d1f21'
+    #foreground: '0xc5c8c6'
+
+  ## Colors the cursor will use if `custom_cursor_colors` is true
+  #cursor:
+    #text: '0x1d1f21'
+    #cursor: '0xc5c8c6'
+
+  ## Normal colors
+  #normal:
+    #black:   '0x1d1f21'
+    #red:     '0xcc6666'
+    #green:   '0xb5bd68'
+    #yellow:  '0xf0c674'
+    #blue:    '0x81a2be'
+    #magenta: '0xb294bb'
+    #cyan:    '0x8abeb7'
+    #white:   '0xc5c8c6'
+
+  ## Bright colors
+  #bright:
+    #black:   '0x969896'
+    #red:     '0xf78467'
+    #green:   '0x8bf4b3'
+    #yellow:  '0xf9d27c'
+    #blue:    '0x73a9f4'
+    #magenta: '0xefa0ef'
+    #cyan:    '0x97fafc'
+    #white:   '0xffffff'
+
+# Catppuccin!
 colors:
   # Default colors
   primary:
-    background: '0x1d1f21'
-    foreground: '0xc5c8c6'
+    background: '0x1E1D2F'
+    foreground: '0xD9E0EE'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x1d1f21'
-    cursor: '0xc5c8c6'
+    text: '0x1E1D2F'
+    cursor: '0xF5E0DC'
 
   # Normal colors
   normal:
-    black:   '0x1d1f21'
-    red:     '0xcc6666'
-    green:   '0xb5bd68'
-    yellow:  '0xf0c674'
-    blue:    '0x81a2be'
-    magenta: '0xb294bb'
-    cyan:    '0x8abeb7'
-    white:   '0xc5c8c6'
+    black:   '0x6E6C7E'
+    red:     '0xF28FAD'
+    green:   '0xABE9B3'
+    yellow:  '0xFAE3B0'
+    blue:    '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan:    '0x89DCEB'
+    white:   '0xD9E0EE'
 
   # Bright colors
   bright:
-    black:   '0x969896'
-    red:     '0xf78467'
-    green:   '0x8bf4b3'
-    yellow:  '0xf9d27c'
-    blue:    '0x73a9f4'
-    magenta: '0xefa0ef'
-    cyan:    '0x97fafc'
-    white:   '0xffffff'
+    black:   '0x988BA2'
+    red:     '0xF28FAD'
+    green:   '0xABE9B3'
+    yellow:  '0xFAE3B0'
+    blue:    '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan:    '0x89DCEB'
+    white:   '0xD9E0EE'
+
+  indexed_colors:
+    - { index: 16, color: '0xF8BD96' }
+    - { index: 17, color: '0xF5E0DC' }
 
 
 #selection:

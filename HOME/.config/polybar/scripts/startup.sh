@@ -8,6 +8,6 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar
 polybar main &
-#polybar left & #deprecated
-#polybar mid & #deprecated
-#polybar right & #deprecated 
+#polybar left &
+#polybar mid &
+#polybar right &

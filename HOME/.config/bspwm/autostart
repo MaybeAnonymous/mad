@@ -1,14 +1,14 @@
 #!/usr/bin/env sh
 #-Auto Start
 picom --vsync --backend glx &
-nitrogen --set-auto "$HOME/Pictures/Backgrounds/wallpaper.png" &
+nitrogen --set-auto "$HOME/Pictures/Backgrounds/minima-dev-full.png" &
 
 xss-lock -l env XSECURELOCK_SHOW_USERNAME=0 XSECURELOCK_SHOW_HOSTNAME=0 XSECURELOCK_AUTH_BACKGROUND_COLOR=#1d1f21 XSECURELOCK_FONT=Jetbrains\ Mono XSECURELOCK_PASSWORD_PROMPT=time_hex xsecurelock &
 
 lxpolkit &
 
 # Keyboard Layout = layout-model
-#setxkbmap -layout br -model abnt2 & # optional
+setxkbmap -layout br -model abnt2 &
 
 # Mouse
 xinput set-button-map "Compx 2.4G Receiver Mouse" 1 2 3 4 5 6 7 2 9
@@ -24,6 +24,7 @@ xinput set-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Tapping Enabled" 1 &
 exec $HOME/.config/polybar/scripts/startup.sh &
 
 exec $HOME/.config/dunst/scripts/startup.sh &
+#pgrep dunst || dunst &
 
 pgrep conky || conky &
 

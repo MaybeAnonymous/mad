@@ -14,6 +14,7 @@ call plug#begin("~/.vim/plugged")
   " Color Schemes
   Plug 'dracula/vim'
   Plug 'flazz/vim-colorschemes'
+  Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
   " Other
   Plug 'scrooloose/nerdtree' " File management in (neo)vim
@@ -28,6 +29,7 @@ call plug#begin("~/.vim/plugged")
   " Status Bar
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes' 
+  "Plug 'itchyny/lightline.vim'
 
   " Git
   Plug 'airblade/vim-gitgutter'
@@ -50,9 +52,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#left_alt_sep = '>'
 
 let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_theme='atomic'
 
 " fzf
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
@@ -65,6 +68,6 @@ set shiftwidth=3
 syntax enable
 "colorscheme evening
 set termguicolors
-colorscheme Tomorrow-Night
+colorscheme catppuccin
 set background=dark
 "hi Normal guibg=NONE ctermbg=NONE
