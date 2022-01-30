@@ -122,7 +122,11 @@ alias grep='grep --color=auto'
 alias la='ls --color=auto -A'
 alias ls='ls --color=auto'
 
+alias gpo='g++ -o'
+alias gco='gcc -o'
+
 alias neovide='neovide --nofork'
+alias nmg='neovide --multigrid'
 
 alias pac='pacman'
 alias pacman='sudo pacman'
@@ -132,7 +136,7 @@ alias pls='sudo'
 
 alias update='paru -Syu'
 alias v2t='mpv --no-config --pause --vo=tct'
-alias yt-wav='yt-dlp -x --audio-format wav'
+alias ytwav='yt-dlp -x --audio-format wav'
 
 #gitalias
 alias gitpo='git push origin'
