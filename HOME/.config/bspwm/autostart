@@ -28,7 +28,7 @@ exec $HOME/.config/dunst/scripts/startup.sh &
 
 pgrep conky || conky &
 
-pgrep glava || glava -d &
+#pgrep glava || glava -d & # too much cpu usage
 
 pgrep nm-applet || nm-applet &
 
