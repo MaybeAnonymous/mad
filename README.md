@@ -33,7 +33,7 @@ conky
 
 applets> nm-applet, blueman-applet, xfce4-clipman
 
-other> maim
+other> maim, glava
 
 **more:**
 ```
