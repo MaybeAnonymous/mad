@@ -6,11 +6,12 @@ source ~/.config/nvim/user-modules/start-up.vim
 source ~/.config/nvim/user-modules/plugs.vim
 source ~/.config/nvim/user-modules/neovide.vim
 
+set foldmethod=syntax
+set foldlevel=99
 
 " Open new split panes to right and below
 set splitright
 set splitbelow
-
 
 " Insert Keybindings
 inoremap <A-Up> <Esc>:m .-2<CR>==gi
@@ -19,12 +20,13 @@ inoremap <A-Down> <Esc>:m .+1<CR>==gi
 inoremap <silent> <A-z> <Esc>:undo<CR>==gi
 inoremap <silent> <A-y> <Esc>:redo<CR>==gi
 
-inoremap <silent> <Leader>p
+"inoremap <silent> <Leader>p
 
 " Normal Keybindings
 nnoremap <silent> <C-s> :w<CR>
 nnoremap <silent> <C-Q> :bd<CR>
-nnoremap <silent> <esc> :noh<cr><esc>
+nnoremap <silent> <esc> :noh<CR><esc>
+nnoremap <silent> <C-z> za
 
 " Other
 autocmd FileType json syntax match Comment +\/\/.\+$+

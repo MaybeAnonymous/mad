@@ -31,8 +31,9 @@ set nostartofline
 
 set notimeout ttimeout ttimeoutlen=200
 
+set foldcolumn=1
 set number
-set relativenumber
+"set relativenumber
 
 set pastetoggle=<F11>
 set ruler

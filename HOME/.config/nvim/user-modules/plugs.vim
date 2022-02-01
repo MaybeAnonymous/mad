@@ -51,14 +51,20 @@ let g:lightline = {'active': {'left': [ [ 'mode', 'paste' ], [ 'readonly', 'file
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '>'
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '>'
 
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_theme='atomic'
 
 " fzf
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
+
+" sidebar
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+
 
 set expandtab
 set tabstop=3
