@@ -119,14 +119,20 @@ PS1='%F{magenta}[%~]%f $vcs_info_msg_0_%F{red}&%f '
 alias clr='echo > ~/.zsh_history && history -c && clear'
 alias grep='grep --color=auto'
 
-alias la='ls --color=auto -A'
-alias ls='ls --color=auto'
+alias ls='exa'
+alias l='exa -l -a'
+alias la='exa -a'
+
+#alias la='ls --color=auto -A'
+#alias ls='ls --color=auto'
 
 alias gpo='g++ -o'
 alias gco='gcc -o'
 
 alias neovide='neovide --nofork'
 alias nmg='neovide --multigrid'
+alias nvidefig='neovide ~/.config/nvim/init.vim ~/.config/nvim/user-modules/plugs.vim ~/.config/nvim/user-modules/start-up.vim ~/.vimrc'
+alias nvimfig='nvim -p ~/.config/nvim/init.vim ~/.config/nvim/user-modules/plugs.vim ~/.config/nvim/user-modules/start-up.vim ~/.vimrc'
 
 alias pac='pacman'
 alias pacman='sudo pacman'
