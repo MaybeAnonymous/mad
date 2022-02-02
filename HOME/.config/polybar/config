@@ -19,14 +19,14 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 ;background = #75000000
-background = #181729
+background = #1E1E2E
 ;background-alt = #4000000
-background-alt = #222132
+background-alt = #302D41
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
 ;primary = #9d5dd8
-primary = #d095f4
+primary = #F2CDCD
 secondary = #ddb6f2
 alert = #bd2c40
 
@@ -34,7 +34,7 @@ alert = #bd2c40
 bottom = false
 fixed-center = true
 height = 28
-radius = 4.0
+radius = 8.0
 width = 100%
 
 override-redirect = true
@@ -55,10 +55,10 @@ border-size = 5
 border-color = #00000000
 
 padding-left = 0
-padding-right = 0
+padding-right = 2
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 2
+module-margin-right = 2
 
 font-0 = Ubuntu:pixelsize=10:style=Bold;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -67,7 +67,6 @@ font-2 = siji:pixelsize=14;1
 
 modules-left = i3 bspwm filesystem xwindow
 modules-right = pulseaudio memory cpu battery wlan eth temperature date
-;modules-right = none
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -102,7 +101,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#d095f4}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#colors.primary}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -111,7 +110,7 @@ type = internal/bspwm
 
 label-focused = O
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.background-alt}
+label-focused-underline= ${colors.primary}
 label-focused-padding = 3
 
 label-occupied = o
@@ -187,7 +186,7 @@ label-song-ellipsis = true
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = bl
 
 bar-width = 10
 bar-indicator = |
@@ -210,7 +209,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #ef9d77
+format-underline = #F8BD96
 label = %percentage:2%%
 
 [module/memory]
@@ -218,7 +217,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #ef86a5
+format-underline = #F28FAD
 label = %percentage_used%%
 
 [module/wlan]
@@ -271,7 +270,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #6ea1e5
+format-underline = #96CDFB
 
 label = %date% / %time%
 
@@ -337,7 +336,7 @@ adapter = ADP0
 full-at = 99
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #f7c965
+format-charging-underline = #FAE3B0
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -369,7 +368,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #96eac0
+format-underline = #ABE9B3
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
