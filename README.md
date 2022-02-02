@@ -19,26 +19,29 @@ also remember that this is a work in progress, if anything important is missing,
 
 **requirements:**
 
-neovim> vim-plug
+[bspwm](https://github.com/baskerville/bspwm)
 
-zsh> oh-my-zsh
+neovim> [vim-plug](https://github.com/junegunn/vim-plug), [neovide](https://github.com/neovide/neovide)
+
+zsh> [oh-my-zsh](https://ohmyz.sh)
 
 fonts> JetBrains Mono, Ubuntu, Siji, Powerline Fonts, Symbols Nerd Fonts, etc
 
-alacritty
+[alacritty](https://alacritty.org)
 
-picom
+[picom-jonaburg-fix](https://github.com/Arian8j2/picom-jonaburg-fix)
 
-conky
+[conky](https://github.com/brndnmtthws/conky)
 
 applets> nm-applet, blueman-applet, xfce4-clipman
 
-other> maim, glava
+other> maim, glava, [neovide](neovide.io)
 
 **more:**
 ```
 to configure neovim you must open it and run :PlugInstall
 ```
+the colourscheme is [catppuccin](https://github.com/catppuccin/catppuccin)
 
 ---
 old:
