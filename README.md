@@ -43,8 +43,10 @@ to configure neovim you must open it and run :PlugInstall
 ---
 old:
 ![image](https://user-images.githubusercontent.com/89218161/151441716-4b9ea61d-1140-4966-b21f-f51aca54c006.png)
+![image](https://user-images.githubusercontent.com/89218161/151670039-7f73b378-86e1-4bf6-8614-c3c0e583a8ac.png)
 
 new:
-![image](https://user-images.githubusercontent.com/89218161/151670039-7f73b378-86e1-4bf6-8614-c3c0e583a8ac.png)
+![image](https://user-images.githubusercontent.com/89218161/152176468-12eef94b-1d8e-4246-aed0-6792631148c5.png)
+
 
 
