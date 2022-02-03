@@ -31,7 +31,7 @@ secondary = #ddb6f2
 alert = #bd2c40
 
 [bar/main]
-bottom = false
+bottom = true
 fixed-center = true
 height = 28
 radius = 8.0
@@ -57,16 +57,16 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 1
 
-font-0 = Ubuntu:pixelsize=10:style=Bold;1
+font-0 = Jetbrains Mono:pixelsize=10:style=Bold;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=14;1
 
 
 modules-left = i3 bspwm filesystem xwindow
-modules-right = pulseaudio memory cpu battery wlan eth temperature date
+modules-right = xbacklight pulseaudio memory cpu battery wlan eth temperature date
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -108,21 +108,21 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = O
+label-focused = Õ
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 3
+label-focused-padding = 1
 
-label-occupied = o
-label-occupied-padding = 2
+label-occupied = u
+label-occupied-padding = 1
 
 label-urgent = !
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 label-empty = ~ 
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 1
 
 ; Separator in between workspaces
 ;label-separator = |
