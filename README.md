@@ -15,6 +15,8 @@ use https://github.com/MaybeAnonymous/bspswallow for window swallowing, it's a f
 
 also remember that this is a work in progress, if anything important is missing, tell me
 
+oh also, the `pavol` script was not made by me, i don't know where i found it
+
 ---
 
 **requirements:**
