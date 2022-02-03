@@ -31,7 +31,7 @@ secondary = #ddb6f2
 alert = #bd2c40
 
 [bar/main]
-bottom = true
+bottom = false
 fixed-center = true
 height = 28
 radius = 8.0
