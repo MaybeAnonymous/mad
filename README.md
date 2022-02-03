@@ -21,11 +21,11 @@ also remember that this is a work in progress, if anything important is missing,
 
 [bspwm](https://github.com/baskerville/bspwm)
 
-neovim> [vim-plug](https://github.com/junegunn/vim-plug), [neovide](https://github.com/neovide/neovide)
+neovim> [vim-plug](https://github.com/junegunn/vim-plug) should be pre-installed
 
 zsh> [oh-my-zsh](https://ohmyz.sh)
 
-fonts> JetBrains Mono, Ubuntu, Siji, Powerline Fonts, Symbols Nerd Fonts, etc
+fonts> JetBrains Mono, Siji, Powerline Fonts, Symbols Nerd Fonts, etc
 
 [alacritty](https://alacritty.org)
 
@@ -35,7 +35,7 @@ fonts> JetBrains Mono, Ubuntu, Siji, Powerline Fonts, Symbols Nerd Fonts, etc
 
 applets> nm-applet, blueman-applet, xfce4-clipman
 
-other> maim, glava, [neovide](neovide.io)
+other> maim, glava, [neovide](https://github.com/neovide/neovide)
 
 **more:**
 ```
