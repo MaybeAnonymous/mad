@@ -37,7 +37,7 @@ fonts> JetBrains Mono, Siji, Powerline Fonts, Symbols Nerd Fonts, etc
 
 applets> nm-applet, blueman-applet, xfce4-clipman
 
-other> maim, glava, [neovide](https://github.com/neovide/neovide)
+other> maim, glava, [neovide](https://github.com/neovide/neovide), vivaldi, ungoogled-chromium
 
 **more:**
 ```

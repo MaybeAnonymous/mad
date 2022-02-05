@@ -9,8 +9,8 @@ super + Return
 	alacritty
 
 # browser
-control + alt + v
-	vivaldi-stable
+control + alt + {v, c}
+	{vivaldi-stable, chromium}
 
 # files
 super + shift + Return
