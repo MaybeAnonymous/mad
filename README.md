@@ -48,10 +48,11 @@ the colourscheme is [catppuccin](https://github.com/catppuccin/catppuccin)
 ---
 
 # old:
-![image](https://user-images.githubusercontent.com/89218161/151670039-7f73b378-86e1-4bf6-8614-c3c0e583a8ac.png)
+![image](https://user-images.githubusercontent.com/89218161/152315572-01d8e2e3-8c35-4301-b15e-e6962cf96a19.png)
 
 # new:
-![image](https://user-images.githubusercontent.com/89218161/152315572-01d8e2e3-8c35-4301-b15e-e6962cf96a19.png)
+![image](https://user-images.githubusercontent.com/89218161/152661623-bfa0f2dc-43dc-46a2-85b0-fa6ce60b243a.png)
+
 
 
 
