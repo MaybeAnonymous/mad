@@ -25,7 +25,7 @@ i do not plan on making an installation script, and i expect you to know what yo
 
 [bspwm](https://github.com/baskerville/bspwm) || [dwm](https://dwm.suckless.org)
 
-   dwm only: [flexipatch](https://github.com/bakkeby/dwm-flexipatch) + [the finalizer](https://github.com/bakkeby/flexipatch-finalizer) both pre-installed
+   **dwm only:** [flexipatch](https://github.com/bakkeby/dwm-flexipatch) + [the finalizer](https://github.com/bakkeby/flexipatch-finalizer) both pre-installed
 
    **neovim>** [vim-plug](https://github.com/junegunn/vim-plug) should be pre-installed
 
@@ -43,13 +43,15 @@ i do not plan on making an installation script, and i expect you to know what yo
 
 kinda optional:
 
-   other> maim, glava, [neovide](https://github.com/neovide/neovide), vivaldi, ungoogled-chromium, [ufetch](https://gitlab.com/jschx/ufetch)
+   other> maim, glava, [neovide](https://github.com/neovide/neovide), vivaldi || ungoogled-chromium, [ufetch](https://gitlab.com/jschx/ufetch), [dmenu](https://tools.suckless.org/dmenu/) || [rofi](https://github.com/davatorium/rofi)
 
 **more && after installation:**
 
 to configure neovim you must open it and run :PlugInstall
 
 to configure dwm you must `cd ~/.dwm && sudo make install`
+
+to configure dmenu you must `cd ~/.dmenu && sudo make install`
 
 the colourscheme is [catppuccin](https://github.com/catppuccin/catppuccin)
 
