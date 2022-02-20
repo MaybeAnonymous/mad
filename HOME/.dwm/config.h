@@ -202,6 +202,7 @@ static const int layoutaxis[] = {
 
 static const Layout layouts[] = {
 	/* symbol     arrange function, { nmaster, nstack, layout, master axis, stack axis, secondary stack axis, symbol func } */
+	{ "[\\]",     flextile,         { -1, -1, NO_SPLIT, DWINDLE, DWINDLE, 0, NULL } }, // fibonacci dwindle
 	{ "[]=",      flextile,         { -1, -1, SPLIT_VERTICAL, TOP_TO_BOTTOM, TOP_TO_BOTTOM, 0, NULL } }, // default tile layout
  	{ "><>",      NULL,             {0} },    /* no layout function means floating behavior */
 	{ "[M]",      flextile,         { -1, -1, NO_SPLIT, MONOCLE, MONOCLE, 0, NULL } }, // monocle
@@ -213,7 +214,6 @@ static const Layout layouts[] = {
 	{ "|M|",      flextile,         { -1, -1, SPLIT_CENTERED_VERTICAL, LEFT_TO_RIGHT, TOP_TO_BOTTOM, TOP_TO_BOTTOM, NULL } }, // centeredmaster
 	{ "-M-",      flextile,         { -1, -1, SPLIT_CENTERED_HORIZONTAL, TOP_TO_BOTTOM, LEFT_TO_RIGHT, LEFT_TO_RIGHT, NULL } }, // centeredmaster horiz
 	{ ":::",      flextile,         { -1, -1, NO_SPLIT, GAPPLESSGRID, GAPPLESSGRID, 0, NULL } }, // gappless grid
-	{ "[\\]",     flextile,         { -1, -1, NO_SPLIT, DWINDLE, DWINDLE, 0, NULL } }, // fibonacci dwindle
 	{ "(@)",      flextile,         { -1, -1, NO_SPLIT, SPIRAL, SPIRAL, 0, NULL } }, // fibonacci spiral
 	{ "[T]",      flextile,         { -1, -1, SPLIT_VERTICAL, LEFT_TO_RIGHT, TATAMI, 0, NULL } }, // tatami mats
 	{ NULL, NULL, {0} },
@@ -330,13 +330,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,          killclient,             {0} },
 	{ MODKEY|ShiftMask,             XK_e,          quit,                   {0} },
 
-	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,          setlayout,              {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,          setlayout,              {.v = &layouts[2]} },
-	{ MODKEY|ControlMask,           XK_w,          setlayout,              {.v = &layouts[3]} },
-	{ MODKEY|ControlMask|ShiftMask, XK_w,          setlayout,              {.v = &layouts[7]} },
-	{ MODKEY|ShiftMask,             XK_t,          setlayout,              {.v = &layouts[6]} },
-	{ MODKEY,                       XK_s,          setlayout,              {.v = &layouts[11]}},
+	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[1]} },
+	{ MODKEY,                       XK_f,          setlayout,              {.v = &layouts[2]} },
+	{ MODKEY,                       XK_m,          setlayout,              {.v = &layouts[3]} },
+	{ MODKEY|ControlMask,           XK_w,          setlayout,              {.v = &layouts[4]} },
+	{ MODKEY|ControlMask|ShiftMask, XK_w,          setlayout,              {.v = &layouts[8]} },
+	{ MODKEY|ShiftMask,             XK_t,          setlayout,              {.v = &layouts[7]} },
+	{ MODKEY,                       XK_s,          setlayout,              {.v = &layouts[0]}},
 	{ MODKEY,                       XK_space,      setlayout,              {0} },
 
 	{ MODKEY|ShiftMask,             XK_space,      togglefloating,         {0} },
@@ -380,6 +380,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,              Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,              Button3,        toggletag,      {0} },
 };
-
-
-
