@@ -23,6 +23,8 @@ i do not plan on making an installation script, and i expect you to know what yo
 
 **requirements:**
 
+**YOU MUST HAVE [this](https://github.com/uditkarode/libxft-bgra) IF YOU'RE USING DWM**
+
 [bspwm](https://github.com/baskerville/bspwm) || [dwm](https://dwm.suckless.org)
 
    **dwm only:** [flexipatch](https://github.com/bakkeby/dwm-flexipatch) + [the finalizer](https://github.com/bakkeby/flexipatch-finalizer) both pre-installed

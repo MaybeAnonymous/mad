@@ -14,6 +14,7 @@ static const unsigned int gappov         = 4;  /* vert outer gap between windows
 static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
+static const int bar_height              = 24;   /* 0 means derive from font, >= 1 explicit height */
 static const int focusonwheel            = 0;
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index), 'A' (active monitor) */
 static const int statusmon               = 'A';
@@ -24,7 +25,7 @@ static const int showsystray             = 1;   /* 0 means no systray */
 static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
-static const char *fonts[]               = { "Jetbrains\\ Mono:size=10", "Noto Color Emoji:pixelsize=10:style=Regular" };
+static const char *fonts[]               = { "Jetbrains\\ Mono:size=10", "Noto\\ Color\\ Emoji:pixelsize=12:style=Regular" };
 static const char dmenufont[]            = "Jetbrains\\ Mono:size=10";
 
 static char c000000[]                    = "#000000"; // placeholder value
