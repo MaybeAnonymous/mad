@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Xsession
+Name=dwm
+Comment=Dynamic Window Manager
+Encoding=UTF-8
+Exec=dwm
