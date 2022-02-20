@@ -25,6 +25,8 @@ i do not plan on making an installation script, and i expect you to know what yo
 
 [bspwm](https://github.com/baskerville/bspwm) || [dwm](https://dwm.suckless.org)
 
+   dwm only: [flexipatch](https://github.com/bakkeby/dwm-flexipatch) + [the finalizer](https://github.com/bakkeby/flexipatch-finalizer) both pre-installed
+
    **neovim>** [vim-plug](https://github.com/junegunn/vim-plug) should be pre-installed
 
    **zsh** + [oh-my-zsh](https://ohmyz.sh)
