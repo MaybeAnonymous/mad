@@ -40,11 +40,11 @@ super + l
 #
 
 XF86AudioRaiseVolume
-	pavol +5%
+	pamixer -i5
 XF86AudioLowerVolume
-	pavol -5%
+	pamixer -d5
 XF86AudioMute
-	pavol toggle
+	pamixer -t
 
 XF86MonBrightnessUp
 	xbacklight -inc 5

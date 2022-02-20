@@ -20,6 +20,29 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
+#echo -en "\x1b[\x36 q"
+if [ "$TERM" = "linux" ]; then
+    setfont /usr/share/kbd/consolefonts/viscii10-8x16.psfu.gz
+    echo -en "\e]P0161320" #black
+    echo -en "\e]P86e6c7e" #darkgrey
+    echo -en "\e]P1f28fad" #darkred
+    echo -en "\e]P9f28fad" #red
+    echo -en "\e]P2abe9b3" #darkgreen
+    echo -en "\e]PAabe9b3" #green
+    echo -en "\e]P3f5e0dc" #brown
+    echo -en "\e]PBfae3b0" #yellow
+    echo -en "\e]P496cdfb" #darkblue
+    echo -en "\e]PC89dceb" #blue
+    echo -en "\e]P5ddb6f2" #darkmagenta
+    echo -en "\e]PDf5c2e7" #magenta
+    echo -en "\e]P6b5e8e0" #darkcyan
+    echo -en "\e]PEb5e8e0" #cyan
+    echo -en "\e]P7c3bac6" #lightgrey
+    echo -en "\e]PFFFFFFF" #white
+    clear #for background artifacting
+    echo "This is TTY!"
+fi
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -31,7 +54,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
 else
-   export EDITOR='mvim'
+   export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -48,16 +71,20 @@ fi
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+#alias pfetch="PF_INFO='ascii os host kernel uptime pkgs memory' PF_ASCII='linux' pfetch"
+
 # User set startup commands
-printf "\n"
-neofetch
+#pfetch
+ufetch
+#printf "\n"
+#neofetch
 #colorscript -r
 
 autoload -Uz vcs_info
 precmd () { vcs_info }
 zstyle ':vcs_info:*' formats ' %s(%F{yellow}%b%f)'
 
-PS1='%F{magenta}[%~]%f $vcs_info_msg_0_%F{red}&%f '
+PS1='%F{magenta}[%~]%f$(tput bold) $vcs_info_msg_0_%F{red}&%f$(tput sgr0) '
 
 # Alias
 alias clr='echo > ~/.zsh_history && history -c && clear'
@@ -66,6 +93,8 @@ alias grep='grep --color=auto'
 alias ls='exa'
 alias l='exa -l -a'
 alias la='exa -a'
+
+alias sd='sudoedit'
 
 #alias la='ls --color=auto -A'
 #alias ls='ls --color=auto'
@@ -80,6 +109,15 @@ alias nvimfig='nvim -p ~/.config/nvim/init.vim ~/.config/nvim/user-modules/plugs
 
 alias pac='pacman'
 alias pacman='sudo pacman'
+
+packer() {
+   # Alternate pacman thingy I'm making
+   if [ $1 = "in" ]; then
+      pacman -S $2
+   elif [ $1 = "rm" ]; then
+      pacman -Rns $2
+   fi
+}
 
 alias please='sudo'
 alias pls='sudo'
@@ -99,6 +137,8 @@ alias ppacman='pacman'
 alias pacmna='pacman'
 alias pamcna='pacman'
 alias pamcan='pacman'
+alias pacmn='pacman'
+alias pacmsn='pacman'
 #pac
 alias pca='pacman'
 

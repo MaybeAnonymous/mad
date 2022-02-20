@@ -5,54 +5,60 @@ my dotfiles, work in progress
 
 before installing, **backup your dotfiles.**
 
-i am not responsible for problems you may get while installing this
+i am not responsible for problems you may get while installing this && know that this isn't complete
 
-know that this isn't complete
+bspwm: use https://github.com/MaybeAnonymous/bspswallow for bspwm window swallowing, it's a fork i made of another project
 
-use https://github.com/MaybeAnonymous/bspswallow for window swallowing, it's a fork i made of another project
+ufetch: default is artix, get your own [here](https://gitlab.com/jschx/ufetch) 
 
 ---
 
 also remember that this is a work in progress, if anything important is missing, tell me
 
-oh also, the `pavol` script was not made by me, i don't know where i found it
+these dotfiles contain dwm and bspwm
+
+i do not plan on making an installation script, and i expect you to know what you're doing
 
 ---
 
 **requirements:**
 
-[bspwm](https://github.com/baskerville/bspwm)
+[bspwm](https://github.com/baskerville/bspwm) || [dwm](https://dwm.suckless.org)
 
-neovim> [vim-plug](https://github.com/junegunn/vim-plug) should be pre-installed
+   neovim> [vim-plug](https://github.com/junegunn/vim-plug) should be pre-installed
 
-zsh> [oh-my-zsh](https://ohmyz.sh)
+   zsh + [oh-my-zsh](https://ohmyz.sh)
 
-fonts> JetBrains Mono, Siji, Powerline Fonts, Symbols Nerd Fonts, etc
+   fonts> JetBrains Mono, Siji, Powerline Fonts, Symbols Nerd Fonts, etc
 
-[alacritty](https://alacritty.org)
+   [alacritty](https://alacritty.org)
 
-[picom-jonaburg-fix](https://github.com/Arian8j2/picom-jonaburg-fix)
+   [picom-jonaburg-fix](https://github.com/Arian8j2/picom-jonaburg-fix)
 
-[conky](https://github.com/brndnmtthws/conky)
+   [conky](https://github.com/brndnmtthws/conky)
 
-applets> nm-applet, blueman-applet, xfce4-clipman
+   applets> nm-applet, blueman-applet, xfce4-clipman
 
-other> maim, glava, [neovide](https://github.com/neovide/neovide), vivaldi, ungoogled-chromium
+kinda optional:
+
+   other> maim, glava, [neovide](https://github.com/neovide/neovide), vivaldi, ungoogled-chromium, [ufetch](https://gitlab.com/jschx/ufetch)
 
 **more:**
-```
+
 to configure neovim you must open it and run :PlugInstall
-```
+
+to configure dwm you must `cd ~/.dwm && sudo make install`
+
 the colourscheme is [catppuccin](https://github.com/catppuccin/catppuccin)
 
 ---
 
-# old:
-![image](https://user-images.githubusercontent.com/89218161/152315572-01d8e2e3-8c35-4301-b15e-e6962cf96a19.png)
-
-# new:
+# bspwm:
 ![image](https://user-images.githubusercontent.com/89218161/152661623-bfa0f2dc-43dc-46a2-85b0-fa6ce60b243a.png)
 
+# dwm:
+
+i have not taken a picture yet as i am procastinating
 
 
 
