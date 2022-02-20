@@ -1,15 +1,3 @@
--- Conky, a system monitor https://github.com/brndnmtthws/conky
---
--- This configuration file is Lua code. You can write code in here, and it will
--- execute when Conky loads. You can use it to generate your own advanced
--- configurations.
---
--- Try this (remove the `--`):
---
---   print("Loading Conky config")
---
--- For more on Lua, see:
--- https://www.lua.org/pil/contents.html
 
 conky.config = {
     alignment = 'middle_right',
@@ -25,7 +13,7 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     extra_newline = false,
-    font = 'Jetbrains Mono:size=10',
+    font = 'Comic\\ Mono:size=10',
     gap_x = 0,
     gap_y = 0,
     minimum_height = 5,
