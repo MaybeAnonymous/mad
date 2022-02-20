@@ -7,9 +7,9 @@ before installing, **backup your dotfiles.**
 
 i am not responsible for problems you may get while installing this && know that this isn't complete
 
-bspwm: use https://github.com/MaybeAnonymous/bspswallow for bspwm window swallowing, it's a fork i made of another project
+**bspwm:** use https://github.com/MaybeAnonymous/bspswallow for bspwm window swallowing, it's a fork i made of another project
 
-ufetch: default is artix, get your own [here](https://gitlab.com/jschx/ufetch) 
+**ufetch:** default is artix, get your own [here](https://gitlab.com/jschx/ufetch) 
 
 ---
 
@@ -25,11 +25,11 @@ i do not plan on making an installation script, and i expect you to know what yo
 
 [bspwm](https://github.com/baskerville/bspwm) || [dwm](https://dwm.suckless.org)
 
-   neovim> [vim-plug](https://github.com/junegunn/vim-plug) should be pre-installed
+   **neovim>** [vim-plug](https://github.com/junegunn/vim-plug) should be pre-installed
 
-   zsh + [oh-my-zsh](https://ohmyz.sh)
+   **zsh** + [oh-my-zsh](https://ohmyz.sh)
 
-   fonts> JetBrains Mono, Siji, Powerline Fonts, Symbols Nerd Fonts, etc
+   **fonts>** JetBrains Mono, Siji, Powerline Fonts, Symbols Nerd Fonts, etc
 
    [alacritty](https://alacritty.org)
 
@@ -37,13 +37,13 @@ i do not plan on making an installation script, and i expect you to know what yo
 
    [conky](https://github.com/brndnmtthws/conky)
 
-   applets> nm-applet, blueman-applet, xfce4-clipman
+   **applets>** nm-applet, blueman-applet, xfce4-clipman
 
 kinda optional:
 
    other> maim, glava, [neovide](https://github.com/neovide/neovide), vivaldi, ungoogled-chromium, [ufetch](https://gitlab.com/jschx/ufetch)
 
-**more:**
+**more && after installation:**
 
 to configure neovim you must open it and run :PlugInstall
 
