@@ -13,6 +13,7 @@
 #include "cyclelayouts.c"
 #include "focusmaster.c"
 #include "rotatestack.c"
+#include "selfrestart.c"
 #include "swallow.c"
 #include "togglefullscreen.c"
 #include "vanitygaps.c"

@@ -330,6 +330,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,        view,                   {0} },
 	{ MODKEY|ShiftMask,             XK_q,          killclient,             {0} },
 	{ MODKEY|ShiftMask,             XK_e,          quit,                   {0} },
+	{ MODKEY|ShiftMask,             XK_r,          self_restart,           {0} },
 
 	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[1]} },
 	{ MODKEY,                       XK_f,          setlayout,              {.v = &layouts[2]} },

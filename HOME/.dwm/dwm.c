@@ -188,6 +188,7 @@ struct Client {
 	char name[256];
 	float mina, maxa;
 	int x, y, w, h;
+	int sfx, sfy, sfw, sfh; /* stored float geometry, used on mode revert */
 	int oldx, oldy, oldw, oldh;
 	int basew, baseh, incw, inch, maxw, maxh, minw, minh;
 	int bw, oldbw;
@@ -1434,6 +1435,10 @@ manage(Window w, XWindowAttributes *wa)
 		setfullscreen(c, 1);
 	updatewmhints(c);
 
+	c->sfx = -9999;
+	c->sfy = -9999;
+	c->sfw = c->w;
+	c->sfh = c->h;
 
 	XSelectInput(dpy, w, EnterWindowMask|FocusChangeMask|PropertyChangeMask|StructureNotifyMask);
 	grabbuttons(c, 0);
@@ -1540,10 +1545,14 @@ movemouse(const Arg *arg)
 				ny = selmon->wy + selmon->wh - HEIGHT(c);
 			if (!c->isfloating && selmon->lt[selmon->sellt]->arrange
 			&& (abs(nx - c->x) > snap || abs(ny - c->y) > snap)) {
+				c->sfx = -9999; // disable savefloats when using movemouse
 				togglefloating(NULL);
 			}
 			if (!selmon->lt[selmon->sellt]->arrange || c->isfloating) {
 				resize(c, nx, ny, c->w, c->h, 1);
+				/* save last known float coordinates */
+				c->sfx = nx;
+				c->sfy = ny;
 			}
 			break;
 		}
@@ -1711,11 +1720,16 @@ resizemouse(const Arg *arg)
 			{
 				if (!c->isfloating && selmon->lt[selmon->sellt]->arrange
 				&& (abs(nw - c->w) > snap || abs(nh - c->h) > snap)) {
+					c->sfx = -9999; // disable savefloats when using resizemouse
 					togglefloating(NULL);
 				}
 			}
 			if (!selmon->lt[selmon->sellt]->arrange || c->isfloating) {
 				resize(c, c->x, c->y, nw, nh, 1);
+				c->sfx = c->x;
+				c->sfy = c->y;
+				c->sfw = nw;
+				c->sfh = nh;
 			}
 			break;
 		}
@@ -2055,6 +2069,12 @@ showhide(Client *c)
 		return;
 	if (ISVISIBLE(c)) {
 		/* show clients top down */
+		if (!c->mon->lt[c->mon->sellt]->arrange && c->sfx != -9999 && !c->isfullscreen) {
+			XMoveWindow(dpy, c->win, c->sfx, c->sfy);
+			resize(c, c->sfx, c->sfy, c->sfw, c->sfh, 0);
+			showhide(c->snext);
+			return;
+		}
 		XMoveWindow(dpy, c->win, c->x, c->y);
 		if ((!c->mon->lt[c->mon->sellt]->arrange || c->isfloating)
 			&& !c->isfullscreen
@@ -2157,7 +2177,17 @@ togglefloating(const Arg *arg)
 	else
 		XSetWindowBorder(dpy, c->win, scheme[SchemeSel][ColBorder].pixel);
 	if (c->isfloating) {
+		if (c->sfx != -9999) {
+			/* restore last known float dimensions */
+			resize(c, c->sfx, c->sfy, c->sfw, c->sfh, 0);
+		} else
 		resize(c, c->x, c->y, c->w, c->h, 0);
+	} else {
+		/* save last known float dimensions */
+		c->sfx = c->x;
+		c->sfy = c->y;
+		c->sfw = c->w;
+		c->sfh = c->h;
 	}
 	arrange(c->mon);
 
