@@ -33,7 +33,7 @@ i do not plan on making an installation script, and i expect you to know what yo
 
    **zsh** + [oh-my-zsh](https://ohmyz.sh)
 
-   **fonts>** JetBrains Mono, Siji, Powerline Fonts, Symbols Nerd Fonts, etc
+   **fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, Symbols Nerd Fonts, [Comic Mono](https://github.com/dtinth/comic-mono-font), etc
 
    [alacritty](https://alacritty.org)
 
