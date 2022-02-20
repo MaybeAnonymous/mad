@@ -1,5 +1,5 @@
 # dotfiles
-<span style="font-family: 'Comic Sans MS', 'Comic Sans', 'Comic Neue';">my dotfiles, work in progress</span>
+<span style="font-family: 'Comic Sans MS', 'Comic Sans', 'Comic Neue', sans-serif;">my dotfiles, work in progress</span>
 
 ---
 
