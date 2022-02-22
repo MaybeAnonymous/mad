@@ -66,6 +66,13 @@ the colourscheme is [catppuccin](https://github.com/catppuccin/catppuccin)
 
 i have not taken a picture yet as i am procastinating
 
+---
+
+# wallpaper
+
+in HOME/Pictures/Backgrounds
+
+Wallpaper font is Comic Neue
 
 
 
