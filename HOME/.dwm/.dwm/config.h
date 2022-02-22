@@ -13,7 +13,8 @@ static const unsigned int gappoh         = 4;  /* horiz outer gap between window
 static const unsigned int gappov         = 4;  /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 static const int showbar                 = 1;   /* 0 means no bar */
-static const int topbar                  = 0;   /* 0 means bottom bar */
+static const int topbar                  = 1;   /* 0 means bottom bar */
+static const int bar_height              = 24;   /* 0 means derive from font, >= 1 explicit height */
 static const int focusonwheel            = 0;
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index), 'A' (active monitor) */
 static const int statusmon               = 'A';
@@ -24,7 +25,7 @@ static const int showsystray             = 1;   /* 0 means no systray */
 static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
-static const char *fonts[]               = { "Jetbrains\\ Mono:size=10" };
+static const char *fonts[]               = { "Jetbrains\\ Mono:size=10", "Noto\\ Color\\ Emoji:pixelsize=12:style=Regular" };
 static const char dmenufont[]            = "Jetbrains\\ Mono:size=10";
 
 static char c000000[]                    = "#000000"; // placeholder value
@@ -50,7 +51,7 @@ static char titleselbordercolor[]        = "#005577";
 static char titleselfloatcolor[]         = "#005577";
 
 static char tagsnormfgcolor[]            = "#bbbbbb";
-static char tagsnormbgcolor[]            = "#222222";
+static char tagsnormbgcolor[]            = "#1a1826";
 static char tagsnormbordercolor[]        = "#444444";
 static char tagsnormfloatcolor[]         = "#db8fd9";
 
@@ -70,7 +71,6 @@ static char urgbordercolor[]             = "#ff0000";
 static char urgfloatcolor[]              = "#db8fd9";
 
 
-
 static char *colors[][ColCount] = {
 	/*                       fg                bg                border                float */
 	[SchemeNorm]         = { normfgcolor,      normbgcolor,      normbordercolor,      normfloatcolor },
@@ -87,6 +87,7 @@ static char *colors[][ColCount] = {
 
 
 static const char *const autostart[] = {
+	"dwmblocks", NULL,
 	"sh", "-c", "$HOME/.config/autostartdwm", NULL,
 	NULL /* terminate */
 };
@@ -188,18 +189,38 @@ static const BarRule barrules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.52; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
+static const int nstack      = 0;    /* number of clients in primary stack area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+static const int decorhints  = 1;    /* 1 means respect decoration hints */
 
-
+static const int layoutaxis[] = {
+	1,    /* layout axis: 1 = x, 2 = y; negative values mirror the layout, setting the master area to the right / bottom instead of left / top */
+	2,    /* master axis: 1 = x (from left to right), 2 = y (from top to bottom), 3 = z (monocle) */
+	2,    /* stack axis:  1 = x (from left to right), 2 = y (from top to bottom), 3 = z (monocle) */
+};
 
 static const Layout layouts[] = {
-	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	/* symbol     arrange function, { nmaster, nstack, layout, master axis, stack axis, secondary stack axis, symbol func } */
+	{ "[\\]",     flextile,         { -1, -1, NO_SPLIT, DWINDLE, DWINDLE, 0, NULL } }, // fibonacci dwindle
+	{ "[]=",      flextile,         { -1, -1, SPLIT_VERTICAL, TOP_TO_BOTTOM, TOP_TO_BOTTOM, 0, NULL } }, // default tile layout
+ 	{ "><>",      NULL,             {0} },    /* no layout function means floating behavior */
+	{ "[M]",      flextile,         { -1, -1, NO_SPLIT, MONOCLE, MONOCLE, 0, NULL } }, // monocle
+	{ "|||",      flextile,         { -1, -1, SPLIT_VERTICAL, LEFT_TO_RIGHT, TOP_TO_BOTTOM, 0, NULL } }, // columns (col) layout
+	{ ">M>",      flextile,         { -1, -1, FLOATING_MASTER, LEFT_TO_RIGHT, LEFT_TO_RIGHT, 0, NULL } }, // floating master
+	{ "[D]",      flextile,         { -1, -1, SPLIT_VERTICAL, TOP_TO_BOTTOM, MONOCLE, 0, NULL } }, // deck
+	{ "TTT",      flextile,         { -1, -1, SPLIT_HORIZONTAL, LEFT_TO_RIGHT, LEFT_TO_RIGHT, 0, NULL } }, // bstack
+	{ "===",      flextile,         { -1, -1, SPLIT_HORIZONTAL, LEFT_TO_RIGHT, TOP_TO_BOTTOM, 0, NULL } }, // bstackhoriz
+	{ "|M|",      flextile,         { -1, -1, SPLIT_CENTERED_VERTICAL, LEFT_TO_RIGHT, TOP_TO_BOTTOM, TOP_TO_BOTTOM, NULL } }, // centeredmaster
+	{ "-M-",      flextile,         { -1, -1, SPLIT_CENTERED_HORIZONTAL, TOP_TO_BOTTOM, LEFT_TO_RIGHT, LEFT_TO_RIGHT, NULL } }, // centeredmaster horiz
+	{ ":::",      flextile,         { -1, -1, NO_SPLIT, GAPPLESSGRID, GAPPLESSGRID, 0, NULL } }, // gappless grid
+	{ "(@)",      flextile,         { -1, -1, NO_SPLIT, SPIRAL, SPIRAL, 0, NULL } }, // fibonacci spiral
+	{ "[T]",      flextile,         { -1, -1, SPLIT_VERTICAL, LEFT_TO_RIGHT, TATAMI, 0, NULL } }, // tatami mats
+	{ NULL, NULL, {0} },
+	//{ "[]=",      tile,             {0} },
+	//{ "[M]",      monocle,          {0} },
 };
 
 
@@ -230,6 +251,7 @@ static const char *dmenucmd[] = {
 };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browser[]  = { "chromium", NULL };
+static const char *filemngr[] = { "thunar", NULL };
 static const char *scsh[]     = { "sh", "-c", "maim -s -u | xclip -selection clipboard -t image/png", NULL};
 static const char *fullscsh[] = { "sh", "-c", "maim | xclip -selection clipboard -t image/png", NULL };
 
@@ -258,25 +280,36 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,          spawn,                  {.v = dmenucmd } },
 	{ MODKEY,		                 XK_Return,     spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_c,          spawn,                  {.v = browser } },
+	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = filemngr } },
 	{ MODKEY|ShiftMask,             XK_z,          spawn,                  {.v = fullscsh } },
 	{ MODKEY|ShiftMask,             XK_s,          spawn,                  {.v = scsh } },
 
 	// rofi
-	{ MODKEY,                       XK_d,          spawn,                  {.v = rofirun } },
+	{ MODKEY|ControlMask,           XK_d,          spawn,                  {.v = rofirun } },
 	{ MODKEY|ShiftMask,             XK_d,          spawn,                  {.v = rofidrun } },
 	{ MODKEY,                       XK_period,     spawn,                  {.v = rofiemoji } },
 
 	{ MODKEY,                       XK_b,          togglebar,              {0} },
 	{ MODKEY|ControlMask,           XK_space,      focusmaster,            {0} },
-	{ MODKEY|ShiftMask|ControlMask, XK_j,          rotatestack,            {.i = +1 } },
-	{ MODKEY|ShiftMask|ControlMask, XK_k,          rotatestack,            {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_j,          rotatestack,            {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,          rotatestack,            {.i = -1 } },
 	{ MODKEY,                       XK_j,          focusstack,             {.i = +1 } },
 	{ MODKEY,                       XK_k,          focusstack,             {.i = -1 } },
 	{ MODKEY,                       XK_i,          incnmaster,             {.i = +1 } },
 	{ MODKEY,                       XK_d,          incnmaster,             {.i = -1 } },
 	{ MODKEY,                       XK_h,          setmfact,               {.f = -0.05} },
 	{ MODKEY,                       XK_l,          setmfact,               {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_Return,     zoom,                   {0} },
+	//{ MODKEY|ShiftMask,             XK_Return,     zoom,                   {0} },
+
+	{ MODKEY|ControlMask,           XK_t,          rotatelayoutaxis,       {.i = +1 } },   /* flextile, 1 = layout axis */
+	{ MODKEY|ControlMask,           XK_Tab,        rotatelayoutaxis,       {.i = +2 } },   /* flextile, 2 = master axis */
+	{ MODKEY|ControlMask|ShiftMask, XK_Tab,        rotatelayoutaxis,       {.i = +3 } },   /* flextile, 3 = stack axis */
+	{ MODKEY|ControlMask|Mod1Mask,  XK_Tab,        rotatelayoutaxis,       {.i = +4 } },   /* flextile, 4 = secondary stack axis */
+	{ MODKEY|Mod5Mask,              XK_t,          rotatelayoutaxis,       {.i = -1 } },   /* flextile, 1 = layout axis */
+	{ MODKEY|Mod5Mask,              XK_Tab,        rotatelayoutaxis,       {.i = -2 } },   /* flextile, 2 = master axis */
+	{ MODKEY|Mod5Mask|ShiftMask,    XK_Tab,        rotatelayoutaxis,       {.i = -3 } },   /* flextile, 3 = stack axis */
+	{ MODKEY|Mod5Mask|Mod1Mask,     XK_Tab,        rotatelayoutaxis,       {.i = -4 } },   /* flextile, 4 = secondary stack axis */
+	{ MODKEY|ControlMask,           XK_Return,     mirrorlayout,           {0} },          /* flextile, flip master and stack areas */
 
 	{ MODKEY|Mod1Mask,              XK_u,          incrgaps,               {.i = +1 } },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_u,          incrgaps,               {.i = -1 } },
@@ -299,9 +332,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,          killclient,             {0} },
 	{ MODKEY|ShiftMask,             XK_e,          quit,                   {0} },
 
-	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,          setlayout,              {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,          setlayout,              {.v = &layouts[2]} },
+	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[1]} },
+	{ MODKEY,                       XK_f,          setlayout,              {.v = &layouts[2]} },
+	{ MODKEY,                       XK_m,          setlayout,              {.v = &layouts[3]} },
+	{ MODKEY|ControlMask,           XK_w,          setlayout,              {.v = &layouts[4]} },
+	{ MODKEY|ControlMask|ShiftMask, XK_w,          setlayout,              {.v = &layouts[8]} },
+	{ MODKEY|ShiftMask,             XK_t,          setlayout,              {.v = &layouts[7]} },
+	{ MODKEY,                       XK_s,          setlayout,              {.v = &layouts[0]}},
 	{ MODKEY,                       XK_space,      setlayout,              {0} },
 
 	{ MODKEY|ShiftMask,             XK_space,      togglefloating,         {0} },
@@ -311,7 +348,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period,     focusmon,               {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,      tagmon,                 {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,     tagmon,                 {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
+	{ MODKEY|ShiftMask,             XK_f,          togglefullscreen,  {0} },
+
+	// cyclelayout
+	{ MODKEY|ControlMask,           XK_comma,      cyclelayout,            {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_period,     cyclelayout,            {.i = +1 } },
+
 	TAGKEYS(                        XK_1,                                  0)
 	TAGKEYS(                        XK_2,                                  1)
 	TAGKEYS(                        XK_3,                                  2)
@@ -340,6 +382,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,              Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,              Button3,        toggletag,      {0} },
 };
-
-
-

@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #-Auto Start DWM ONLY
 picom --vsync --backend glx &
-nitrogen --set-auto "$HOME/Pictures/Backgrounds/wallpaper.png" &
+nitrogen --set-auto "$HOME/Pictures/Backgrounds/wallpaper-alt.png" &
 
 xss-lock -l env XSECURELOCK_SHOW_USERNAME=0 XSECURELOCK_SHOW_HOSTNAME=0 XSECURELOCK_FONT=Jetbrains\ Mono XSECURELOCK_PASSWORD_PROMPT=time_hex xsecurelock &
 
