@@ -5,15 +5,15 @@
 
 /* appearance */
 static const unsigned int borderpx       = 2;   /* border pixel of windows */
-static const unsigned int snap           = 24;  /* snap pixel */
+static const unsigned int snap           = 16;  /* snap pixel */
 static const int swallowfloating         = 0;   /* 1 means swallow floating windows by default */
 static const unsigned int gappih         = 4;  /* horiz inner gap between windows */
 static const unsigned int gappiv         = 4;  /* vert inner gap between windows */
-static const unsigned int gappoh         = 4;  /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov         = 4;  /* vert outer gap between windows and screen edge */
+static const unsigned int gappoh         = 5;  /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov         = 5;  /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 static const int showbar                 = 1;   /* 0 means no bar */
-static const int topbar                  = 1;   /* 0 means bottom bar */
+static const int topbar                  = 0;   /* 0 means bottom bar */
 static const int bar_height              = 24;   /* 0 means derive from font, >= 1 explicit height */
 static const int focusonwheel            = 0;
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index), 'A' (active monitor) */
@@ -162,6 +162,7 @@ static const Rule rules[] = {
 	RULE(.class = "Gimp", .tags = 1 << 4)
 	RULE(.class = "Firefox", .tags = 1 << 7)
 	RULE(.class = "Alacritty", .isterminal = 1)
+	RULE(.class = "st", .isterminal = 1)
 	RULE(.title = "Event Tester", .noswallow = 1)
 };
 

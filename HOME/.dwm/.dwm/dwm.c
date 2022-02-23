@@ -45,9 +45,6 @@
 #include "util.h"
 
 
-
-
-
 /* macros */
 #define Button6                 6
 #define Button7                 7
@@ -2506,6 +2503,7 @@ updatesizehints(Client *c)
 	if (!XGetWMNormalHints(dpy, c->win, &size, &msize))
 		/* size is uninitialized, ensure that size.flags aren't used */
 		size.flags = PSize;
+
 	if (size.flags & PBaseSize) {
 		c->basew = size.base_width;
 		c->baseh = size.base_height;
