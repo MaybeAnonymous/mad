@@ -15,7 +15,7 @@ i am not responsible for problems you may get while installing this && know that
 
 also remember that this is a work in progress, if anything important is missing, tell me
 
-these dotfiles contain dwm and bspwm
+these dotfiles contain dwm && bspwm
 
 i do not plan on making an installation script, and i expect you to know what you're doing
 
@@ -45,7 +45,7 @@ i do not plan on making an installation script, and i expect you to know what yo
 
 kinda optional:
 
-   other> maim, glava, [neovide](https://github.com/neovide/neovide), vivaldi || ungoogled-chromium, [ufetch](https://gitlab.com/jschx/ufetch), [dmenu](https://tools.suckless.org/dmenu/) || [rofi](https://github.com/davatorium/rofi)
+   other> maim, glava, [neovide](https://github.com/neovide/neovide), vivaldi || ungoogled-chromium, [ufetch](https://gitlab.com/jschx/ufetch), [dmenu](https://tools.suckless.org/dmenu/) || \( [rofi](https://github.com/davatorium/rofi) + [emoji rofi](https://github.com/Mange/rofi-emoji) \)
 
 **more && after installation:**
 
