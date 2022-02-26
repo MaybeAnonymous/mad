@@ -1,9 +1,13 @@
 # maybeanonymous' dotfiles
+
 my dotfiles, work in progress
 
 ---
+**Hello! Backup your dotfiles, and make sure you know what you're doing!**
 
-before installing, **backup your dotfiles.**
+<img src="https://user-images.githubusercontent.com/89218161/155859733-59d2fe19-0573-4080-94c4-768a75310412.png" alt="my profile picture" width="200" height="200">
+
+---
 
 i am not responsible for problems you may get while installing this && know that this isn't complete
 
@@ -24,12 +28,11 @@ i am not responsible for problems you may get while installing this && know that
 || means or
 
 + means and
-
 ```
 
 also remember that this is a work in progress, if anything important is missing, tell me
 
-these dotfiles contain dwm && bspwm
+these dotfiles contain two shells and two window managers \( [zsh](https://www.zsh.org/) && [fish](https://fishshell.com), [dwm](https://dwm.suckless.org) && [bspwm](https://github.com/baskerville/bspwm) \) 
 
 i do not plan on making an installation script, and i expect you to know what you're doing
 
