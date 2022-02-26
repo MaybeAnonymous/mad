@@ -61,8 +61,9 @@
         function la; exa -a $argv; end
     # Clearing
         function clr; builtin history --clear && clear; end
-    # Memes
-        function lolsans; echo "Hello, I am Sans Undertale!"; end
+    # Memes / Unnecessary
+        function lolsans; echo "'sup i'm sans undertale, i will your mom"; end
+        function hello; echo "Hello, world!"; end
     # Spleling
         function pamcna; pacman $argv; end
         function pacmna; pacman $argv; end
@@ -74,6 +75,8 @@
         # instead of using `whoami` and `hostname`
         printf '%s %s%s : ' (set_color blue) (prompt_pwd) (set_color red)
     end
+
+    
 # }
 
 # Start up {
