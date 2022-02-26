@@ -10,7 +10,7 @@ SETUVAR fish_color_command:green
 SETUVAR fish_color_comment:black
 SETUVAR fish_color_cwd:blue
 SETUVAR fish_color_cwd_root:red
-SETUVAR fish_color_end:009900
+SETUVAR fish_color_end:green
 SETUVAR fish_color_error:red
 SETUVAR fish_color_escape:00a6b2
 SETUVAR fish_color_history_current:\x2d\x2dbold

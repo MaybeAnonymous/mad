@@ -24,6 +24,7 @@
                 set fish_color_quote yellow
                 set fish_color_param cyan
                 set fish_color_operator brcyan
+                set fish_color_end green
         # Other
 # }
 
