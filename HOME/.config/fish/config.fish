@@ -14,15 +14,15 @@
         set fish_greeting
         # Colour
             # Pager
-                set fish_pager_color_completion green # pager autocompletion
+                set fish_pager_color_completion -o cyan # pager autocompletion
                 set fish_pager_color_description yellow
             # Other
                 set fish_color_comment black # comment
-                set fish_color_error red # unknown command
-                set fish_color_command green # known command
-                set fish_color_autosuggestion brblack
+                set fish_color_error -o brred # unknown command
+                set fish_color_command brgreen # known command
+                set fish_color_autosuggestion -i brblack
                 set fish_color_quote yellow
-                set fish_color_param cyan
+                set fish_color_param normal
                 set fish_color_operator brcyan
                 set fish_color_end green
         # Other
@@ -55,14 +55,16 @@
 # Functions {
     # Any
         function pacman; sudo pacman $argv; end
+        function yt-wav; yt-dlp -x --format wav $argv; end
     # List
         function ls; exa $argv; end
         function l; exa -l -a $argv; end
         function la; exa -a $argv; end
     # Clearing
-        function clr; builtin history clear && clear; end
-    # Memes
-        function lolsans; echo "Hello, I am Sans Undertale!"; end
+        function clr; builtin history --clear && clear; end
+    # Memes / Unnecessary
+        function lolsans; echo "'sup i'm sans undertale, i will your mom"; end
+        function hello; echo "Hello, world!"; end
     # Spleling
         function pamcna; pacman $argv; end
         function pacmna; pacman $argv; end
@@ -72,8 +74,11 @@
         # This shows up as USER@HOST /home/user/ >, with the directory colored
         # $USER and $hostname are set by fish, so you can just use them
         # instead of using `whoami` and `hostname`
-        printf '%s %s%s : ' (set_color blue) (prompt_pwd) (set_color red)
+        #set -l git_branch (git branch 2>/dev/null | sed -n '/\* /s///p')
+        printf '%s %s%s%s%s : ' (set_color blue) (prompt_pwd) (set_color yellow) (fish_vcs_prompt) (set_color red)
     end
+
+    
 # }
 
 # Start up {
