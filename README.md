@@ -96,9 +96,11 @@ i have not taken a picture yet as i am procastinating
 
 # wallpaper
 
-in HOME/Pictures/Backgrounds
+<img src="HOME/Pictures/Backgrounds/wallpaper.png">
 
-Wallpaper font is Comic Neue
+<img src="HOME/Pictures/Backgrounds/wallpaper-alt.png">
+
+Text is in [Comic Neue](http://www.comicneue.com/)
 
 
 
