@@ -21,6 +21,9 @@
                 set fish_color_error red # unknown command
                 set fish_color_command green # known command
                 set fish_color_autosuggestion brblack
+                set fish_color_quote yellow
+                set fish_color_param cyan
+                set fish_color_operator brcyan
         # Other
 # }
 
@@ -68,8 +71,7 @@
         # This shows up as USER@HOST /home/user/ >, with the directory colored
         # $USER and $hostname are set by fish, so you can just use them
         # instead of using `whoami` and `hostname`
-        printf '%s %s%s%s : ' (set_color magenta)$hostname \
-            (set_color blue) (prompt_pwd) (set_color red)
+        printf '%s %s%s : ' (set_color blue) (prompt_pwd) (set_color red)
     end
 # }
 
