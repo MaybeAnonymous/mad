@@ -41,44 +41,44 @@ i do not plan on making an installation script, and i expect you to know what yo
 
 **shell:**
 
-   **zsh** + [oh-my-zsh](https://ohmyz.sh) || [fish](https://fishshell.com) + [bass;;](https://github.com/edc/bass)
+   >**zsh** + [oh-my-zsh](https://ohmyz.sh) || [fish](https://fishshell.com) + [bass;;](https://github.com/edc/bass)
 
 **either wm:**
 
-   **fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, Symbols Nerd Fonts, [Comic Mono](https://github.com/dtinth/comic-mono-font)
-   
-   **neovim>** [vim-plug;;](https://github.com/junegunn/vim-plug)
-   
-   **applets>** nm-applet, blueman-applet, xfce4-clipman
-   
-   [alacritty](https://alacritty.org)
-   
-   [picom-jonaburg-fix](https://github.com/Arian8j2/picom-jonaburg-fix)
-   
-   [conky](https://github.com/brndnmtthws/conky)
+   >**fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, Symbols Nerd Fonts, [Comic Mono](https://github.com/dtinth/comic-mono-font)
+   >
+   >**neovim>** [vim-plug;;](https://github.com/junegunn/vim-plug)
+   >
+   >**applets>** nm-applet, blueman-applet, xfce4-clipman
+   >
+   >[alacritty](https://alacritty.org)
+   >
+   >[picom-jonaburg-fix](https://github.com/Arian8j2/picom-jonaburg-fix)
+   >
+   >[conky](https://github.com/brndnmtthws/conky)
+   >
+   >[maim](https://github.com/naelstrof/maim)
+   >
+   >[dmenu](https://tools.suckless.org/dmenu/) || \( [rofi](https://github.com/davatorium/rofi) + [emoji rofi](https://github.com/Mange/rofi-emoji) \)
 
-   [maim](https://github.com/naelstrof/maim)
+**[dwm:](https://dwm.suckless.org)**
 
-   [dmenu](https://tools.suckless.org/dmenu/) || \( [rofi](https://github.com/davatorium/rofi) + [emoji rofi](https://github.com/Mange/rofi-emoji) \)
+   > [flexipatch;;](https://github.com/bakkeby/dwm-flexipatch) + [finalizer;;](https://github.com/bakkeby/flexipatch-finalizer)
 
-[dwm:](https://dwm.suckless.org)
-
-   [flexipatch;;](https://github.com/bakkeby/dwm-flexipatch) + [finalizer;;](https://github.com/bakkeby/flexipatch-finalizer)
-
-[bspwm](https://github.com/baskerville/bspwm) 
+**[bspwm](https://github.com/baskerville/bspwm)**
 
 **optional:**
-   glava, [neovide](https://github.com/neovide/neovide), [vivaldi!C](https://vivaldi.com) || [ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium), [ufetch](https://gitlab.com/jschx/ufetch)
+   > glava, [neovide](https://github.com/neovide/neovide), [vivaldi!C](https://vivaldi.com) || [ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium), [ufetch](https://gitlab.com/jschx/ufetch)
 
 **more && after installation:**
 
-to configure neovim you must open it and run `:PlugInstall`
-
-to configure dwm you must `cd ~/.dwm && sudo make install`
-
-to configure dmenu you must `cd ~/.dmenu && sudo make install`
-
-colourscheme: [catppuccin](https://github.com/catppuccin/catppuccin)
+>to configure neovim you must open it and run `:PlugInstall`
+>
+>to configure dwm you must `cd ~/.dwm && sudo make install`
+>
+>to configure dmenu you must `cd ~/.dmenu && sudo make install`
+>
+> colourscheme: [catppuccin](https://github.com/catppuccin/catppuccin)
 
 ---
 
