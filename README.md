@@ -1,4 +1,4 @@
-# dotfiles
+# maybeanonymous' dotfiles
 my dotfiles, work in progress
 
 ---
@@ -7,9 +7,13 @@ before installing, **backup your dotfiles.**
 
 i am not responsible for problems you may get while installing this && know that this isn't complete
 
-**bspwm:** use https://github.com/MaybeAnonymous/bspswallow for bspwm window swallowing, it's a fork i made of another project
+**bspwm:** use [this](https://github.com/MaybeAnonymous/bspswallow) for bspwm window swallowing, it's a fork i made of another project
 
 **ufetch:** default is artix, get your own [here](https://gitlab.com/jschx/ufetch) 
+
+**zsh:** it may give you error message, install the plugins [here](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh) and [here](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+
+**fish:** my config file is quite simple as i just switched to it, zsh will still be here though.
 
 ---
 
@@ -23,7 +27,7 @@ i do not plan on making an installation script, and i expect you to know what yo
 
 **requirements:**
 
-**YOU MUST HAVE [this](https://github.com/uditkarode/libxft-bgra) IF YOU'RE USING DWM**
+**YOU MUST HAVE [THIS](https://github.com/uditkarode/libxft-bgra) IF YOU'RE USING DWM**
 
 [bspwm](https://github.com/baskerville/bspwm) || [dwm](https://dwm.suckless.org)
 
@@ -31,7 +35,7 @@ i do not plan on making an installation script, and i expect you to know what yo
 
    **neovim>** [vim-plug](https://github.com/junegunn/vim-plug) should be pre-installed
 
-   **zsh** + [oh-my-zsh](https://ohmyz.sh)
+   **zsh** + [oh-my-zsh](https://ohmyz.sh) || [fish](https://fishshell.com)
 
    **fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, Symbols Nerd Fonts, [Comic Mono](https://github.com/dtinth/comic-mono-font), etc
 
@@ -43,19 +47,19 @@ i do not plan on making an installation script, and i expect you to know what yo
 
    **applets>** nm-applet, blueman-applet, xfce4-clipman
 
-kinda optional:
+**kinda optional:**
 
    other> maim, glava, [neovide](https://github.com/neovide/neovide), vivaldi || ungoogled-chromium, [ufetch](https://gitlab.com/jschx/ufetch), [dmenu](https://tools.suckless.org/dmenu/) || \( [rofi](https://github.com/davatorium/rofi) + [emoji rofi](https://github.com/Mange/rofi-emoji) \)
 
 **more && after installation:**
 
-to configure neovim you must open it and run :PlugInstall
+to configure neovim you must open it and run `:PlugInstall`
 
 to configure dwm you must `cd ~/.dwm && sudo make install`
 
 to configure dmenu you must `cd ~/.dmenu && sudo make install`
 
-the colourscheme is [catppuccin](https://github.com/catppuccin/catppuccin)
+colourscheme: [catppuccin](https://github.com/catppuccin/catppuccin)
 
 ---
 
