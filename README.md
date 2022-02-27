@@ -25,7 +25,7 @@ I recently switched to [fish](https://fishshell.com)
 >
 >|| means or
 >
->+ means and
+>\+ means and
 
 
 also remember that this is a work in progress, if anything important is missing, tell me
