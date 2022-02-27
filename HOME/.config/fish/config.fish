@@ -27,6 +27,7 @@ fish_add_path $HOME/.cargo/bin
                 set fish_color_param normal
                 set fish_color_operator brcyan
                 set fish_color_end green
+                set fish_color_redirection -u brblue
         # Other
 # }
 
