@@ -76,8 +76,7 @@ fish_add_path $HOME/.cargo/bin
         # This shows up as USER@HOST /home/user/ >, with the directory colored
         # $USER and $hostname are set by fish, so you can just use them
         # instead of using `whoami` and `hostname`
-        #set -l git_branch (git branch 2>/dev/null | sed -n '/\* /s///p')
-        printf '%s %s%s%s%s : ' (set_color blue) (prompt_pwd) (set_color yellow) (fish_vcs_prompt) (set_color red)
+        printf '%s %s%s%s%s ><> ' (set_color blue) (prompt_pwd) (set_color yellow) (fish_vcs_prompt) (set_color yellow)
     end
 
 # }
