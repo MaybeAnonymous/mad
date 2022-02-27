@@ -9,32 +9,30 @@ my dotfiles, work in progress
 
 ---
 
-i am not responsible for problems you may get while installing this && know that this isn't complete
+i am not responsible for problems you may get while installing this, and know that this isn't complete
 
-**bspwm:** use [this](https://github.com/MaybeAnonymous/bspswallow) for bspwm window swallowing, it's a fork i made of another project
+use **[ufetch](https://gitlab.com/jschx/ufetch)** *( or use the one in usr/local/bin )*
 
-**ufetch:** default is artix, get your own [here](https://gitlab.com/jschx/ufetch) 
+**[zsh:](https://zsh.org)** plugins are [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh) and [syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 
-**zsh:** it may give you error message, install the plugins [here](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh) and [here](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
-
-**fish:** my config file is quite simple as i just switched to it, zsh will still be here though.
+I recently switched to [fish](https://fishshell.com)
 
 ---
-```
-!C means closed source/proprietary!!
 
-;; means it is pre-installed and you should not worry
+>!C means closed source/proprietary!!
+>
+>;; means it is pre-installed and you should not worry
+>
+>|| means or
+>
+>+ means and
 
-|| means or
-
-+ means and
-```
 
 also remember that this is a work in progress, if anything important is missing, tell me
 
-these dotfiles contain two shells and two window managers \( [zsh](https://www.zsh.org/) && [fish](https://fishshell.com), [dwm](https://dwm.suckless.org) && [bspwm](https://github.com/baskerville/bspwm) \) 
-
 i do not plan on making an installation script, and i expect you to know what you're doing
+
+these dotfiles contain two shells and two window managers \( [zsh](https://www.zsh.org/) && [fish](https://fishshell.com), [dwm](https://dwm.suckless.org) && [bspwm](https://github.com/baskerville/bspwm) \) 
 
 ---
 
@@ -68,7 +66,7 @@ i do not plan on making an installation script, and i expect you to know what yo
 
    > [flexipatch;;](https://github.com/bakkeby/dwm-flexipatch) + [finalizer;;](https://github.com/bakkeby/flexipatch-finalizer)
 
-**[bspwm](https://github.com/baskerville/bspwm)**
+**[bspwm](https://github.com/baskerville/bspwm)** + [fork of bspswallow](https://github.com/MaybeAnonymous/bspswallow)
 
 **optional:**
    > glava, [neovide](https://github.com/neovide/neovide), [vivaldi!C](https://vivaldi.com) || [ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium), [ufetch](https://gitlab.com/jschx/ufetch)
@@ -81,7 +79,9 @@ i do not plan on making an installation script, and i expect you to know what yo
 >
 >to configure dmenu you must `cd ~/.dmenu && sudo make install`
 >
-> colourscheme: [catppuccin](https://github.com/catppuccin/catppuccin)
+>colourscheme: [catppuccin](https://github.com/catppuccin/catppuccin)
+>
+>Have fun!
 
 ---
 
