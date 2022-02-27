@@ -5,11 +5,13 @@
 # |  _| \__ \ | | |
 # |_| |_|___/_| |_|
 
+fish_add_path $HOME/.cargo/bin
+
 # Variables {
     # EDITOR
-    set -U EDITOR nvim
+    set EDITOR nvim # sudoedit apparently doesn't get this?
     # Other
-    set -U MICRO_TRUECOLOR 1
+    set -U MICRO_TRUECOLOR 1 # idk what -U does
     # Fish
         set fish_greeting
         # Colour
@@ -52,23 +54,23 @@
     end
 # }
 
-# Functions {
+# Functions + Abbreviations {
     # Any
-        function pacman; sudo pacman $argv; end
-        function yt-wav; yt-dlp -x --format wav $argv; end
+        abbr "pacman" "sudo pacman"
+        abbr "yt-wav" "yt-dlp -x --format wav" 
+        abbr "sue" "EDITOR=nvim sudoedit"
     # List
-        function ls; exa $argv; end
-        function l; exa -l -a $argv; end
-        function la; exa -a $argv; end
+        abbr "ls" "exa"
+        abbr "l" "exa -l -a"
+        abbr "la" "exa -a"
     # Clearing
-        function clr; builtin history --clear && clear; end
+        abbr "clr" "builtin history --clear && clear"
     # Memes / Unnecessary
         function lolsans; echo "'sup i'm sans undertale, i will your mom"; end
         function hello; echo "Hello, world!"; end
     # Spleling
-        function pamcna; pacman $argv; end
-        function pacmna; pacman $argv; end
-
+        abbr "pamcna" "pacman"
+        abbr "pacmna" "pacman"
 
     function fish_prompt -d "Write out the prompt"
         # This shows up as USER@HOST /home/user/ >, with the directory colored
@@ -78,7 +80,6 @@
         printf '%s %s%s%s%s : ' (set_color blue) (prompt_pwd) (set_color yellow) (fish_vcs_prompt) (set_color red)
     end
 
-    
 # }
 
 # Start up {
