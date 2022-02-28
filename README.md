@@ -1,13 +1,8 @@
 # maybeanonymous' dotfiles
 
-my dotfiles, work in progress
-
----
-**Hello! Backup your dotfiles, and make sure you know what you're doing!**
+### Hello! Backup your dotfiles, and make sure you know what you're doing!
 
 <img src="https://user-images.githubusercontent.com/89218161/155859733-59d2fe19-0573-4080-94c4-768a75310412.png" alt="my profile picture" width="200" height="200">
-
----
 
 i am not responsible for problems you may get while installing this, and know that this isn't complete
 
@@ -17,7 +12,7 @@ use **[ufetch](https://gitlab.com/jschx/ufetch)** *( or use the one in usr/local
 
 I recently switched to [fish](https://fishshell.com)
 
----
+# Before installation
 
 >!C means closed source/proprietary!!
 >
@@ -28,29 +23,29 @@ I recently switched to [fish](https://fishshell.com)
 >\+ means and
 
 
-also remember that this is a work in progress, if anything important is missing, tell me
+Also, remember that this is a work in progress, if anything important is missing, tell me!
 
-i do not plan on making an installation script, and i expect you to know what you're doing
+I do not plan on making an installation script, and **make sure you know what you're doing.**
 
-these dotfiles contain two shells and two window managers \( [zsh](https://www.zsh.org/) && [fish](https://fishshell.com), [dwm](https://dwm.suckless.org) && [bspwm](https://github.com/baskerville/bspwm) \) 
+These dotfiles contain 2 shells + 2 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) \) 
 
----
+# Requirements
 
-# requirements
+* **you must have [THIS](https://github.com/uditkarode/libxft-bgra) for DWM**
 
-**YOU MUST HAVE [THIS](https://github.com/uditkarode/libxft-bgra) IF YOU'RE USING DWM**
-
-**shell:**
+* **Shell:**
 
    >**zsh** + [oh-my-zsh](https://ohmyz.sh) || [fish](https://fishshell.com) + [bass;;](https://github.com/edc/bass)
 
-**either wm:**
+* **Either wm:**
 
+   >[nitrogen](https://github.com/l3ib/nitrogen)
+   >
    >**fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, Symbols Nerd Fonts, [Comic Mono](https://github.com/dtinth/comic-mono-font)
    >
-   >**neovim>** [vim-plug;;](https://github.com/junegunn/vim-plug)
+   >[neovim](https://neovim.io/) + [vim-plug;;](https://github.com/junegunn/vim-plug)
    >
-   >**applets>** nm-applet, blueman-applet, xfce4-clipman
+   >**Applets>** nm-applet, blueman-applet, xfce4-clipman
    >
    >[alacritty](https://alacritty.org)
    >
@@ -62,16 +57,16 @@ these dotfiles contain two shells and two window managers \( [zsh](https://www.z
    >
    >[dmenu](https://tools.suckless.org/dmenu/) || \( [rofi](https://github.com/davatorium/rofi) + [emoji rofi](https://github.com/Mange/rofi-emoji) \)
 
-**[dwm:](https://dwm.suckless.org)**
+* **[dwm:](https://dwm.suckless.org)**
 
    > [flexipatch;;](https://github.com/bakkeby/dwm-flexipatch) + [finalizer;;](https://github.com/bakkeby/flexipatch-finalizer)
 
-**[bspwm](https://github.com/baskerville/bspwm)** + [fork of bspswallow](https://github.com/MaybeAnonymous/bspswallow)
+* **[bspwm](https://github.com/baskerville/bspwm)** + [fork of bspswallow](https://github.com/MaybeAnonymous/bspswallow)
 
-**optional:**
-   > glava, [neovide](https://github.com/neovide/neovide), [vivaldi!C](https://vivaldi.com) || [ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium), [ufetch](https://gitlab.com/jschx/ufetch)
+* **optional:**
+   > [glava](https://github.com/jarcode-foss/glava), [neovide](https://github.com/neovide/neovide), [vivaldi!C](https://vivaldi.com) || [ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium), [ufetch](https://gitlab.com/jschx/ufetch)
 
-**more && after installation:**
+# After Installing
 
 >to configure neovim you must open it and run `:PlugInstall`
 >
@@ -79,11 +74,12 @@ these dotfiles contain two shells and two window managers \( [zsh](https://www.z
 >
 >to configure dmenu you must `cd ~/.dmenu && sudo make install`
 >
->colourscheme: [catppuccin](https://github.com/catppuccin/catppuccin)
->
 >Have fun!
 
----
+# More Info
+
+>colourscheme: [catppuccin](https://github.com/catppuccin/catppuccin)
+
 
 # bspwm:
 ![image](https://user-images.githubusercontent.com/89218161/152661623-bfa0f2dc-43dc-46a2-85b0-fa6ce60b243a.png)
