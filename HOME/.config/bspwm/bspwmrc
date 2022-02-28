@@ -1,11 +1,15 @@
 #! /bin/sh
 
-#  BBBBBBB  BBBBBB  BBBBBB  B     B  B     B
-#  S     S  S       S    S  S  S  S  SS   SS
-#  PPPPP    PPPPPP  PPPPPP  P PPP P  P PPP P
-#  W     W       W  W       WW   WW  W  W  W
-#  MMMMMMM  MMMMMM  M       M     M  M     M
+#  |
+#  __ \    __|   __ \     \ \  \   / __ `__ \
+#  |   | \__ \  |   |      \ \  \ / |   |   |
+# _.__/  ____/   __/        \_/\_/ _|  _|  _|
+#              _|
+# binary space partitioning window manager
 
+#--------------------#
+# bspc and important #
+#--------------------#
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep bspswallow || bspswallow &
 
@@ -32,5 +36,8 @@ bspc rule -a Screenkey manage=off
 bspc rule -a Alacritty state=pseudo_tiled
 bspc rule -a neovide state=pseudo_tiled
 
-# autostart
-exec $HOME/.config/bspwm/autostart 
+#-----------#
+# Autostart #
+#-----------#
+exec $HOME/.config/bspwm/autostart &
+exec $HOME/.config/polybar/scripts/startup.sh &
