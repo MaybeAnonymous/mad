@@ -21,13 +21,17 @@ I recently switched to [fish](https://fishshell.com)
 >|| means or
 >
 >\+ means and
+>
+>!w means Work In Progress
 
 
 Also, remember that this is a work in progress, if anything important is missing, tell me!
 
 I do not plan on making an installation script, and **make sure you know what you're doing.**
 
-These dotfiles contain 2 shells + 2 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) \) 
+These dotfiles contain 2 shells + 2 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) || [qtile!w](https://www.qtile.org) \) 
+
+qtile has no swallowing here
 
 # Requirements
 
@@ -63,6 +67,7 @@ These dotfiles contain 2 shells + 2 window managers \( [zsh](https://www.zsh.org
 
    > [flexipatch;;](https://github.com/bakkeby/dwm-flexipatch) + [finalizer;;](https://github.com/bakkeby/flexipatch-finalizer)
 
+* **[qtile](https://www.qtile.org)**
 
 * **optional:**
    > [glava](https://github.com/jarcode-foss/glava), [neovide](https://github.com/neovide/neovide), [vivaldi!C](https://vivaldi.com) || [ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium), [ufetch](https://gitlab.com/jschx/ufetch)
