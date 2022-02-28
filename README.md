@@ -6,7 +6,7 @@
 
 i am not responsible for problems you may get while installing this, and know that this isn't complete
 
-use **[ufetch](https://gitlab.com/jschx/ufetch)** *( or use the one in usr/local/bin )*
+use **[ufetch](https://gitlab.com/jschx/ufetch)** *( or the one in usr/local/bin )*
 
 **[zsh:](https://zsh.org)** plugins are [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh) and [syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 
@@ -39,29 +39,30 @@ These dotfiles contain 2 shells + 2 window managers \( [zsh](https://www.zsh.org
 
 * **Either wm:**
 
-   >[nitrogen](https://github.com/l3ib/nitrogen)
-   >
-   >**fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, Symbols Nerd Fonts, [Comic Mono](https://github.com/dtinth/comic-mono-font)
-   >
-   >[neovim](https://neovim.io/) + [vim-plug;;](https://github.com/junegunn/vim-plug)
-   >
-   >**Applets>** nm-applet, blueman-applet, xfce4-clipman
-   >
    >[alacritty](https://alacritty.org)
-   >
-   >[picom-jonaburg-fix](https://github.com/Arian8j2/picom-jonaburg-fix)
    >
    >[conky](https://github.com/brndnmtthws/conky)
    >
+   >[dmenu](https://tools.suckless.org/dmenu/) || \( [rofi](https://github.com/davatorium/rofi) + [emoji rofi](https://github.com/Mange/rofi-emoji) \)
+   >
    >[maim](https://github.com/naelstrof/maim)
    >
-   >[dmenu](https://tools.suckless.org/dmenu/) || \( [rofi](https://github.com/davatorium/rofi) + [emoji rofi](https://github.com/Mange/rofi-emoji) \)
+   >[neovim](https://neovim.io/) + [vim-plug;;](https://github.com/junegunn/vim-plug)
+   >
+   >[nitrogen](https://github.com/l3ib/nitrogen)
+   >
+   >[picom-jonaburg-fix](https://github.com/Arian8j2/picom-jonaburg-fix)
+   >
+   >**Applets>** nm-applet, blueman-applet, xfce4-clipman
+   >
+   >**fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, Symbols Nerd Fonts, [Comic Mono](https://github.com/dtinth/comic-mono-font)
+
+* **[bspwm](https://github.com/baskerville/bspwm)** + [fork of bspswallow](https://github.com/MaybeAnonymous/bspswallow)
 
 * **[dwm:](https://dwm.suckless.org)**
 
    > [flexipatch;;](https://github.com/bakkeby/dwm-flexipatch) + [finalizer;;](https://github.com/bakkeby/flexipatch-finalizer)
 
-* **[bspwm](https://github.com/baskerville/bspwm)** + [fork of bspswallow](https://github.com/MaybeAnonymous/bspswallow)
 
 * **optional:**
    > [glava](https://github.com/jarcode-foss/glava), [neovide](https://github.com/neovide/neovide), [vivaldi!C](https://vivaldi.com) || [ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium), [ufetch](https://gitlab.com/jschx/ufetch)
