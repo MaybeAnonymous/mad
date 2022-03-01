@@ -23,6 +23,7 @@ terminal = "alacritty"
 menu = "dmenu_run"
 run = "rofi -show run -show-icons"
 drun = "rofi -show drun -show-icons"
+emoji = "rofi -show emoji"
 fshot = "sh -c 'maim | xclip -selection clipboard -t image/png'"
 shot = "sh -c 'maim -s -u | xclip -selection clipboard -t image/png'"
 browser = "chromium"
@@ -89,6 +90,7 @@ keys = [
     Key([mod], "p", lazy.spawn(menu), desc="Launch dmenu"),
     Key([mod, "shift"], "d", lazy.spawn(drun)),
     Key([mod, "control"], "d", lazy.spawn(run)),
+    Key([mod], "period", lazy.spawn(emoji)),
 
     #---------#
     # Layouts #
