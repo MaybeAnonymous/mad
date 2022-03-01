@@ -59,7 +59,7 @@ qtile has no swallowing here
    >
    >**Applets>** nm-applet, blueman-applet, xfce4-clipman
    >
-   >**fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, Symbols Nerd Fonts, [Comic Mono](https://github.com/dtinth/comic-mono-font)
+   >**fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, Symbols Nerd Fonts, [Comic Mono](https://github.com/dtinth/comic-mono-font), Ubuntu Font
 
 * **[bspwm](https://github.com/baskerville/bspwm)** + [fork of bspswallow](https://github.com/MaybeAnonymous/bspswallow)
 
