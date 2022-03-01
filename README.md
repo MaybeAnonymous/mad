@@ -41,6 +41,10 @@ qtile has no swallowing here
 
    >**zsh** + [oh-my-zsh](https://ohmyz.sh) || [fish](https://fishshell.com) + [bass;;](https://github.com/edc/bass)
 
+* **Display Manager:**
+   
+   >[https://github.com/canonical/lightdm] + [catppuccin gtk theme](https://github.com/catppuccin/gtk)  
+
 * **Either wm:**
 
    >[alacritty](https://alacritty.org)
