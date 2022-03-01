@@ -1,4 +1,4 @@
-# maybeanonymous' dotfiles
+# MaybeAnonymous' Dotfiles
 
 ### Hello! Backup your dotfiles, and make sure you know what you're doing!
 
