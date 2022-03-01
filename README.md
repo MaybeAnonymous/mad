@@ -31,7 +31,7 @@ I do not plan on making an installation script, and **make sure you know what yo
 
 These dotfiles contain 2 shells + 2 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) || [qtile](https://www.qtile.org) \) 
 
-qtile has no swallowing here
+qtile has swallowing now, also, qtile is configured for xorg
 
 # Requirements
 
@@ -45,8 +45,10 @@ qtile has no swallowing here
    
    >[https://github.com/canonical/lightdm] + [catppuccin gtk theme](https://github.com/catppuccin/gtk)  
 
-* **Either wm:**
+* **Either wms:**
 
+   >[xsecurelock](https://github.com/google/xsecurelock)
+   >
    >[alacritty](https://alacritty.org)
    >
    >[conky](https://github.com/brndnmtthws/conky)
