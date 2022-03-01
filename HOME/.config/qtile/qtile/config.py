@@ -12,18 +12,27 @@ from typing import List  # noqa: F401
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
+#from libqtile.utils import guess_terminal
 
 mod = "mod4"
 
 #----------#
 # Commands #
 #----------#
-terminal = guess_terminal()
+terminal = "alacritty"
 menu = "dmenu_run"
 fshot = "maim | xclip -selection clipboard -t image/png"
 shot = "maim -s -u | xclip -selection clipboard -t image/png"
 browser = "chromium"
+
+#---------------#
+# More Commands #
+#---------------#
+raisevol = "pamixer -i5"
+lowervol = "pamixer -d5"
+togglevol = "pamixer -t"
+raisebr = "xbacklight -inc 5"
+lowerbr = "xbacklight -dec 5"
 
 import os
 import subprocess
@@ -86,6 +95,11 @@ keys = [
     #-----------#
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "c", lazy.spawn(browser), desc="Launch the web browser"),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn(raisevol)),
+    Key([], "XF86AudioLowerVolume", lazy.spawn(lowervol)),
+    Key([], "XF86AudioMute", lazy.spawn(togglevol)),
+    Key([], "XF86MonBrightnessUp", lazy.spawn(raisebr)),
+    Key([], "XF86MonBrightnessDown", lazy.spawn(lowerbr)),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -114,16 +128,25 @@ for i in groups:
         ]
     )
 
+def init_basic_layout():
+    return {
+            "margin": 4,
+            "border_width": 2,
+            "border_focus": "#f2cdcd",
+            "border_normal": "#6e6c7e"
+    }
+basic_layout = init_basic_layout()
+
 layouts = [
-    layout.Columns(border_focus_stack=["#f2cdcd", "#6e6c7e"], border_width=2, margin=4),
-    layout.Max(margin=4),
+    layout.Columns(**basic_layout),
+    layout.Max(**basic_layout),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
-    layout.Bsp(margin=4, border_width=2),
-    layout.Matrix(margin=4, border_width=2),
+    layout.Bsp(**basic_layout),
+    layout.Matrix(**basic_layout),
     # layout.MonadTall(),
     # layout.MonadWide(),
-    layout.RatioTile(margin=4, border_width=2),
+    layout.RatioTile(**basic_layout),
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
@@ -131,8 +154,8 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="sans",
-    fontsize=12,
+    font="Jetbrains Mono",
+    fontsize=14,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
@@ -142,7 +165,7 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayout(),
-                widget.GroupBox(),
+                widget.GroupBox(active="#f2cdcd", inactive="#6e6c7e", highlight_method="block", block_highlight_text_color="#ffffff"),
                 widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
@@ -154,10 +177,12 @@ screens = [
                 widget.TextBox("maybeanonymous", name="default"),
                 widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+                widget.Clock(format="%Y-%m-%d %a %H:%M"),
                 widget.QuickExit(),
             ],
-            24,
+            32,
+            background="#161320",
+            margin=[4,4,0,4],
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
@@ -187,8 +212,9 @@ floating_layout = layout.Floating(
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
     ],
-    border_focus_stack=["#f2cdcd", "#6e6c7e"],
     border_width=2,
+    border_focus="#f2cdcd",
+    border_normal="#6e6c7e",
 )
 auto_fullscreen = True
 focus_on_window_activation = "smart"
@@ -197,6 +223,37 @@ reconfigure_screens = True
 # If things like steam games want to auto-minimize themselves when losing
 # focus, should we respect this or not?
 auto_minimize = True
+
+# Be careful here, I got this from
+# https://github.com/qtile/qtile/issues/1771
+# It swallows! I don't know how but it works I guess
+import psutil
+
+@hook.subscribe.client_new
+def _swallow(window):
+    pid = window.window.get_net_wm_pid()
+    ppid = psutil.Process(pid).ppid()
+    cpids = {c.window.get_net_wm_pid(): wid for wid, c in window.qtile.windows_map.items()}
+    for i in range(5):
+        if not ppid:
+            return
+        if ppid in cpids:
+            parent = window.qtile.windows_map.get(cpids[ppid])
+            if parent.window.get_wm_class()[0] != "Alacritty":
+                return
+            parent.minimized = True
+            window.parent = parent
+            return
+        ppid = psutil.Process(ppid).ppid()
+
+@hook.subscribe.client_killed
+def _unswallow(window):
+    if hasattr(window, 'parent'):
+        window.parent.minimized = False
+
+
+
+
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
