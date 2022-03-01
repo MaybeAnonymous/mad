@@ -23,9 +23,11 @@ terminal = "alacritty"
 menu = "dmenu_run"
 run = "rofi -show run -show-icons"
 drun = "rofi -show drun -show-icons"
+emoji = "rofi -show emoji"
 fshot = "sh -c 'maim | xclip -selection clipboard -t image/png'"
 shot = "sh -c 'maim -s -u | xclip -selection clipboard -t image/png'"
 browser = "chromium"
+files = "thunar"
 
 #---------------#
 # More Commands #
@@ -41,7 +43,8 @@ import subprocess
 
 from libqtile import hook
 
-@hook.subscribe.startup_once
+#@hook.subscribe.startup_once
+@hook.subscribe.startup
 def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.run([home])
@@ -88,6 +91,7 @@ keys = [
     Key([mod], "p", lazy.spawn(menu), desc="Launch dmenu"),
     Key([mod, "shift"], "d", lazy.spawn(drun)),
     Key([mod, "control"], "d", lazy.spawn(run)),
+    Key([mod], "period", lazy.spawn(emoji)),
 
     #---------#
     # Layouts #
@@ -110,6 +114,7 @@ keys = [
     # Utilities #
     #-----------#
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod, "shift"], "Return", lazy.spawn(files), desc="Launch file browser"),
     Key([mod], "c", lazy.spawn(browser), desc="Launch the web browser"),
     Key([], "XF86AudioRaiseVolume", lazy.spawn(raisevol)),
     Key([], "XF86AudioLowerVolume", lazy.spawn(lowervol)),
@@ -176,27 +181,33 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+flamingo = "#f2cdcd" # flamingo colour catppuccin
+
 screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayout(),
-                widget.GroupBox(active="#f2cdcd", inactive="#6e6c7e", highlight_method="block", block_highlight_text_color="#ffffff"),
-                widget.Prompt(),
-                widget.WindowName(),
+                widget.CurrentLayout(foreground=flamingo),
+                widget.GroupBox(active="#f5e0dc", inactive="#6e6c7e", highlight_method="block", block_highlight_text_color="#161320", this_screen_border=flamingo, 
+                    this_current_screen_border=flamingo, rounded=False, padding=3),
+                widget.Prompt(foreground=flamingo),
+                widget.WindowName(background=flamingo, foreground="#161320"),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Volume(),
-                widget.Battery(charge_char="^", discharge_char="v", empty_char="x", notify_below=15, notification_timeout=5, update_interval=2),
-                #widget.TextBox("maybeanonymous", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                widget.TextBox("| vol", foreground=flamingo),
+                widget.Volume(foreground=flamingo),
+                widget.TextBox("| BAT", foreground=flamingo),
+                widget.Battery(charge_char="^", discharge_char="v", empty_char="x", notify_below=15, notification_timeout=5, update_interval=2,
+                    foreground=flamingo),
+                widget.TextBox("|", foreground=flamingo),
+                #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                widget.Clock(format="%Y-%m-%d %a %H:%M", foreground=flamingo),
+                widget.QuickExit(foreground="#ff8888"),
                 widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %H:%M"),
-                widget.QuickExit(),
             ],
             32,
             background="#161320",
@@ -216,7 +227,7 @@ mouse = [
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
-follow_mouse_focus = True
+follow_mouse_focus = False
 bring_front_click = False
 cursor_warp = True
 floating_layout = layout.Floating(
