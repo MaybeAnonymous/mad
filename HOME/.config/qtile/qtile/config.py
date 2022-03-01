@@ -21,8 +21,10 @@ mod = "mod4"
 #----------#
 terminal = "alacritty"
 menu = "dmenu_run"
-fshot = "maim | xclip -selection clipboard -t image/png"
-shot = "maim -s -u | xclip -selection clipboard -t image/png"
+run = "rofi -show run -show-icons"
+drun = "rofi -show drun -show-icons"
+fshot = "sh -c 'maim | xclip -selection clipboard -t image/png'"
+shot = "sh -c 'maim -s -u | xclip -selection clipboard -t image/png'"
 browser = "chromium"
 
 #---------------#
@@ -47,7 +49,10 @@ def autostart():
 keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
-    # Switch between windows
+
+    #------------------#
+    # Window Switching #
+    #------------------#
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
@@ -76,13 +81,24 @@ keys = [
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
+
+    #-------#
+    # Menus #
+    #-------#
     Key([mod], "p", lazy.spawn(menu), desc="Launch dmenu"),
-    # Toggle between different layouts as defined below
+    Key([mod, "shift"], "d", lazy.spawn(drun)),
+    Key([mod, "control"], "d", lazy.spawn(run)),
+
+    #---------#
+    # Layouts #
+    #---------#
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "e", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod, "shift"], "f", lazy.window.toggle_fullscreen()),
+    Key([mod, "shift"], "space", lazy.window.toggle_floating()),
 
     #-------------#
     # Screenshots #
@@ -138,6 +154,7 @@ def init_basic_layout():
 basic_layout = init_basic_layout()
 
 layouts = [
+    layout.RatioTile(**basic_layout),
     layout.Columns(**basic_layout),
     layout.Max(**basic_layout),
     # Try more layouts by unleashing below layouts.
@@ -146,7 +163,6 @@ layouts = [
     layout.Matrix(**basic_layout),
     # layout.MonadTall(),
     # layout.MonadWide(),
-    layout.RatioTile(**basic_layout),
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
@@ -174,7 +190,9 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("maybeanonymous", name="default"),
+                widget.Volume(),
+                widget.Battery(charge_char="^", discharge_char="v", empty_char="x", notify_below=15, notification_timeout=5, update_interval=2),
+                #widget.TextBox("maybeanonymous", name="default"),
                 widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
                 widget.Clock(format="%Y-%m-%d %a %H:%M"),
