@@ -177,7 +177,7 @@ layouts = [
 widget_defaults = dict(
     font="Jetbrains Mono",
     fontsize=14,
-    padding=3,
+    padding=5,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -189,7 +189,7 @@ screens = [
             [
                 widget.CurrentLayout(foreground=flamingo),
                 widget.GroupBox(active="#f5e0dc", inactive="#6e6c7e", highlight_method="block", block_highlight_text_color="#161320", this_screen_border=flamingo, 
-                    this_current_screen_border=flamingo, rounded=False, padding=3),
+                    this_current_screen_border=flamingo, rounded=False, padding=6),
                 widget.Prompt(foreground=flamingo),
                 widget.WindowName(background=flamingo, foreground="#161320"),
                 widget.Chord(
