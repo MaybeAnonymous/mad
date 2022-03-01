@@ -26,6 +26,7 @@ drun = "rofi -show drun -show-icons"
 fshot = "sh -c 'maim | xclip -selection clipboard -t image/png'"
 shot = "sh -c 'maim -s -u | xclip -selection clipboard -t image/png'"
 browser = "chromium"
+files = "thunar"
 
 #---------------#
 # More Commands #
@@ -110,6 +111,7 @@ keys = [
     # Utilities #
     #-----------#
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod, "shift"], "Return", lazy.spawn(files), desc="Launch file browser"),
     Key([mod], "c", lazy.spawn(browser), desc="Launch the web browser"),
     Key([], "XF86AudioRaiseVolume", lazy.spawn(raisevol)),
     Key([], "XF86AudioLowerVolume", lazy.spawn(lowervol)),
@@ -193,10 +195,12 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
+                widget.TextBox("| vol", foreground=flamingo),
                 widget.Volume(foreground=flamingo),
-                widget.TextBox("|", foreground=flamingo),
+                widget.TextBox("| BAT", foreground=flamingo),
                 widget.Battery(charge_char="^", discharge_char="v", empty_char="x", notify_below=15, notification_timeout=5, update_interval=2,
                     foreground=flamingo),
+                widget.TextBox("|", foreground=flamingo),
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Clock(format="%Y-%m-%d %a %H:%M", foreground=flamingo),
                 widget.QuickExit(foreground="#ff8888"),
