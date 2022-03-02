@@ -47,9 +47,9 @@ XF86AudioMute
 	pamixer -t
 
 XF86MonBrightnessUp
-	xbacklight -inc 5
+	brightnessctl s 5%+
 XF86MonBrightnessDown
-	xbacklight -dec 5
+	brightnessctl s 5%-
 
 #
 # bspwm hotkeys

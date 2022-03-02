@@ -279,8 +279,8 @@ static const char *raisevol[] = { "sh", "-c", "pamixer -i5; kill -44 $(pidof dwm
 static const char *lowervol[] = { "sh", "-c", "pamixer -d5; kill -44 $(pidof dwmblocks)", NULL };
 static const char *mutevol[]  = { "sh", "-c", "pamixer -t;  kill -44 $(pidof dwmblocks)", NULL };
 
-static const char *raisebr[]  = { "xbacklight", "-inc", "10", NULL };
-static const char *lowerbr[]  = { "xbacklight", "-dec", "10", NULL };
+static const char *raisebr[]  = { "brightnessctl", "s", "5%+", NULL };
+static const char *lowerbr[]  = { "brightnessctl", "s", "5%-", NULL };
 
 
 static Key keys[] = {

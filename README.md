@@ -47,9 +47,13 @@ qtile has swallowing now, also, qtile is configured for xorg
 
 * **Either wms:**
 
-   >[xsecurelock](https://github.com/google/xsecurelock)
+   >**Applets>** nm-applet, blueman-applet, xfce4-clipman
+   >
+   >**fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, Symbols Nerd Fonts, [Comic Mono](https://github.com/dtinth/comic-mono-font), Ubuntu Font
    >
    >[alacritty](https://alacritty.org)
+   >
+   >[brightnessctl](https://github.com/Hummer12007/brightnessctl)
    >
    >[conky](https://github.com/brndnmtthws/conky)
    >
@@ -63,9 +67,7 @@ qtile has swallowing now, also, qtile is configured for xorg
    >
    >[picom-jonaburg-fix](https://github.com/Arian8j2/picom-jonaburg-fix)
    >
-   >**Applets>** nm-applet, blueman-applet, xfce4-clipman
-   >
-   >**fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, Symbols Nerd Fonts, [Comic Mono](https://github.com/dtinth/comic-mono-font), Ubuntu Font
+   >[xsecurelock](https://github.com/google/xsecurelock)
 
 * **[bspwm](https://github.com/baskerville/bspwm)** + [fork of bspswallow](https://github.com/MaybeAnonymous/bspswallow)
 
