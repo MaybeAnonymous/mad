@@ -189,7 +189,7 @@ screens = [
             [
                 widget.CurrentLayout(foreground=flamingo),
                 widget.GroupBox(active="#f5e0dc", inactive="#6e6c7e", highlight_method="block", block_highlight_text_color="#161320", this_screen_border=flamingo, 
-                    this_current_screen_border=flamingo, rounded=False, padding=6),
+                    this_current_screen_border=flamingo, rounded=False, padding=6, disable_drag=True),
                 widget.Prompt(foreground=flamingo),
                 widget.WindowName(background=flamingo, foreground="#161320"),
                 widget.Chord(
