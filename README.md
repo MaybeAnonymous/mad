@@ -102,6 +102,10 @@ qtile has swallowing now, also, qtile is configured for xorg
 
 i have not taken a picture yet as i am procastinating
 
+# qtile:
+
+![image](https://user-images.githubusercontent.com/89218161/156469155-253b4e20-133d-499c-b425-fc39c6aeb7fa.png)
+
 ---
 
 # wallpaper
