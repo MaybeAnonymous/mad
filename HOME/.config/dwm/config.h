@@ -3,73 +3,90 @@
 #include <X11/keysym.h>
 /* See LICENSE file for copyright and license details. */
 
-/* appearance */
-static const unsigned int borderpx       = 2;   /* border pixel of windows */
-static const unsigned int snap           = 24;  /* snap pixel */
-static const int swallowfloating         = 0;   /* 1 means swallow floating windows by default */
-static const unsigned int gappih         = 4;  /* horiz inner gap between windows */
-static const unsigned int gappiv         = 4;  /* vert inner gap between windows */
-static const unsigned int gappoh         = 4;  /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov         = 4;  /* vert outer gap between windows and screen edge */
-static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
-static const int showbar                 = 1;   /* 0 means no bar */
-static const int topbar                  = 1;   /* 0 means bottom bar */
-static const int bar_height              = 24;   /* 0 means derive from font, >= 1 explicit height */
-static const int focusonwheel            = 0;
-/* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index), 'A' (active monitor) */
-static const int statusmon               = 'A';
-static const unsigned int systrayspacing = 2;   /* systray spacing */
-static const int showsystray             = 1;   /* 0 means no systray */
+/*  ____   __        __  __  __
+ * |  _ \  \ \      / / |  \/  |
+ * | | | |  \ \ /\ / /  | |\/| |
+ * | |_| |   \ V  V /   | |  | |
+ * |____/     \_/\_/    |_|  |_|
+ * * * * * * * * * * * * * * * * */
 
-/* Indicators: see patch/bar_indicators.h for options */
+
+/*
+* appearence
+ */
+static const int bar_height              = 28;// height of bar
+static const int focusonwheel            = 0; // focus once you scroll; 1 or 0
+static const int showbar                 = 1;
+static const int smartgaps_fact          = 1;
+static const int swallowfloating         = 0; // swallow floating windows? 1 or 0
+static const int topbar                  = 1; // 1 = bar on top; 0 = bar on bottom
+static const unsigned int borderpx       = 2;
+static const unsigned int gappih         = 4; // gap inner horizontal
+static const unsigned int gappiv         = 4; // gap innver vertical
+static const unsigned int gappoh         = 5; // gap outer horizontal
+static const unsigned int gappov         = 5; // gap outer vertical
+static const unsigned int snap           = 16;
+
+// Status is to be shown on: -1 = all monitors; 0 = a specific monitor by index; 'A' = active monitor
+static const int statusmon               = 'A';
+static const unsigned int systrayspacing = 2; // systray spacing
+static const int showsystray             = 1;
+
+// Indicators: see patch/bar_indicators.h for options
 static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
 static const char *fonts[]               = { "Jetbrains\\ Mono:size=10", "Noto\\ Color\\ Emoji:pixelsize=12:style=Regular" };
 static const char dmenufont[]            = "Jetbrains\\ Mono:size=10";
 
-static char c000000[]                    = "#000000"; // placeholder value
+static char c000000[]                    = "#000000"; // placeholder
 
-static char normfgcolor[]                = "#bbbbbb";
+
+
+
+
+
+
+
+static char hidnormbgcolor[]             = "#222222";
+static char hidnormfgcolor[]             = "#005577";
+static char hidselbgcolor[]              = "#222222";
+static char hidselfgcolor[]              = "#227799";
+
 static char normbgcolor[]                = "#1a1826";
 static char normbordercolor[]            = "#444444";
+static char normfgcolor[]                = "#bbbbbb";
 static char normfloatcolor[]             = "#db8fd9";
 
-static char selfgcolor[]                 = "#161320";
 static char selbgcolor[]                 = "#f2cdcd";
 static char selbordercolor[]             = "#f2cdcd";
+static char selfgcolor[]                 = "#161320";
 static char selfloatcolor[]              = "#f2cdcd";
 
-static char titlenormfgcolor[]           = "#bbbbbb";
-static char titlenormbgcolor[]           = "#1a1826";
-static char titlenormbordercolor[]       = "#444444";
-static char titlenormfloatcolor[]        = "#db8fd9";
-
-static char titleselfgcolor[]            = "#161320";
-static char titleselbgcolor[]            = "#f2cdcd";
-static char titleselbordercolor[]        = "#005577";
-static char titleselfloatcolor[]         = "#005577";
-
-static char tagsnormfgcolor[]            = "#bbbbbb";
-static char tagsnormbgcolor[]            = "#161320";
+static char tagsnormbgcolor[]            = "#1a1826";
 static char tagsnormbordercolor[]        = "#444444";
+static char tagsnormfgcolor[]            = "#bbbbbb";
 static char tagsnormfloatcolor[]         = "#db8fd9";
 
-static char tagsselfgcolor[]             = "#161320";
 static char tagsselbgcolor[]             = "#f2cdcd";
 static char tagsselbordercolor[]         = "#005577";
+static char tagsselfgcolor[]             = "#161320";
 static char tagsselfloatcolor[]          = "#005577";
 
-static char hidnormfgcolor[]             = "#005577";
-static char hidselfgcolor[]              = "#227799";
-static char hidnormbgcolor[]             = "#222222";
-static char hidselbgcolor[]              = "#222222";
+static char titlenormbgcolor[]           = "#1a1826";
+static char titlenormbordercolor[]       = "#444444";
+static char titlenormfgcolor[]           = "#bbbbbb";
+static char titlenormfloatcolor[]        = "#db8fd9";
 
-static char urgfgcolor[]                 = "#bbbbbb";
+static char titleselbgcolor[]            = "#f2cdcd";
+static char titleselbordercolor[]        = "#005577";
+static char titleselfgcolor[]            = "#161320";
+static char titleselfloatcolor[]         = "#005577";
+
 static char urgbgcolor[]                 = "#222222";
 static char urgbordercolor[]             = "#ff0000";
+static char urgfgcolor[]                 = "#bbbbbb";
 static char urgfloatcolor[]              = "#db8fd9";
-
 
 static char *colors[][ColCount] = {
 	/*                       fg                bg                border                float */
@@ -88,7 +105,7 @@ static char *colors[][ColCount] = {
 
 static const char *const autostart[] = {
 	"dwmblocks", NULL,
-	"sh", "-c", "$HOME/.config/autostartdwm", NULL,
+	"sh", "-c", "$HOME/.config/dwm/autostart.sh", NULL,
 	NULL /* terminate */
 };
 
@@ -152,9 +169,9 @@ static const Rule rules[] = {
 	 *	WM_WINDOW_ROLE(STRING) = role
 	 *	_NET_WM_WINDOW_TYPE(ATOM) = wintype
 	 */
+	/*------------------------------------------------------------------------------*/
 	/* class  instance  title  tagsmask  isfloating  isterminal  noswallow  monitor */
-	//{ NULL,NULL,"Event Tester",0,0,0,1,-1 },
-	//{ "Alacritty","Alacritty",NULL,0,0,1,0,-1 },
+	/*------------------------------------------------------------------------------*/
 	RULE(.wintype = WTYPE "DIALOG", .isfloating = 1)
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
@@ -162,6 +179,7 @@ static const Rule rules[] = {
 	RULE(.class = "Gimp", .tags = 1 << 4)
 	RULE(.class = "Firefox", .tags = 1 << 7)
 	RULE(.class = "Alacritty", .isterminal = 1)
+	RULE(.class = "st", .isterminal = 1)
 	RULE(.title = "Event Tester", .noswallow = 1)
 };
 
@@ -194,6 +212,7 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int nstack      = 0;    /* number of clients in primary stack area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+static const int decorhints  = 1;    /* 1 means respect decoration hints */
 
 static const int layoutaxis[] = {
 	1,    /* layout axis: 1 = x, 2 = y; negative values mirror the layout, setting the master area to the right / bottom instead of left / top */
@@ -205,9 +224,9 @@ static const Layout layouts[] = {
 	/* symbol     arrange function, { nmaster, nstack, layout, master axis, stack axis, secondary stack axis, symbol func } */
 	{ "[\\]",     flextile,         { -1, -1, NO_SPLIT, DWINDLE, DWINDLE, 0, NULL } }, // fibonacci dwindle
 	{ "[]=",      flextile,         { -1, -1, SPLIT_VERTICAL, TOP_TO_BOTTOM, TOP_TO_BOTTOM, 0, NULL } }, // default tile layout
- 	{ "><>",      NULL,             {0} },    /* no layout function means floating behavior */
+ 	{ "><>",      NULL,             {0} }, // floating
 	{ "[M]",      flextile,         { -1, -1, NO_SPLIT, MONOCLE, MONOCLE, 0, NULL } }, // monocle
-	{ "|||",      flextile,         { -1, -1, SPLIT_VERTICAL, LEFT_TO_RIGHT, TOP_TO_BOTTOM, 0, NULL } }, // columns (col) layout
+	{ "|||",      flextile,         { -1, -1, SPLIT_VERTICAL, LEFT_TO_RIGHT, TOP_TO_BOTTOM, 0, NULL } }, // columns layout
 	{ ">M>",      flextile,         { -1, -1, FLOATING_MASTER, LEFT_TO_RIGHT, LEFT_TO_RIGHT, 0, NULL } }, // floating master
 	{ "[D]",      flextile,         { -1, -1, SPLIT_VERTICAL, TOP_TO_BOTTOM, MONOCLE, 0, NULL } }, // deck
 	{ "TTT",      flextile,         { -1, -1, SPLIT_HORIZONTAL, LEFT_TO_RIGHT, LEFT_TO_RIGHT, 0, NULL } }, // bstack
@@ -219,7 +238,7 @@ static const Layout layouts[] = {
 	{ "[T]",      flextile,         { -1, -1, SPLIT_VERTICAL, LEFT_TO_RIGHT, TATAMI, 0, NULL } }, // tatami mats
 	{ NULL, NULL, {0} },
 	//{ "[]=",      tile,             {0} },
-	//{ "[M]",      monocle,          {0} },
+	//{ "[M]",      monocle,          {0} }, // non-flextile layouts
 };
 
 
@@ -230,8 +249,6 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
-
-
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -262,8 +279,8 @@ static const char *raisevol[] = { "sh", "-c", "pamixer -i5; kill -44 $(pidof dwm
 static const char *lowervol[] = { "sh", "-c", "pamixer -d5; kill -44 $(pidof dwmblocks)", NULL };
 static const char *mutevol[]  = { "sh", "-c", "pamixer -t;  kill -44 $(pidof dwmblocks)", NULL };
 
-static const char *raisebr[]  = { "xbacklight", "-inc", "10", NULL };
-static const char *lowerbr[]  = { "xbacklight", "-dec", "10", NULL };
+static const char *raisebr[]  = { "brightnessctl", "s", "5%+", NULL };
+static const char *lowerbr[]  = { "brightnessctl", "s", "5%-", NULL };
 
 
 static Key keys[] = {
@@ -330,7 +347,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,        view,                   {0} },
 	{ MODKEY|ShiftMask,             XK_q,          killclient,             {0} },
 	{ MODKEY|ShiftMask,             XK_e,          quit,                   {0} },
-	{ MODKEY|ShiftMask,             XK_r,          self_restart,           {0} },
 
 	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[1]} },
 	{ MODKEY,                       XK_f,          setlayout,              {.v = &layouts[2]} },
