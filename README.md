@@ -31,7 +31,7 @@ I do not plan on making an installation script, and **make sure you know what yo
 
 These dotfiles contain 2 shells + 2 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) || [qtile](https://www.qtile.org) \) 
 
-qtile has swallowing now, also, qtile is configured for xorg
+qtile has swallowing now, also, qtile is configured for xorg, i no longer plan on adding proper wayland config as i do not need it
 
 # Requirements
 
