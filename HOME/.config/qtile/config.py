@@ -159,8 +159,8 @@ def init_basic_layout():
 basic_layout = init_basic_layout()
 
 layouts = [
-    layout.RatioTile(**basic_layout),
     layout.Columns(**basic_layout),
+    layout.RatioTile(**basic_layout),
     layout.Max(**basic_layout),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
