@@ -24,7 +24,7 @@ alert = #bd2c40
 bottom = false
 fixed-center = true
 height = 28
-radius = 8.0
+radius = 0.0
 width = 100%
 
 override-redirect = true
