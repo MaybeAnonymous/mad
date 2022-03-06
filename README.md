@@ -29,7 +29,7 @@ Also, remember that this is a work in progress, if anything important is missing
 
 I do not plan on making an installation script, and **make sure you know what you're doing.**
 
-These dotfiles contain 2 shells + 2 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) || [qtile](https://www.qtile.org) \) 
+These dotfiles contain 2 shells + 4 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) || [qtile](https://www.qtile.org) || [i3-gaps](https://github.com/Airblader/i3) \) 
 
 qtile has swallowing now, also, qtile is configured for xorg, i no longer plan on adding proper wayland config as i do not need it
 
@@ -76,6 +76,8 @@ qtile has swallowing now, also, qtile is configured for xorg, i no longer plan o
    > [flexipatch;;](https://github.com/bakkeby/dwm-flexipatch) + [finalizer;;](https://github.com/bakkeby/flexipatch-finalizer)
 
 * **[qtile](https://www.qtile.org)**
+
+* **[i3](https://github.com/Airblader/i3)**
 
 * **optional:**
    > [glava](https://github.com/jarcode-foss/glava), [neovide](https://github.com/neovide/neovide), [vivaldi!C](https://vivaldi.com) || [ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium), [ufetch](https://gitlab.com/jschx/ufetch)

@@ -5,8 +5,9 @@
 ;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
 ;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
 ;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ 
 ;==========================================================
+; This config is i3 specific, changing wm-restack to "i3" in [bar/main]
 
 [colors]
 background = #1E1E2E
@@ -27,7 +28,7 @@ radius = 8.0
 width = 100%
 
 override-redirect = true
-wm-restack = bspwm
+wm-restack = i3
 
 tray-position = center
 tray-detach = true
