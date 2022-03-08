@@ -4,7 +4,7 @@
 # _|    _|    _|      _|  _|  _|
 #   _|_|_|      _|_|  _|  _|    _|_|_|
 #       _| tiling window managers are great
-#       _|
+#       _| WAYLAND CONFIGS ARE NOT READY
 
 
 from typing import List  # noqa: F401
@@ -38,16 +38,33 @@ togglevol = "pamixer -t"
 raisebr = "brightnessctl s 5%+"
 lowerbr = "brightnessctl s 5%-"
 
+#---------#
+# Wayland #
+#---------#
+
+
 import os
 import subprocess
 
 from libqtile import hook
 
-#@hook.subscribe.startup_once
+from libqtile import qtile
+from libqtile.backend.wayland.inputs import InputConfig
+
 @hook.subscribe.startup
 def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    if qtile.core.name == "x11":
+        home = os.path.expanduser('~/.config/qtile/xautostart.sh')
+    elif qtile.core.name == "wayland":
+        home = os.path.expanduser('~/.config/qtile/wl-autostart.sh') # WAYLAND CONFIGS ARE NOT READY AT ALL
+    else:
+        home = os.path.expanduser("~/.config/qtile/xautostart.sh")
     subprocess.run([home])
+# wl_input_rules = {
+    # "ELAN0504:00 04F3:3091 Touchpad": InputConfig(scroll_method='two_finger', natural_scroll=True, tap=True),
+    # "type:keyboard": InputConfig(xkb_layout='br-abnt2')
+# }
+
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -206,15 +223,17 @@ screens = [
                 widget.TextBox("|", foreground=flamingo),
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Clock(format="%Y-%m-%d %a %H:%M", foreground=flamingo),
-                widget.QuickExit(foreground="#ff8888"),
+                #widget.QuickExit(foreground="#ff8888"),
                 widget.Systray(),
             ],
             32,
-            background="#161320",
+            background="#1e1d2f",
             margin=[4,4,0,4],
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
+        wallpaper='~/Pictures/Backgrounds/wallpaper.png',
+        wallpaper_mode='fill',
     ),
 ]
 
