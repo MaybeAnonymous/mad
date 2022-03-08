@@ -43,7 +43,7 @@ qtile has swallowing now, also, qtile is configured for xorg, i no longer plan o
 
 * **Display Manager:**
    
-   >[https://github.com/canonical/lightdm] + [catppuccin gtk theme](https://github.com/catppuccin/gtk)  
+   >[lightdm](https://github.com/canonical/lightdm) + [catppuccin gtk theme](https://github.com/catppuccin/gtk)  
 
 * **Either wms:**
 
