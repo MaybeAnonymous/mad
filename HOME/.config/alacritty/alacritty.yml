@@ -1,223 +1,109 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
-# Import additional configuration files
-#
-# Imports are loaded in order, skipping all missing files, with the importing
-# file being loaded last. If a field is already present in a previous import, it
-# will be replaced.
-#
-# All imports must either be absolute paths starting with `/`, or paths relative
-# to the user's home directory starting with `~/`.
 #import:
 #  - /path/to/alacritty.yml
 
-# Any items in the `env` entry below will be added as
-# environment variables. Some entries may override variables
-# set by alacritty itself.
+#-----------------------#
+# Environment Variables #
+#-----------------------#
 env:
-  # TERM variable
-  #
-  # This value is used to set the `$TERM` environment variable for
-  # each instance of Alacritty. If it is not present, alacritty will
-  # check the local terminfo database and use `alacritty` if it is
-  # available, otherwise `xterm-256color` is used.
   TERM: xterm-256color
 
+#-----------------#
+# Window Settings #
+#-----------------#
 window:
-  # Window dimensions (changes require restart)
-  #
-  # Number of lines/columns (not pixels) in the terminal. The number of columns
-  # must be at least `2`, while using a value of `0` for columns and lines will
-  # fall back to the window manager's recommended size.
-  #dimensions:
-  #  columns: 0
-  #  lines: 0
-
-  # Window position (changes require restart)
-  #
-  # Specified in number of pixels.
-  # If the position is not set, the window manager will handle the placement.
+  #  Window dimensions ( not in pixels ), both should be a minimum of 2,
+  # if set to 0, it will be handled automatically.
+  dimensions:
+    columns: 80
+    lines: 25
+  
+  #  Window position by default,
+  # if not set it will be handled by the window manager.
   #position:
-  #  x: 0
-  #  y: 0
+    #x: 0
+    #y: 0
 
-  # Window padding (changes require restart)
-  #
-  # Blank space added around the window in pixels. This padding is scaled
-  # by DPI and the specified value is always added at both opposing sides.
-  #padding:
-  #  x: 0
-  #  y: 0
+  #  Scaled by DPI, changes requires restart.
+  padding:
+    x: 4
+    y: 4
 
-  # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
+  #  Spread additional padding evenly around the terminal content.
+  dynamic_padding: true
 
-  # Window decorations
-  #
-  # Values for `decorations`:
-  #     - full: Borders and title bar
-  #     - none: Neither borders nor title bar
-  #
-  # Values for `decorations` (macOS only):
-  #     - transparent: Title bar, transparent background and title bar buttons
-  #     - buttonless: Title bar, transparent background and no title bar buttons
-  decorations: none
+  #  Window decorations, valid values are: full, none;
+  # MacOS has extra values: transparent, buttonless.
+  #  Although, if you're using MacOS, I would not expect you to be using my dotfiles, you do you I guess.
+  decorations: full
 
-  # Background opacity
-  #
-  # Window opacity as a floating point number from `0.0` to `1.0`.
-  # The value `0.0` is completely transparent and `1.0` is opaque.
+  #  Background opacity, 0.0 is fully transparent, 1.0 is fully opaque. 
   opacity: 1.0
 
-  # Startup Mode (changes require restart)
-  #
-  # Values for `startup_mode`:
-  #   - Windowed
-  #   - Maximized
-  #   - Fullscreen
-  #
-  # Values for `startup_mode` (macOS only):
-  #   - SimpleFullscreen
-  #startup_mode: Windowed
+  #  Startup mode, valie values are: Windowed, Maximized, Fullscreen;
+  # MacOS has extra values: SimpleFullscreen.
+  startup_mode: Maximized
 
-  # Window title
+  #  Default Window title
   title: Alacritty
 
-  # Allow terminal applications to change Alacritty's window title.
-  #dynamic_title: true
+  #  Allow terminal applications to change Alacritty's window title.
+  dynamic_title: false
 
-  # Window class (Linux/BSD only):
+  #  Window class, Linux/BSD Only.
   class:
-    # Application instance name
-    instance: Alacritty
-    # General application class
-    general: Alacritty
+    instance: Alacritty # Application instance name.
+    general: Alacritty  # General application class.
 
-  # GTK theme variant (Linux/BSD only)
-  #
-  # Override the variant of the GTK theme. Commonly supported values are `dark`
-  # and `light`. Set this to `None` to use the default theme variant.
+  #  GTK theme variant, not sure what this does, but it's Linux/BSD only. 
   #gtk_theme_variant: None
 
 scrolling:
-  # Maximum number of lines in the scrollback buffer.
-  # Specifying '0' will disable scrolling.
-  history: 10000
+  history: 10000 # Maximum lines you can scroll, set to 0 to disable scrolling.
+  multiplier: 5  # How quickly you can scroll.
 
-  # Scrolling distance multiplier.
-  multiplier: 5
-
-# Font configuration
+#-------#
+# Fonts #
+#-------#
+# Note:
+#  These are all mostly self-explanatory, there will not be many comments in this section.
 font:
-  # Normal (roman) font face
   normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
     family: Jetbrains Mono
-
-    # The `style` can be specified to pick a specific face.
     style: Regular
-
-  # Bold font face
   bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
     family: Jetbrains Mono
-
-    # The `style` can be specified to pick a specific face.
     style: Bold
-
-  # Italic font face
   italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
     family: Jetbrains Mono
-
-    # The `style` can be specified to pick a specific face.
     style: Italic
-
-  # Bold italic font face
   bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
     family: Jetbrain Mono
-
-    # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
-  # Point size
-  size: 10.0
+  size: 10.0 # Font size
 
-  # Offset is the extra space around each character. `offset.y` can be thought
-  # of as modifying the line spacing, and `offset.x` as modifying the letter
-  # spacing.
   offset:
-    x: 0
-    y: 0
+    x: 0 # Letter spacing
+    y: 0 # Line spacing
 
-  # Glyph offset determines the locations of the glyphs within their cells with
+  #  Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
-  # right, increasing `y` moves the glyph upward.
+  # right, increasing `y` moves the glyph upward. ( This default comment explains well! )
   glyph_offset:
     x: 0
     y: 0
 
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`.
+  # For retina screen on MacOS
   #use_thin_strokes: true
-
-# If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
-
-## Colors ( Tomorrow Night )
-#colors:
-  ## Default colors
-  #primary:
-    #background: '0x1d1f21'
-    #foreground: '0xc5c8c6'
-
-  ## Colors the cursor will use if `custom_cursor_colors` is true
-  #cursor:
-    #text: '0x1d1f21'
-    #cursor: '0xc5c8c6'
-
-  ## Normal colors
-  #normal:
-    #black:   '0x1d1f21'
-    #red:     '0xcc6666'
-    #green:   '0xb5bd68'
-    #yellow:  '0xf0c674'
-    #blue:    '0x81a2be'
-    #magenta: '0xb294bb'
-    #cyan:    '0x8abeb7'
-    #white:   '0xc5c8c6'
-
-  ## Bright colors
-  #bright:
-    #black:   '0x969896'
-    #red:     '0xf78467'
-    #green:   '0x8bf4b3'
-    #yellow:  '0xf9d27c'
-    #blue:    '0x73a9f4'
-    #magenta: '0xefa0ef'
-    #cyan:    '0x97fafc'
-    #white:   '0xffffff'
-
-# Catppuccin!
+#------------------------#
+# Catppuccin colorscheme #
+#------------------------#
+# Link:
+#  ( https://github.com/catppuccin/catppuccin )
 colors:
-  # Default colors
   primary:
     background: '0x1E1D2F'
     foreground: '0xD9E0EE'
@@ -248,10 +134,10 @@ colors:
     magenta: '0xF5C2E7'
     cyan:    '0x89DCEB'
     white:   '0xD9E0EE'
-
-  indexed_colors:
-    - { index: 16, color: '0xF8BD96' }
-    - { index: 17, color: '0xF5E0DC' }
+  
+  #indexed_colors:
+    #- { index: 16, color: '0xF8BD96' }
+    #- { index: 17, color: '0xF5E0DC' }
 
 
 #selection:
@@ -273,21 +159,10 @@ cursor:
     #   - | Beam
     shape: Beam
 
-    # Cursor blinking state
-    #
-    # Values for `blinking`:
-    #   - Never: Prevent the cursor from ever blinking
-    #   - Off: Disable blinking by default
-    #   - On: Enable blinking by default
-    #   - Always: Force the cursor to always blink
+    # Blinking, valid values are: Never, Off, On, Always.
     blinking: On
-
-  # Vi mode cursor style
-  #
-  # If the vi mode cursor style is `None` or not specified, it will fall back to
-  # the style of the active value of the normal cursor.
-  #
-  # See `cursor.style` for available options.
+  
+  # Alacritty's Vi mode cursor style
   vi_mode_style: Underline
 
   # Cursor blinking interval in milliseconds.
@@ -301,27 +176,16 @@ cursor:
   # from `0.0` to `1.0`.
   thickness: 0.15
 
-# Live config reload (changes require restart)
-#live_config_reload: true
-# Shell
-#
-# You can set `shell.program` to the path of your favorite shell, e.g.
-# `/bin/fish`. Entries in `shell.args` are passed unmodified as arguments to the
-# shell.
-#
-# Default:
-#   - (macOS) /bin/bash --login
-#   - (Linux/BSD) user login shell
-#   - (Windows) powershell
+# Live config reload, changes require restart.
+live_config_reload: true
+
+# Shell, the program should be a full path
 #shell:
 #  program: /bin/bash
 #  args:
 #    - --login
 
-# Startup directory
-#
-# Directory the shell is started in. If this is unset, or `None`, the working
-# directory of the parent process will be used.
+# Startup directory, if set to None, then it will be the directory of the parent process that started it.
 #working_directory: None
 
 # Send ESC (\x1b) before characters when alt is pressed.
