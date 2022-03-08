@@ -86,9 +86,7 @@ qtile has swallowing now, also, qtile is configured for xorg, i no longer plan o
 
 >to configure neovim you must open it and run `:PlugInstall`
 >
->to configure dwm you must `cd ~/.dwm && sudo make install`
->
->to configure dmenu you must `cd ~/.dmenu && sudo make install`
+>to build dwm, dmenu, and dwmblocks you must run `cd ~/.config/dwm && sudo make install; cd ~/.config/dmenu && sudo make install; cd ~/.config/dwmblocks && sudo make install`
 >
 >Have fun!
 
