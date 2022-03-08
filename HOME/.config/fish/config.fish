@@ -56,7 +56,7 @@ if test "$TERM" = "linux"
 end
 
 #---------------------------#
-# Functions + Abbreviations #
+# Functions && Abbreviations #
 #---------------------------#
 abbr "clr" "builtin history --clear && clear"
 abbr "l" "exa -l -a"
@@ -75,6 +75,13 @@ function fish_prompt -d "Write out the prompt"
     # instead of using `whoami` and `hostname`
     printf '%s %s%s%s%s ><> ' (set_color blue) (prompt_pwd) (set_color yellow) (fish_vcs_prompt) (set_color yellow)
 end
+
+#-------------------#
+# Git Abbreviations #
+#-------------------#
+abbr "ga" "git add ."
+abbr "gc" "git commit -m"
+abbr "gp" "git push"
 
 #----------#
 # Start up #

@@ -1,10 +1,13 @@
 random programs i like
 list starts here!
-exa
-dust
-ungoogled-chromium
-mpv
-feh
-nitrogen
 conky
+duf
+dust
+exa
+fd
+feh
+mpv
+nitrogen
+tldr
+ungoogled-chromium
 yt-dlp
