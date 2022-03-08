@@ -1,9 +1,11 @@
 #!/bin/sh
 #
-# ufetch-artix - tiny system info for artix ( edit for your distro )
-# edited by MaybeAnonymous
-
-## INFO
+# ufetch-artix - tiny system info for artix
+#        __      _       _
+# _   _ / _| ___| |_ ___| |__
+#| | | | |_ / _ \ __/ __| '_ \
+#| |_| |  _|  __/ || (__| | | |
+# \__,_|_|  \___|\__\___|_| |_|
 
 # user is already defined
 host="$(hostname)"
@@ -25,22 +27,22 @@ parse_rcs() {
 rcwm="$(parse_rcs "${HOME}/.xinitrc" "${HOME}/.xsession")"
 
 ui='unknown'
-uitype='UI'
+uitype='ui'
 if [ -n "${DE}" ]; then
 	ui="${DE}"
-	uitype='DE'
+	uitype='de'
 elif [ -n "${WM}" ]; then
 	ui="${WM}"
-	uitype='WM'
-elif [ -n "${XDG_CURRENT_DESKTOP}" ]; then
-	ui="${XDG_CURRENT_DESKTOP}"
-	uitype='DE'
+	uitype='wm'
 elif [ -n "${DESKTOP_SESSION}" ]; then
 	ui="${DESKTOP_SESSION}"
-	uitype='WM'
+	uitype='wm'
+elif [ -n "${XDG_CURRENT_DESKTOP}" ]; then
+	ui="${XDG_CURRENT_DESKTOP}"
+	uitype='de'
 elif [ -n "${rcwm}" ]; then
 	ui="${rcwm}"
-	uitype='WM'
+	uitype='wm'
 elif [ -n "${XDG_SESSION_TYPE}" ]; then
 	ui="${XDG_SESSION_TYPE}"
 fi
@@ -74,10 +76,10 @@ c0="${reset}${magenta}"                # first color
 
 cat <<EOF
 ${c0}      /\\
-${c0}     /  \\ ${lc}OS:        ${ic}${os}${reset}
-${c0}    /-_  \\ ${lc}KERNEL:    ${ic}${kernel}${reset}
-${c0}   /   "-_\\ ${lc}UPTIME:    ${ic}${uptime}${reset}
-${c0}  /    _-  \\ ${lc}PACKAGES:  ${ic}${packages}${reset}
-${c0} /  _-  -_  \\ ${lc}SHELL:     ${ic}${shell}${reset}
-${c0}/_-"       -_\\ ${lc}${uitype}:        ${ic}${ui}${reset}
+${c0}     /  \\ ${lc}os  : ${ic}${os}${reset}
+${c0}    /-_  \\ ${lc}kern: ${ic}${kernel}${reset}
+${c0}   /   "-_\\ ${lc}upt : ${ic}${uptime}${reset}
+${c0}  /    _-  \\ ${lc}pkgs: ${ic}${packages}${reset}
+${c0} /  _-  -_  \\ ${lc}sh  : ${ic}${shell}${reset}
+${c0}/_-"       -_\\ ${lc}${uitype}  : ${ic}${ui}${reset}
 EOF
