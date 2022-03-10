@@ -57,8 +57,6 @@ def autostart():
         home = os.path.expanduser('~/.config/qtile/xautostart.sh')
     elif qtile.core.name == "wayland":
         home = os.path.expanduser('~/.config/qtile/wl-autostart.sh') # WAYLAND CONFIGS ARE NOT READY AT ALL
-    else:
-        home = os.path.expanduser("~/.config/qtile/xautostart.sh")
     subprocess.run([home])
 # wl_input_rules = {
     # "ELAN0504:00 04F3:3091 Touchpad": InputConfig(scroll_method='two_finger', natural_scroll=True, tap=True),
@@ -96,7 +94,7 @@ keys = [
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
     Key(
-        [mod, "control"],
+        [mod, "shift"],
         "Return",
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
@@ -176,8 +174,8 @@ def init_basic_layout():
 basic_layout = init_basic_layout()
 
 layouts = [
-    layout.Columns(**basic_layout),
     layout.RatioTile(**basic_layout),
+    layout.Columns(**basic_layout),
     layout.Max(**basic_layout),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -223,11 +221,11 @@ screens = [
                 widget.TextBox("|", foreground=flamingo),
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Clock(format="%Y-%m-%d %a %H:%M", foreground=flamingo),
-                #widget.QuickExit(foreground="#ff8888"),
+                widget.QuickExit(foreground="#ff8888"),
                 widget.Systray(),
             ],
             32,
-            background="#1e1d2f",
+            background="#161320",
             margin=[4,4,0,4],
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
