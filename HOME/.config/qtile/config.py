@@ -49,7 +49,7 @@ import subprocess
 from libqtile import hook
 
 from libqtile import qtile
-from libqtile.backend.wayland.inputs import InputConfig
+#from libqtile.backend.wayland.inputs import InputConfig
 
 @hook.subscribe.startup
 def autostart():
@@ -57,11 +57,9 @@ def autostart():
         home = os.path.expanduser('~/.config/qtile/xautostart.sh')
     elif qtile.core.name == "wayland":
         home = os.path.expanduser('~/.config/qtile/wl-autostart.sh') # WAYLAND CONFIGS ARE NOT READY AT ALL
+    else:
+        home = os.path.expanduser("~/.config/qtile/xautostart.sh")
     subprocess.run([home])
-# wl_input_rules = {
-    # "ELAN0504:00 04F3:3091 Touchpad": InputConfig(scroll_method='two_finger', natural_scroll=True, tap=True),
-    # "type:keyboard": InputConfig(xkb_layout='br-abnt2')
-# }
 
 
 keys = [
@@ -94,7 +92,7 @@ keys = [
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
     Key(
-        [mod, "shift"],
+        [mod, "control"],
         "Return",
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
@@ -111,13 +109,13 @@ keys = [
     #---------#
     # Layouts #
     #---------#
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "shift"], "e", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod, "shift"], "f", lazy.window.toggle_fullscreen()),
-    Key([mod, "shift"], "space", lazy.window.toggle_floating()),
+    Key([mod],          "Tab",  lazy.next_layout(),  desc="Toggle between layouts"),
+    Key([mod, "shift"], "q",    lazy.window.kill(),  desc="Kill focused window"),
+    Key([mod, "shift"], "r",    lazy.reload_config(),desc="Reload the config"),
+    Key([mod, "shift"], "e",    lazy.shutdown(),     desc="Shutdown Qtile"),
+    Key([mod],          "r",    lazy.spawncmd(),     desc="Spawn a command using a prompt widget"),
+    Key([mod, "shift"], "f",    lazy.window.toggle_fullscreen()),
+    Key([mod, "shift"], "space",lazy.window.toggle_floating()),
 
     #-------------#
     # Screenshots #
@@ -128,14 +126,14 @@ keys = [
     #-----------#
     # Utilities #
     #-----------#
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod, "shift"], "Return", lazy.spawn(files), desc="Launch file browser"),
-    Key([mod], "c", lazy.spawn(browser), desc="Launch the web browser"),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn(raisevol)),
-    Key([], "XF86AudioLowerVolume", lazy.spawn(lowervol)),
-    Key([], "XF86AudioMute", lazy.spawn(togglevol)),
-    Key([], "XF86MonBrightnessUp", lazy.spawn(raisebr)),
-    Key([], "XF86MonBrightnessDown", lazy.spawn(lowerbr)),
+    Key([mod], "Return",               lazy.spawn(terminal),desc="Launch terminal"),
+    Key([mod,  "shift"], "Return",     lazy.spawn(files),   desc="Launch file browser"),
+    Key([mod], "c",                    lazy.spawn(browser), desc="Launch the web browser"),
+    Key([],    "XF86AudioRaiseVolume", lazy.spawn(raisevol)),
+    Key([],    "XF86AudioLowerVolume", lazy.spawn(lowervol)),
+    Key([],    "XF86AudioMute",        lazy.spawn(togglevol)),
+    Key([],    "XF86MonBrightnessUp",  lazy.spawn(raisebr)),
+    Key([],    "XF86MonBrightnessDown",lazy.spawn(lowerbr)),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -174,19 +172,18 @@ def init_basic_layout():
 basic_layout = init_basic_layout()
 
 layouts = [
-    layout.RatioTile(**basic_layout),
     layout.Columns(**basic_layout),
-    layout.Max(**basic_layout),
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    layout.Bsp(**basic_layout),
-    layout.Matrix(**basic_layout),
     # layout.MonadTall(),
     # layout.MonadWide(),
+    # layout.RatioTile(**basic_layout),
+    # layout.Stack(num_stacks=2),
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
-    # layout.Zoomy(),
+    layout.Bsp(**basic_layout),
+    layout.Matrix(**basic_layout),
+    layout.Max(**basic_layout),
+    layout.Zoomy(**basic_layout),
 ]
 
 widget_defaults = dict(
@@ -196,36 +193,40 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-flamingo = "#f2cdcd" # flamingo colour catppuccin
+FLAMINGO = "#f2cdcd" # flamingo colour catppuccin
+BLACK    = "#161320"
+LBLACK   = "#1e1d2f"
 
 screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayout(foreground=flamingo),
-                widget.GroupBox(active="#f5e0dc", inactive="#6e6c7e", highlight_method="block", block_highlight_text_color="#161320", this_screen_border=flamingo, 
-                    this_current_screen_border=flamingo, rounded=False, padding=6, disable_drag=True),
-                widget.Prompt(foreground=flamingo),
-                widget.WindowName(background=flamingo, foreground="#161320"),
+                widget.CurrentLayout(foreground=FLAMINGO),
+                widget.GroupBox(active="#f5e0dc", inactive="#6e6c7e", highlight_method="block", block_highlight_text_color=BLACK, this_screen_border=FLAMINGO, 
+                    this_current_screen_border=FLAMINGO, rounded=False, padding=6, disable_drag=True),
+                widget.Prompt(foreground=FLAMINGO),
+                widget.WindowName(background=FLAMINGO, foreground=BLACK),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("| vol", foreground=flamingo),
-                widget.Volume(foreground=flamingo),
-                widget.TextBox("| BAT", foreground=flamingo),
+                widget.TextBox("br", foreground=FLAMINGO),
+                widget.Backlight(foreground=FLAMINGO, backlight_name="intel_backlight"),
+                widget.TextBox("| vol", foreground=FLAMINGO),
+                widget.Volume(foreground=FLAMINGO),
+                widget.TextBox("| BAT", foreground=FLAMINGO),
                 widget.Battery(charge_char="^", discharge_char="v", empty_char="x", notify_below=15, notification_timeout=5, update_interval=2,
-                    foreground=flamingo),
-                widget.TextBox("|", foreground=flamingo),
+                    foreground=FLAMINGO),
+                widget.TextBox("|", foreground=FLAMINGO),
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Clock(format="%Y-%m-%d %a %H:%M", foreground=flamingo),
-                widget.QuickExit(foreground="#ff8888"),
+                widget.Clock(format="%Y-%m-%d %a %H:%M", foreground=FLAMINGO),
+                #widget.QuickExit(foreground="#ff8888"),
                 widget.Systray(),
             ],
             32,
-            background="#161320",
+            background=LBLACK,
             margin=[4,4,0,4],
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
