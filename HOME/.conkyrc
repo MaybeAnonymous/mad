@@ -1,4 +1,5 @@
 
+
 conky.config = {
     alignment = 'middle_right',
     background = true,
@@ -13,7 +14,7 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     extra_newline = false,
-    font = 'Comic\\ Mono:size=10',
+    font = 'Jetbrains\\ Mono:size=10',
     gap_x = 0,
     gap_y = 0,
     minimum_height = 5,
@@ -27,7 +28,7 @@ conky.config = {
     own_window = true,
     own_window_class = 'Conky',
     own_window_colour = '1e1d2f',
-    own_window_transparent = true,
+    own_window_transparent = false,
     own_window_type = 'override',
     show_graph_range = false,
     show_graph_scale = false,
