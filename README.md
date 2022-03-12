@@ -49,7 +49,7 @@ qtile has swallowing now, also, qtile is configured for xorg, i no longer plan o
 
    >**Applets>** nm-applet, blueman-applet, xfce4-clipman
    >
-   >**fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, Symbols Nerd Fonts, [Comic Mono](https://github.com/dtinth/comic-mono-font), Ubuntu Font
+   >**fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, [Symbols Nerd Fonts](https://www.nerdfonts.com/),Ubuntu Font
    >
    >[alacritty](https://alacritty.org)
    >
