@@ -1,79 +1,58 @@
+
+"
+" Plugins
+"
+
 call plug#begin("~/.vim/plugged")
-  " Auto Complete
-  Plug 'tmsvg/pear-tree'
-  
-  " Syntax
-  Plug 'vim-syntastic/syntastic'
-  Plug 'fladson/vim-kitty'
-
-  " Snippets
-  Plug 'honza/vim-snippets'
   Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-
-  " Color Schemes
-  Plug 'dracula/vim'
-  Plug 'flazz/vim-colorschemes'
-  Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-
-  " Other
-  Plug 'scrooloose/nerdtree' " File management in (neo)vim
-  Plug 'preservim/nerdcommenter'
-  Plug 'mhinz/vim-startify' " Nice start screen
-  Plug 'tpope/vim-sleuth'
-  Plug 'editorconfig/editorconfig-vim'
-  Plug 'mattn/emmet-vim'
-  Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-  Plug 'nathanaelkane/vim-indent-guides'
- 
-  " Status Bar
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes' 
-  "Plug 'itchyny/lightline.vim'
-
-  " Git
   Plug 'airblade/vim-gitgutter'
+  Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'flazz/vim-colorschemes' " A lot of colorschemes
+  Plug 'honza/vim-snippets' " Code snippets
+  Plug 'itchyny/vim-gitbranch' " Show git branch
+  Plug 'khaveesh/vim-fish-syntax' " Syntax highlighting for .fish files
+  Plug 'mattn/emmet-vim'
+  Plug 'mhinz/vim-startify' " Start screen
+  Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'} " coc, useful for coding
+  Plug 'preservim/nerdcommenter' " Comment text with a keybinding
+  Plug 'scrooloose/nerdtree' " File management
+  Plug 'tmsvg/pear-tree' " Pair quotes, parentheses, HTML tags, etc.
   Plug 'tpope/vim-fugitive'
-  Plug 'itchyny/vim-gitbranch'
+  Plug 'tpope/vim-sleuth'
+  Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+  Plug 'vim-airline/vim-airline' " Airline status
+  Plug 'vim-airline/vim-airline-themes' " Airline themes ( requires vim-airline )
+  Plug 'vim-syntastic/syntastic' " More syntax
 
-  " Intellisense
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-  " Icons
-  Plug 'ryanoasis/vim-devicons'
+  Plug 'ryanoasis/vim-devicons' " Nice icons, must be last plugin
 call plug#end()
 
-" If using LightLine
-let g:lightline = {'active': {'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ], 'right': [ [ 'lineinfo' ],[ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype' ] ] }}
-
-
-" If using AirLine
+"
+" Airline
+"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '>'
-
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_theme='atomic'
 
+"
 " fzf
+"
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
 
-" sidebar
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"
+" Toggle Nerd Tree for file management
+"
 map <C-n> :NERDTreeToggle<CR>
-
 
 set expandtab
 set tabstop=3
 set shiftwidth=3
 
-" color schemes
 syntax enable
-"colorscheme evening
 set termguicolors
 colorscheme catppuccin
 set background=dark
-"hi Normal guibg=NONE ctermbg=NONE
+"hi Normal guibg=NONE ctermbg=NONE " Hide background color
