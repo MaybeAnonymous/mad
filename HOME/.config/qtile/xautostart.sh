@@ -19,7 +19,7 @@ pgrep picom || picom & # Start the compositor
 pgrep redshift-gtk || redshift-gtk & # Redshift ( Change screen temperature automatically )
 pgrep xfce4-clipman || xfce4-clipman & # Clipboard Manager
 setxkbmap -model abnt2 -layout br & # Set keyboard layout
-xss-lock -l env XSECURELOCK_SHOW_USERNAME=0 XSECURELOCK_SHOW_HOSTNAME=0 XSECURELOCK_FONT=Jetbrains\ Mono XSECURELOCK_PASSWORD_PROMPT=time_hex xsecurelock &
+pgrep xss-lock || xss-lock -l env XSECURELOCK_SHOW_USERNAME=0 XSECURELOCK_SHOW_HOSTNAME=0 XSECURELOCK_FONT=Jetbrains\ Mono XSECURELOCK_PASSWORD_PROMPT=time_hex xsecurelock &
 
 #---------#
 # Devices #

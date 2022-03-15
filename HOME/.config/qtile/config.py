@@ -193,35 +193,36 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-FLAMINGO = "#f2cdcd" # flamingo colour catppuccin
-BLACK    = "#161320"
-LBLACK   = "#1e1d2f"
+FLAMINGO = "#f2cdcd" # flamingo ( catppuccin )
+WHITE    = "#d9e0ee" # white ( catppuccin )
+BLACK    = "#161320" # black0 ( catppuccin )
+LBLACK   = "#1e1d2f" # custom ( fits catppuccin )
 
 screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayout(foreground=FLAMINGO),
-                widget.GroupBox(active="#f5e0dc", inactive="#6e6c7e", highlight_method="block", block_highlight_text_color=BLACK, this_screen_border=FLAMINGO, 
+                widget.CurrentLayout(foreground=WHITE),
+                widget.GroupBox(active=FLAMINGO, inactive="#6e6c7e", highlight_method="block", block_highlight_text_color=BLACK, this_screen_border=FLAMINGO, 
                     this_current_screen_border=FLAMINGO, rounded=False, padding=6, disable_drag=True),
-                widget.Prompt(foreground=FLAMINGO),
-                widget.WindowName(background=FLAMINGO, foreground=BLACK),
+                widget.Prompt(foreground=WHITE),
+                widget.WindowName(foreground=WHITE),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("br", foreground=FLAMINGO),
-                widget.Backlight(foreground=FLAMINGO, backlight_name="intel_backlight"),
-                widget.TextBox("| vol", foreground=FLAMINGO),
-                widget.Volume(foreground=FLAMINGO),
-                widget.TextBox("| BAT", foreground=FLAMINGO),
+                widget.TextBox("br", foreground=WHITE),
+                widget.Backlight(foreground=WHITE, backlight_name="intel_backlight"),
+                widget.TextBox("| vol", foreground=WHITE),
+                widget.Volume(foreground=WHITE),
+                widget.TextBox("| BAT", foreground=WHITE),
                 widget.Battery(charge_char="^", discharge_char="v", empty_char="x", notify_below=15, notification_timeout=5, update_interval=2,
-                    foreground=FLAMINGO),
-                widget.TextBox("|", foreground=FLAMINGO),
+                    foreground=WHITE),
+                widget.TextBox("|", foreground=WHITE),
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Clock(format="%Y-%m-%d %a %H:%M", foreground=FLAMINGO),
+                widget.Clock(format="%Y-%m-%d %a %H:%M", foreground=WHITE),
                 #widget.QuickExit(foreground="#ff8888"),
                 widget.Systray(),
             ],
