@@ -8,6 +8,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'airblade/vim-gitgutter'
   Plug 'catppuccin/nvim', {'as': 'catppuccin'}
   Plug 'editorconfig/editorconfig-vim'
+  Plug 'fladson/vim-kitty' " kitty.conf syntax highlighting
   Plug 'flazz/vim-colorschemes' " A lot of colorschemes
   Plug 'honza/vim-snippets' " Code snippets
   Plug 'itchyny/vim-gitbranch' " Show git branch

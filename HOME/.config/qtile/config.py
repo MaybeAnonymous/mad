@@ -20,6 +20,7 @@ mod = "mod4"
 # Commands #
 #----------#
 terminal = "alacritty"
+terminalsec = "kitty"
 menu = "dmenu_run"
 run = "rofi -show run -show-icons"
 drun = "rofi -show drun -show-icons"
@@ -126,9 +127,10 @@ keys = [
     #-----------#
     # Utilities #
     #-----------#
-    Key([mod], "Return",               lazy.spawn(terminal),desc="Launch terminal"),
-    Key([mod,  "shift"], "Return",     lazy.spawn(files),   desc="Launch file browser"),
-    Key([mod], "c",                    lazy.spawn(browser), desc="Launch the web browser"),
+    Key([mod], "Return",               lazy.spawn(terminal),   desc="Launch terminal"),
+    Key([mod], "bracketright",         lazy.spawn(terminalsec),desc="Launch secondary terminal"),
+    Key([mod,  "shift"], "Return",     lazy.spawn(files),      desc="Launch file browser"),
+    Key([mod], "c",                    lazy.spawn(browser),    desc="Launch the web browser"),
     Key([],    "XF86AudioRaiseVolume", lazy.spawn(raisevol)),
     Key([],    "XF86AudioLowerVolume", lazy.spawn(lowervol)),
     Key([],    "XF86AudioMute",        lazy.spawn(togglevol)),
