@@ -1,6 +1,4 @@
 {
   "rust-analyzer.diagnostics.disabled": ["unresolved-import"],
   "rust-analyzer.experimental.procAttrMacros": true,
-  "godot.enable": true,
-  "godot.lsp_server_port": 6008
 }
