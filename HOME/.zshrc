@@ -16,6 +16,7 @@ else
    export EDITOR='nvim'
 fi
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=black,bg=none,bold,underline"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 #-----#
 # OMZ #
