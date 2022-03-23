@@ -80,8 +80,8 @@ end
 # Git Abbreviations #
 #-------------------#
 abbr "ga" "git add ."
-abbr "gc" "git commit -m"
-abbr "gp" "git push"
+abbr "gcm" "git commit -m"
+abbr "gpu" "git push"
 
 #----------#
 # Start up #

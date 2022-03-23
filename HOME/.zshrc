@@ -3,7 +3,7 @@
 #         / /\___ \| |_| | |_) | |
 #       / /_ ___) |  _  |  _ <  |___
 # [ ] /____|____/|_| |_|_| \_\\____|
-# Oh. My. ZSH! What is THIS?
+# Oh. My. ZSH! This is my .zshrc!
 
 #-----------#
 # Variables #
@@ -15,11 +15,16 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
    export EDITOR='nvim'
 fi
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=black,bg=none,bold,underline"
 
 #-----#
 # OMZ #
 #-----#
 export ZSH="$HOME/.oh-my-zsh"
+# Install zsh-autosuggestions:
+#  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# Install zsh-syntax-highlighting:
+#  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 #ZSH_THEME="bira"
@@ -60,17 +65,15 @@ ufetch
 autoload -Uz vcs_info
 precmd () { vcs_info }
 zstyle ':vcs_info:*' formats ' %s(%F{yellow}%b%f)'
-PS1='%F{magenta}[%~]%f$(tput bold) $vcs_info_msg_0_%F{red}&%f$(tput sgr0) '
+PS1='%F{magenta}%~%f$(tput bold) $vcs_info_msg_0_%F{red}->%f$(tput sgr0) '
 
 #---------#
 # Aliases #
 #---------#
 alias clr='echo > ~/.zsh_history && history -c && clear'
 alias ga='git add .'
-alias gco='gcc -o'
-alias gitc='git commit -m'
-alias gitpo='git push origin'
-alias gpo='g++ -o'
+alias gcm='git commit -m'
+alias gpu='git push'
 alias grep='grep --color=auto'
 alias l='exa -l -a'
 alias la='exa -a'
@@ -78,11 +81,9 @@ alias ls='exa'
 alias pac='pacman'
 alias pacman='sudo pacman'
 alias pca='pacman'
-alias please='sudo'
-alias pls='sudo'
 alias sue='sudoedit'
 alias update='paru -Syu'
-alias ytwav='yt-dlp -x --audio-format wav'
+alias yt-wav='yt-dlp -x --audio-format wav'
 
 #-------#
 # Typso #
