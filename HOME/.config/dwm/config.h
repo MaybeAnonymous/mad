@@ -36,17 +36,10 @@ static const int showsystray             = 1;
 static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
-static const char *fonts[]               = { "Jetbrains\\ Mono:size=10", "Noto\\ Color\\ Emoji:pixelsize=12:style=Regular" };
+static const char *fonts[]               = { "Jetbrains\\ Mono:size=10", "Noto\\ Color\\ Emoji:pixelsize=10:style=Regular" };
 static const char dmenufont[]            = "Jetbrains\\ Mono:size=10";
 
 static char c000000[]                    = "#000000"; // placeholder
-
-
-
-
-
-
-
 
 static char hidnormbgcolor[]             = "#222222";
 static char hidnormfgcolor[]             = "#005577";
@@ -137,10 +130,10 @@ static const char *const autostart[] = {
  * until it an icon matches. Similarly if there are two tag icons then it would alternate between
  * them. This works seamlessly with alternative tags and alttagsdecoration patches.
  */
-static char *tagicons[][NUMTAGS] = {
-	[DEFAULT_TAGS]        = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
-	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
-	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
+static char *tagicons[][1] = {
+	[DEFAULT_TAGS]        = { "•" },
+	[ALTERNATIVE_TAGS]    = { "*" },
+	//[ALT_TAGS_DECORATION] = { "<1>" },
 };
 
 

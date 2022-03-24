@@ -1,16 +1,16 @@
-
-# wm independent hotkeys
-#
-#
-# @space is the space key
+#----------------#
+# wm independent #
+#----------------#
+# note:
+#  @space is the space key
 
 # terminal emulator
 super + Return
 	alacritty
 
 # browser
-control + alt + {v, c}
-	{vivaldi-stable, chromium}
+super + c
+	chromium
 
 # files
 super + shift + Return
@@ -35,9 +35,9 @@ super + shift + s
 super + l
 	xset s activate
 
-#
-# brightness,volume control
-#
+#-------------------#
+# brightness,volume #
+#-------------------#
 
 XF86AudioRaiseVolume
 	pamixer -i5
@@ -51,9 +51,9 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
 	brightnessctl s 5%-
 
-#
-# bspwm hotkeys
-#
+#---------------#
+# bspwm hotkeys #
+#---------------#
 
 # quit/restart bspwm
 super + shift + {e,r}
@@ -87,13 +87,9 @@ super + {t,shift + @space,@space,f}
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-#
-# focus/swap
-#
-
-# swap from floating window to previous mode
-#super + shift + @space
-    #bspc node focused -t \~floating
+#------------#
+# focus/swap #
+#------------#
 
 # focus the node in the given direction
 super + {_,shift + }{Left,Down,Up,Right}
@@ -127,9 +123,9 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
-# preselect
-#
+#-----------#
+# preselect #
+#-----------#
 
 # preselect the direction
 super + ctrl + {Left,Down,Up,Right}
@@ -148,9 +144,9 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-#
+#-------------#
+# move/resize #
+#-------------#
 
 # expand a window by moving one of its side outward
 super + alt + {Left,Down,Up,Right}

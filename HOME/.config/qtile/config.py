@@ -4,7 +4,7 @@
 # _|    _|    _|      _|  _|  _|
 #   _|_|_|      _|_|  _|  _|    _|_|_|
 #       _| tiling window managers are great
-#       _| WAYLAND CONFIGS ARE NOT READY
+#       _| ( no wayland config support, sorry )
 
 
 from typing import List  # noqa: F401
@@ -38,11 +38,6 @@ lowervol = "pamixer -d5"
 togglevol = "pamixer -t"
 raisebr = "brightnessctl s 5%+"
 lowerbr = "brightnessctl s 5%-"
-
-#---------#
-# Wayland #
-#---------#
-
 
 import os
 import subprocess
@@ -230,7 +225,12 @@ screens = [
             ],
             32,
             background=LBLACK,
-            margin=[4,4,0,4],
+            margin=[
+                4, # top
+                4, # right
+                0, # bottom
+                4, # left
+                ],
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
