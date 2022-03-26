@@ -225,9 +225,9 @@ screens = [
             background=LBLACK,
             margin=[
                 0, # top
-                4, # right
-                4, # bottom
-                4, # left
+                2, # right
+                2, # bottom
+                2, # left
                 ],
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
