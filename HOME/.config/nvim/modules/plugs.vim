@@ -8,12 +8,14 @@ call plug#begin("~/.vim/plugged")
   Plug 'airblade/vim-gitgutter'
   Plug 'catppuccin/nvim', {'as': 'catppuccin'}
   Plug 'editorconfig/editorconfig-vim'
+  Plug 'elkowar/yuck.vim' " .yuck EWW config language filetype support
   Plug 'fladson/vim-kitty' " kitty.conf syntax highlighting
   Plug 'flazz/vim-colorschemes' " A lot of colorschemes
   Plug 'honza/vim-snippets' " Code snippets
   Plug 'itchyny/vim-gitbranch' " Show git branch
   Plug 'khaveesh/vim-fish-syntax' " Syntax highlighting for .fish files
   Plug 'mattn/emmet-vim'
+  Plug 'mg979/vim-visual-multi', {'branch': 'master'}
   Plug 'mhinz/vim-startify' " Start screen
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " coc, useful for coding
@@ -46,7 +48,7 @@ let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comm
 "
 " Toggle Nerd Tree for file management
 "
-map <C-n> :NERDTreeToggle<CR>
+map <C-e> :NERDTreeToggle<CR>
 
 set expandtab
 set tabstop=3
