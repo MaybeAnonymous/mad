@@ -161,7 +161,7 @@ for i in groups:
 
 def init_basic_layout():
     return {
-            "margin": 4,
+            "margin": 2,
             "border_width": 2,
             "border_focus": "#f2cdcd",
             "border_normal": "#6e6c7e"
@@ -197,7 +197,7 @@ LBLACK   = "#1e1d2f" # custom ( fits catppuccin )
 
 screens = [
     Screen(
-        top=bar.Bar(
+        bottom=bar.Bar(
             [
                 widget.CurrentLayout(foreground=WHITE),
                 widget.GroupBox(active=FLAMINGO, inactive="#6e6c7e", highlight_method="block", block_highlight_text_color=BLACK, this_screen_border=FLAMINGO, 
@@ -218,17 +218,15 @@ screens = [
                 widget.Battery(charge_char="^", discharge_char="v", empty_char="x", notify_below=15, notification_timeout=5, update_interval=2,
                     foreground=WHITE),
                 widget.TextBox("|", foreground=WHITE),
-                #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Clock(format="%Y-%m-%d %a %H:%M", foreground=WHITE),
-                #widget.QuickExit(foreground="#ff8888"),
                 widget.Systray(),
             ],
-            32,
+            24,
             background=LBLACK,
             margin=[
-                4, # top
+                0, # top
                 4, # right
-                0, # bottom
+                4, # bottom
                 4, # left
                 ],
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders

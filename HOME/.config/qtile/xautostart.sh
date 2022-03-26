@@ -14,7 +14,7 @@ lxpolkit &
 #nitrogen --set-auto "$HOME/Pictures/Backgrounds/wallpaper.png" &
 pgrep blueman-applet || blueman-applet & # Bluetooth applet
 pgrep nm-applet || nm-applet & # Network Manager
-pgrep conky || conky & # Start conky
+#pgrep conky || conky & # Start conky
 pgrep picom || picom & # Start the compositor
 pgrep redshift-gtk || redshift-gtk & # Redshift ( Change screen temperature automatically )
 pgrep xfce4-clipman || xfce4-clipman & # Clipboard Manager

@@ -4,7 +4,7 @@
 # | |__         ___       _ __           __      __     _ __ ___
 # | '_ \       / __|     | '_ \          \ \ /\ / /    | '_ ` _ \
 # | |_) |      \__ \     | |_) |          \ V  V /     | | | | | |
-# |_.__/inary |___/pace | .__/artitioning \_/\_/indow |_| |_| |_|anager
+# |_.__/inary |___/pace  | .__/artitioning \_/\_/indow |_| |_| |_|anager
 #                        |_|
 
          #exec $HOME/.config/polybar/scripts/startup.sh & # i dont remember why this is commented out
@@ -15,7 +15,7 @@ exec $HOME/.config/dunst/scripts/startup.sh &
 lxpolkit &
 nitrogen --set-auto "$HOME/Pictures/Backgrounds/wallpaper.png" &
 pgrep blueman-applet || blueman-applet &
-pgrep conky || conky &
+#pgrep conky || conky &
 pgrep nm-applet || nm-applet &
 pgrep redshift-gtk || redshift-gtk &
 pgrep xfce4-clipman || xfce4-clipman &
