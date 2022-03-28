@@ -39,5 +39,5 @@ bspc rule -a neovide state=pseudo_tiled
 #-----------#
 # Autostart #
 #-----------#
-exec $HOME/.config/bspwm/autostart &
+exec $HOME/.config/bspwm/autostart.sh &
 exec $HOME/.config/polybar/scripts/startup.sh &
