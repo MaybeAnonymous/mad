@@ -14,24 +14,24 @@ I recently switched to [fish](https://fishshell.com)
 
 # Before installation
 
->!C means closed source/proprietary!!
->
->;; means it is pre-installed and you should not worry
->
->|| means or
->
->\+ means and
->
->!w means Work In Progress
+   >!C means closed source/proprietary!!
+   >
+   >;; means it is pre-installed and you should not worry
+   >
+   >|| means or
+   >
+   >\+ means and
+   >
+   >!w means Work In Progress
 
 
 Also, remember that this is a work in progress, if anything important is missing, tell me!
 
 I do not plan on making an installation script, and **make sure you know what you're doing.**
 
-These dotfiles contain 2 shells + 4 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) || [qtile](https://www.qtile.org) || [i3-gaps](https://github.com/Airblader/i3) \) 
+These dotfiles contain 2 shells + 4 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) || [qtile](https://www.qtile.org) || [i3-gaps](https://github.com/Airblader/i3) \)
 
-qtile has swallowing now, also, qtile is configured for xorg, i no longer plan on adding proper wayland config as i do not need it
+Beware that all of them are configured for Xorg!
 
 # Requirements
 
@@ -84,15 +84,15 @@ qtile has swallowing now, also, qtile is configured for xorg, i no longer plan o
 
 # After Installing
 
->to configure neovim you must open it and run `:PlugInstall`
->
->to build dwm, dmenu, and dwmblocks you must run `cd ~/.config/dwm && sudo make install; cd ~/.config/dmenu && sudo make install; cd ~/.config/dwmblocks && sudo make install`
->
->Have fun!
+   >to configure neovim you must open it and run `:PlugInstall`
+   >
+   >to build dwm, dmenu, and dwmblocks you must run `cd ~/.config/dwm && sudo make install; cd ~/.config/dmenu && sudo make install; cd ~/.config/dwmblocks && sudo make install`
+   >
+   >Have fun!
 
 # More Info
 
->colourscheme: [catppuccin](https://github.com/catppuccin/catppuccin)
+   >colourscheme: [catppuccin](https://github.com/catppuccin/catppuccin)
 
 
 # bspwm:
