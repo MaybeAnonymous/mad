@@ -7,11 +7,11 @@
 # |_.__/inary |___/pace  | .__/artitioning \_/\_/indow |_| |_| |_|anager
 #                        |_|
 
-         #exec $HOME/.config/polybar/scripts/startup.sh & # i dont remember why this is commented out
 #------#
 # Main #
 #------#
 exec $HOME/.config/dunst/scripts/startup.sh &
+exec $HOME/.config/polybar/scripts/startup.sh &
 lxpolkit &
 nitrogen --set-auto "$HOME/Pictures/Backgrounds/wallpaper.png" &
 pgrep blueman-applet || blueman-applet &

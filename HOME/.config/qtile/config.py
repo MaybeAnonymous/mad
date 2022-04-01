@@ -12,7 +12,6 @@ from typing import List  # noqa: F401
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-#from libqtile.utils import guess_terminal
 
 mod = "mod4"
 
@@ -30,9 +29,9 @@ shot = "sh -c 'maim -s -u | xclip -selection clipboard -t image/png'"
 browser = "chromium"
 files = "thunar"
 
-#---------------#
-# More Commands #
-#---------------#
+#------------------#
+# Control Commands #
+#------------------#
 raisevol = "pamixer -i5"
 lowervol = "pamixer -d5"
 togglevol = "pamixer -t"
@@ -44,17 +43,9 @@ import subprocess
 
 from libqtile import hook
 
-from libqtile import qtile
-#from libqtile.backend.wayland.inputs import InputConfig
-
 @hook.subscribe.startup
 def autostart():
-    if qtile.core.name == "x11":
-        home = os.path.expanduser('~/.config/qtile/xautostart.sh')
-    elif qtile.core.name == "wayland":
-        home = os.path.expanduser('~/.config/qtile/wl-autostart.sh') # WAYLAND CONFIGS ARE NOT READY AT ALL
-    else:
-        home = os.path.expanduser("~/.config/qtile/xautostart.sh")
+    home = os.path.expanduser("~/.config/qtile/xautostart.sh")
     subprocess.run([home])
 
 
@@ -70,23 +61,18 @@ keys = [
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
-    # Move windows between left/right columns or move up/down in current stack.
-    # Moving out of range in Columns layout will create new column.
+   
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
-    # Grow windows. If current window is on the edge of screen and direction
-    # will be to screen edge - window would shrink.
+   
     Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
     Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-    # Toggle between split and unsplit sides of stack.
-    # Split = all windows displayed
-    # Unsplit = 1 window displayed, like Max layout, but still with
-    # multiple stack panes
+ 
     Key(
         [mod, "control"],
         "Return",
@@ -164,7 +150,9 @@ def init_basic_layout():
             "margin": 2,
             "border_width": 2,
             "border_focus": "#f2cdcd",
-            "border_normal": "#6e6c7e"
+            "border_normal": "#6e6c7e",
+            "border_focus_stack": "#f2cdcd",
+            "border_normal_stack": "#6e6c7e"
     }
 basic_layout = init_basic_layout()
 
@@ -178,7 +166,7 @@ layouts = [
     # layout.TreeTab(),
     # layout.VerticalTile(),
     layout.Bsp(**basic_layout),
-    layout.Matrix(**basic_layout),
+    # layout.Matrix(**basic_layout),
     layout.Max(**basic_layout),
     layout.Zoomy(**basic_layout),
 ]
@@ -225,9 +213,9 @@ screens = [
             background=LBLACK,
             margin=[
                 0, # top
-                2, # right
+                8, # right
                 2, # bottom
-                2, # left
+                8, # left
                 ],
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
