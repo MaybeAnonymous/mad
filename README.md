@@ -45,7 +45,7 @@ Beware that all of them are configured for Xorg!
    
    >[lightdm](https://github.com/canonical/lightdm) + [catppuccin gtk theme](https://github.com/catppuccin/gtk)  
 
-* **Either wms:**
+* **Any WM:**
 
    >**Applets>** nm-applet, blueman-applet, xfce4-clipman
    >
@@ -80,7 +80,7 @@ Beware that all of them are configured for Xorg!
 * **[i3](https://github.com/Airblader/i3)**
 
 * **optional:**
-   > [glava](https://github.com/jarcode-foss/glava), [neovide](https://github.com/neovide/neovide), [vivaldi!C](https://vivaldi.com) || [ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium), [ufetch](https://gitlab.com/jschx/ufetch)
+   > [glava](https://github.com/jarcode-foss/glava), [neovide](https://github.com/neovide/neovide), [ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium), [ufetch](https://gitlab.com/jschx/ufetch)
 
 # After Installing
 

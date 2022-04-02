@@ -1,0 +1,8 @@
+exa
+fd
+feh
+mpv
+nitrogen
+tldr
+ungoogled-chromium
+yt-dlp
