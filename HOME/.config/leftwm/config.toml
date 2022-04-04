@@ -63,6 +63,12 @@ value = "chromium"
 modifier = ["modkey"]
 key = "c"
 [[keybind]]
+command = "Execute" # Kitty terminal as an alternative to alacritty
+value = "kitty"
+modifier = ["modkey"]
+key = "bracketright"
+#   Rofi
+[[keybind]]
 command = "Execute" # Open an application with rofi
 value = "rofi -show drun -show-icons"
 modifier = ["modkey", "Shift"]
@@ -72,6 +78,11 @@ command = "Execute" # Run a command with rofi
 value = "rofi -show run -show-icons"
 modifier = ["modkey", "Control"]
 key = "d"
+[[keybind]]
+command = "Execute" # Rofi with emojis
+value = "rofi -show emoji"
+modifier = ["modkey"]
+key = "period"
 
 # Default keybindings + slight edits
 [[keybind]]
