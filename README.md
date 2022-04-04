@@ -29,7 +29,7 @@ Also, remember that this is a work in progress, if anything important is missing
 
 I do not plan on making an installation script, and **make sure you know what you're doing.**
 
-These dotfiles contain 2 shells + 4 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) || [qtile](https://www.qtile.org) || [i3-gaps](https://github.com/Airblader/i3) || [leftwm!w](https://leftwm.org) \)
+These dotfiles contain 2 shells + 4 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) || [qtile](https://www.qtile.org) || [i3-gaps](https://github.com/Airblader/i3) || [leftwm](https://leftwm.org) \)
 
 Beware that all of them are configured for Xorg!
 
@@ -79,14 +79,18 @@ Beware that all of them are configured for Xorg!
 
 * **[i3](https://github.com/Airblader/i3)**
 
+* **[leftwm](https://leftwm.org)**
+
 * **optional:**
    > [glava](https://github.com/jarcode-foss/glava), [neovide](https://github.com/neovide/neovide), [ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium), [ufetch](https://gitlab.com/jschx/ufetch)
 
 # After Installing
 
-   >to configure neovim you must open it and run `:PlugInstall`
+   >To configure **NeoVim** you must open it and run `:PlugInstall`
    >
-   >to build dwm, dmenu, and dwmblocks you must run `cd ~/.config/dwm && sudo make install; cd ~/.config/dmenu && sudo make install; cd ~/.config/dwmblocks && sudo make install`
+   >To build **dwm, dmenu, and dwmblocks** you must run `cd ~/.config/dwm && sudo make install; cd ~/.config/dmenu && sudo make install; cd ~/.config/dwmblocks && sudo make install`
+   >
+   >To apply the **leftwm** theme you should run `ln -s ~/.config/leftwm/themes/custom ~/.config/leftwm/themes/current`, [see this](https://github.com/leftwm/leftwm#theming)
    >
    >Have fun!
 
