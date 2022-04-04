@@ -9,18 +9,71 @@ disable_current_tag_swap = false
 focus_behaviour = "ClickTo"
 focus_new_windows = true
 
-# Keybinds set by user
+# Keybindings set by user
+#  Devices ( Such as display brightness or volume )
+#   Volume
+[[keybind]]
+command = "Execute" # Raise volume
+value = "pamixer -i5"
+modifier = []
+key = "XF86XK_AudioRaiseVolume"
+[[keybind]]
+command = "Execute" # Lower volume
+value = "pamixer -d5"
+modifier = []
+key = "XF86XK_AudioLowerVolume"
+#   Brightness
+[[keybind]]
+command = "Execute" # Raise brightness
+value = "brightnessctl s 5%+"
+modifier = []
+key = "XF86XK_MonBrightnessUp"
+[[keybind]]
+command = "Execute" # Lower brightness
+value = "brightnessctl s 5%-"
+modifier = []
+key = "XF86XK_MonBrightnessDown"
+
+#  Layouts
 [[keybind]]
 command = "ToggleFloating"
 modifier = ["modkey", "Shift"]
 key = "space"
-
 [[keybind]]
 command = "ToggleFullScreen"
 modifier = ["modkey", "Shift"]
 key = "f"
 
-# Default keybinds
+#  Screenshots
+[[keybind]]
+command = "Execute" # Selection to clipboard
+value = "maim -s -u | xclip -selection clipboard -t image/png"
+modifier = ["modkey", "Shift"]
+key = "s"
+[[keybind]]
+command = "Execute" # Full screenshot to clipboard
+value = "maim | xclip -selection clipboard -t image/png"
+modifier = ["modkey", "Shift"]
+key = "z"
+
+#  Utilities
+[[keybind]]
+command = "Execute" # Open browser
+value = "chromium"
+modifier = ["modkey"]
+key = "c"
+[[keybind]]
+command = "Execute" # Open an application with rofi
+value = "rofi -show drun -show-icons"
+modifier = ["modkey", "Shift"]
+key = "d"
+[[keybind]]
+command = "Execute" # Run a command with rofi
+value = "rofi -show run -show-icons"
+modifier = ["modkey", "Control"]
+key = "d"
+
+# Default keybindings + slight edits
 [[keybind]]
 command = "Execute"
 value = "dmenu_run"

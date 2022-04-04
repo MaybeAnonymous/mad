@@ -6,7 +6,7 @@
 #------#
 pgrep blueman-applet || blueman-applet &
 exec $HOME/.config/dunst/scripts/startup.sh &
-exec $HOME/.config/polybar/scripts/startup.sh &
+exec $HOME/.config/polybar/scripts/startup-leftwm.sh &
 nitrogen --set-auto "$HOME/Pictures/Backgrounds/wallpaper.png" &
 pgrep picom || picom --vsync --backend glx &
 pgrep redshift-gtk || redshift-gtk &
