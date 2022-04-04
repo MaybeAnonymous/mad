@@ -9,11 +9,11 @@
 ;==========================================================
 
 [colors]
-background = #1E1E2E
-background-alt = #302D41
+background = #1e1e2e
+background-alt = #302d41
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #F2CDCD
+primary = #f2cdcd
 secondary = #ddb6f2
 alert = #bd2c40
 ;
@@ -54,7 +54,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=14;1
 
 
-modules-left = i3 bspwm filesystem xwindow
+modules-left = leftwm filesystem xwindow
 modules-right = xbacklight pulseaudio memory cpu battery wlan eth temperature date
 
 cursor-click = pointer
@@ -96,6 +96,25 @@ mount-0 = /
 label-mounted = %{F#colors.primary}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/leftwm]
+type = internal/xworkspaces
+
+label-active = Õ
+label-active-background = ${colors.background-alt}
+label-active-underline= ${colors.primary}
+label-active-padding = 1
+
+label-occupied = u
+label-occupied-padding = 1
+
+label-urgent = !
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = ~ 
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 1
 
 [module/bspwm]
 type = internal/bspwm

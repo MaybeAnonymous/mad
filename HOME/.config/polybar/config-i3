@@ -10,11 +10,11 @@
 ; This config is i3 specific, changing wm-restack to "i3" in [bar/main]
 
 [colors]
-background = #1E1E2E
-background-alt = #302D41
+background = #1e1e2e
+background-alt = #302d41
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #F2CDCD
+primary = #f2cdcd
 secondary = #ddb6f2
 alert = #bd2c40
 ;
@@ -55,7 +55,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=14;1
 
 
-modules-left = i3 bspwm filesystem xwindow
+modules-left = i3 filesystem xwindow
 modules-right = xbacklight pulseaudio memory cpu battery wlan eth temperature date
 
 cursor-click = pointer
