@@ -79,7 +79,7 @@ font:
     family: Jetbrains Mono
     style: Italic
   bold_italic:
-    family: Jetbrain Mono
+    family: Jetbrains Mono
     style: Bold Italic
 
   size: 10.0 # Font size
