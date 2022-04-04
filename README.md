@@ -29,7 +29,7 @@ Also, remember that this is a work in progress, if anything important is missing
 
 I do not plan on making an installation script, and **make sure you know what you're doing.**
 
-These dotfiles contain 2 shells + 4 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) || [qtile](https://www.qtile.org) || [i3-gaps](https://github.com/Airblader/i3) \)
+These dotfiles contain 2 shells + 4 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) || [qtile](https://www.qtile.org) || [i3-gaps](https://github.com/Airblader/i3) || [leftwm!w](https://leftwm.org) \)
 
 Beware that all of them are configured for Xorg!
 

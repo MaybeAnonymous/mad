@@ -1,0 +1,10 @@
+#!/bin/sh
+# What to run when leftwm shuts down
+
+pkill blueman-applet &
+pkill dunst &
+pkill polybar &
+pkill picom &
+pkill redshift-gtk &
+pkill xfce4-clipman &
+pkill xss-lock &
