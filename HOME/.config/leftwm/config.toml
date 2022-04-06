@@ -22,6 +22,11 @@ command = "Execute" # Lower volume
 value = "pamixer -d5"
 modifier = []
 key = "XF86XK_AudioLowerVolume"
+[[keybind]]
+command = "Execute"
+value = "pamixer -t"
+modifier = []
+key = "XF86XK_AudioMute"
 #   Brightness
 [[keybind]]
 command = "Execute" # Raise brightness
