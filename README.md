@@ -49,7 +49,7 @@ Beware that all of them are configured for Xorg!
 
    >**Applets>** nm-applet, blueman-applet, xfce4-clipman
    >
-   >**fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, [Symbols Nerd Fonts](https://www.nerdfonts.com/),Ubuntu Font
+   >**fonts>** [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Siji, Powerline Fonts, [Symbols Nerd Fonts](https://www.nerdfonts.com/), Ubuntu Font
    >
    >[alacritty](https://alacritty.org)
    >
@@ -61,7 +61,7 @@ Beware that all of them are configured for Xorg!
    >
    >[maim](https://github.com/naelstrof/maim)
    >
-   >[neovim](https://neovim.io/) + [vim-plug;;](https://github.com/junegunn/vim-plug)
+   >[neovim](https://neovim.io/) + [vim-plug;;](https://github.com/junegunn/vim-plug) || [helix](https://helix-editor.com)
    >
    >[nitrogen](https://github.com/l3ib/nitrogen)
    >
