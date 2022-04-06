@@ -14,30 +14,30 @@
 /*
 * appearence
  */
-static const int bar_height              = 28;// height of bar
+static const int bar_height              = 24;// height of bar
 static const int focusonwheel            = 0; // focus once you scroll; 1 or 0
 static const int showbar                 = 1;
 static const int smartgaps_fact          = 1;
 static const int swallowfloating         = 0; // swallow floating windows? 1 or 0
 static const int topbar                  = 1; // 1 = bar on top; 0 = bar on bottom
 static const unsigned int borderpx       = 2;
-static const unsigned int gappih         = 4; // gap inner horizontal
-static const unsigned int gappiv         = 4; // gap innver vertical
-static const unsigned int gappoh         = 5; // gap outer horizontal
-static const unsigned int gappov         = 5; // gap outer vertical
+static const unsigned int gappih         = 2; // gap inner horizontal
+static const unsigned int gappiv         = 2; // gap innver vertical
+static const unsigned int gappoh         = 2; // gap outer horizontal
+static const unsigned int gappov         = 2; // gap outer vertical
 static const unsigned int snap           = 16;
 
 // Status is to be shown on: -1 = all monitors; 0 = a specific monitor by index; 'A' = active monitor
 static const int statusmon               = 'A';
-static const unsigned int systrayspacing = 2; // systray spacing
+static const unsigned int systrayspacing = 4; // systray spacing
 static const int showsystray             = 1;
 
 // Indicators: see patch/bar_indicators.h for options
 static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
-static const char *fonts[]               = { "Jetbrains\\ Mono:size=10", "Noto\\ Color\\ Emoji:pixelsize=10:style=Regular" };
-static const char dmenufont[]            = "Jetbrains\\ Mono:size=10";
+static const char *fonts[]               = { "Jetbrains\\ Mono:size=8", "Noto\\ Color\\ Emoji:pixelsize=8:style=Regular" };
+static const char dmenufont[]            = "Jetbrains\\ Mono:size=8";
 
 static char c000000[]                    = "#000000"; // placeholder
 
@@ -130,9 +130,9 @@ static const char *const autostart[] = {
  * until it an icon matches. Similarly if there are two tag icons then it would alternate between
  * them. This works seamlessly with alternative tags and alttagsdecoration patches.
  */
-static char *tagicons[][1] = {
-	[DEFAULT_TAGS]        = { "•" },
-	[ALTERNATIVE_TAGS]    = { "*" },
+static char *tagicons[][NUMTAGS] = {
+	[DEFAULT_TAGS]        = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
 	//[ALT_TAGS_DECORATION] = { "<1>" },
 };
 
@@ -280,11 +280,11 @@ static Key keys[] = {
 	/* modifier                     key            function                argument */
 	
 	// controls
-	{ 0,                         XF86XK_AudioRaiseVolume, spawn,           {.v = raisevol} },
-	{ 0,                         XF86XK_AudioLowerVolume, spawn,           {.v = lowervol} },
-	{ 0,                         XF86XK_AudioMute,        spawn,           {.v = mutevol } },
-	{ 0,                         XF86XK_MonBrightnessUp,  spawn,           {.v = raisebr } },
-	{ 0,                         XF86XK_MonBrightnessDown,spawn,           {.v = lowerbr } },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn,        {.v = raisevol} },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn,        {.v = lowervol} },
+	{ 0,                            XF86XK_AudioMute,        spawn,        {.v = mutevol } },
+	{ 0,                            XF86XK_MonBrightnessUp,  spawn,        {.v = raisebr } },
+	{ 0,                            XF86XK_MonBrightnessDown,spawn,        {.v = lowerbr } },
 
 	{ MODKEY,                       XK_p,          spawn,                  {.v = dmenucmd } },
 	{ MODKEY,		                 XK_Return,     spawn,                  {.v = termcmd } },
