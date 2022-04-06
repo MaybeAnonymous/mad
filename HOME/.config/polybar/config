@@ -94,7 +94,8 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#colors.primary}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %mountpoint%%{F-}: %percentage_used%%
+label-mounted-foreground = ${colors.primary}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
