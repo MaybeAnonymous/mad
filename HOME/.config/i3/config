@@ -40,6 +40,7 @@ exec --no-startup-id setxkbmap -model abnt2 -layout br -variant abnt2
 exec --no-startup-id xinput --set-int-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Natural Scrolling Enabled" 8 1
 exec --no-startup-id xinput set-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Disable While Typing Enabled" 1
 exec --no-startup-id xinput set-prop 'ELAN0504:00 04F3:3091 Touchpad' 'libinput Tapping Enabled' 1
+exec --no-startup-id xinput set-prop "Logitech M510" 324 0.45 # Set mouse speed ( default 0 )
 
 #--------------#
 # Key Bindings #

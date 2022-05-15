@@ -24,7 +24,7 @@ xss-lock -l env XSECURELOCK_SHOW_USERNAME=0 XSECURELOCK_SHOW_HOSTNAME=0 XSECUREL
 # Devices #
 #---------#
 setxkbmap -layout br -model abnt2 &
-xinput --set-int-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Natural Scrolling Enabled" 8 1 &
-xinput set-button-map "Compx 2.4G Receiver Mouse" 1 2 3 4 5 6 7 2 9 &
+xinput --set-int-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Natural Scrolling Enabled" 8 1 & # Reversed scrolling for mousepad
 xinput set-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Disable While Typing Enabled" 1 &
 xinput set-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Tapping Enabled" 1 &
+xinput set-prop "Logitech M510" 324 0.45 # Set mouse speed ( default 0 )
