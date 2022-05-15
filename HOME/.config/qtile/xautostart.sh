@@ -29,3 +29,4 @@ xinput --set-int-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Natural Scrolli
 xinput set-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Disable While Typing Enabled" 1 &
 xinput set-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Tapping Enabled" 1 &
 xinput set-prop "Logitech M510" 324 0.45 # Set mouse speed ( default 0 )
+xset m 0 0
