@@ -29,12 +29,12 @@ bspc config borderless_monocle      true
 bspc config gapless_monocle         true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
+#bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-bspc rule -a Alacritty state=pseudo_tiled
-bspc rule -a neovide state=pseudo_tiled
+#bspc rule -a Alacritty state=pseudo_tiled
+#bspc rule -a neovide state=pseudo_tiled
 
 #-----------#
 # Autostart #
