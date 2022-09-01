@@ -11,6 +11,8 @@ super + Return
 # browser
 super + c
 	chromium
+super + f
+	librewolf
 
 # files
 super + shift + Return
