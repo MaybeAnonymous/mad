@@ -6,7 +6,7 @@
 
 i am not responsible for problems you may get while installing this, and know that this isn't complete
 
-use **[ufetch](https://gitlab.com/jschx/ufetch)** *( or the one in usr/local/bin )*
+use **[ufetch](https://gitlab.com/jschx/ufetch)** or the one in usr/local/bin
 
 **[zsh:](https://zsh.org)** plugins are [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh) and [syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 
@@ -29,7 +29,7 @@ Also, remember that this is a work in progress, if anything important is missing
 
 I do not plan on making an installation script, and **make sure you know what you're doing.**
 
-These dotfiles contain 2 shells + 4 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) || [qtile](https://www.qtile.org) || [i3-gaps](https://github.com/Airblader/i3) || [leftwm](https://leftwm.org) \)
+These dotfiles contain 2 shells + 4 window managers \( [zsh](https://www.zsh.org/) || [fish](https://fishshell.com) + [dwm](https://dwm.suckless.org) || [bspwm](https://github.com/baskerville/bspwm) || [qtile](https://www.qtile.org) || [i3-gaps](https://github.com/Airblader/i3) \)
 
 Beware that all of them are configured for Xorg!
 
@@ -79,8 +79,6 @@ Beware that all of them are configured for Xorg!
 
 * **[i3](https://github.com/Airblader/i3)**
 
-* **[leftwm](https://leftwm.org)**
-
 * **optional:**
    > [glava](https://github.com/jarcode-foss/glava), [neovide](https://github.com/neovide/neovide), [ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium), [ufetch](https://gitlab.com/jschx/ufetch)
 
@@ -90,14 +88,11 @@ Beware that all of them are configured for Xorg!
    >
    >To build **dwm, dmenu, and dwmblocks** you must run `cd ~/.config/dwm && sudo make install; cd ~/.config/dmenu && sudo make install; cd ~/.config/dwmblocks && sudo make install`
    >
-   >To apply the **leftwm** theme you should run `ln -s ~/.config/leftwm/themes/custom ~/.config/leftwm/themes/current`, [see this](https://github.com/leftwm/leftwm#theming)
-   >
    >Have fun!
 
 # More Info
 
    >colourscheme: [catppuccin](https://github.com/catppuccin/catppuccin)
-
 
 # bspwm:
 ![image](https://user-images.githubusercontent.com/89218161/152661623-bfa0f2dc-43dc-46a2-85b0-fa6ce60b243a.png)

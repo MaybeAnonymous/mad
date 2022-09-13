@@ -7,16 +7,17 @@
 ;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
 ;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 ;==========================================================
-; Normal polybar config, configured for bspwm
+; polybar config for bspwm
 
 [colors]
-background = #1e1e2e
-background-alt = #302d41
+background = #232634
+background-alt = #292c3c
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #f2cdcd
 secondary = #ddb6f2
 alert = #bd2c40
+
 ;
 ; Main Bar
 ;
@@ -31,7 +32,7 @@ override-redirect = true
 wm-restack = bspwm
 
 tray-position = center
-tray-detach = true
+tray-detached = false
 tray-padding = 10
 tray-background = ${colors.background}
 
@@ -44,7 +45,7 @@ line-color = #f00
 border-size = 5
 border-color = #00000000
 
-padding-left = 0
+padding-left = 2
 padding-right = 2
 
 module-margin-left = 0
@@ -54,8 +55,7 @@ font-0 = Jetbrains Mono:pixelsize=10:style=Bold;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=14;1
 
-
-modules-left = bspwm filesystem xwindow
+modules-left = filesystem bspwm xwindow
 modules-right = xbacklight pulseaudio memory cpu battery wlan eth temperature date
 
 cursor-click = pointer
