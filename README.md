@@ -4,7 +4,7 @@
 
 <img src="https://user-images.githubusercontent.com/89218161/155859733-59d2fe19-0573-4080-94c4-768a75310412.png" alt="my profile picture" width="200" height="200">
 
-i am not responsible for problems you may get while installing this, and know that this isn't complete
+i am not responsible for problems you may get while installing this
 
 use **[ufetch](https://gitlab.com/jschx/ufetch)** or the one in usr/local/bin
 
@@ -94,6 +94,8 @@ Beware that all of them are configured for Xorg!
 
    >colourscheme: [catppuccin](https://github.com/catppuccin/catppuccin)
 
+**these pictures are old!**
+
 # bspwm:
 ![image](https://user-images.githubusercontent.com/89218161/152661623-bfa0f2dc-43dc-46a2-85b0-fa6ce60b243a.png)
 
@@ -111,9 +113,6 @@ i have not taken a picture yet as i am procastinating
 
 <img src="HOME/Pictures/Backgrounds/wallpaper.png">
 
-<img src="HOME/Pictures/Backgrounds/wallpaper-alt.png">
-
-Text is in [Comic Neue](http://www.comicneue.com/)
-
+<img src="HOME/Pictures/Backgrounds/wallpaper-old.png">
 
 
