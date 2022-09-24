@@ -30,19 +30,19 @@ ui='unknown'
 uitype='ui'
 if [ -n "${DE}" ]; then
 	ui="${DE}"
-	uitype='de'
+	uitype='DE'
 elif [ -n "${WM}" ]; then
 	ui="${WM}"
-	uitype='wm'
+	uitype='WM'
 elif [ -n "${DESKTOP_SESSION}" ]; then
 	ui="${DESKTOP_SESSION}"
-	uitype='wm'
+	uitype='WM'
 elif [ -n "${XDG_CURRENT_DESKTOP}" ]; then
 	ui="${XDG_CURRENT_DESKTOP}"
-	uitype='de'
+	uitype='DE'
 elif [ -n "${rcwm}" ]; then
 	ui="${rcwm}"
-	uitype='wm'
+	uitype='WM'
 elif [ -n "${XDG_SESSION_TYPE}" ]; then
 	ui="${XDG_SESSION_TYPE}"
 fi
@@ -75,11 +75,12 @@ c0="${reset}${magenta}"                # first color
 #${nc}${USER}${ic}@${nc}${host}${reset}
 
 cat <<EOF
-${c0}      /\\
-${c0}     /  \\ ${lc}os  : ${ic}${os}${reset}
-${c0}    /-_  \\ ${lc}kern: ${ic}${kernel}${reset}
-${c0}   /   "-_\\ ${lc}upt : ${ic}${uptime}${reset}
-${c0}  /    _-  \\ ${lc}pkgs: ${ic}${packages}${reset}
-${c0} /  _-  -_  \\ ${lc}sh  : ${ic}${shell}${reset}
-${c0}/_-"       -_\\ ${lc}${uitype}  : ${ic}${ui}${reset}
+${c0}      /\\       ┌┄
+${c0}     /  \\      │  ${lc}OS:        ${ic}${os}${reset}
+${c0}    /-_  \\     │  ${lc}Kernel:    ${ic}${kernel}${reset}
+${c0}   /   "-_\\    │  ${lc}Uptime:    ${ic}${uptime}${reset}
+${c0}  /    _-  \\   │  ${lc}Packages:  ${ic}${packages}${reset}
+${c0} /  _-  -_  \\  │  ${lc}Shell:     ${ic}${shell}${reset}
+${c0}/_-"       -_\\ │  ${lc}${uitype}:	     ${ic}${ui}${reset}
+${c0}               └┄
 EOF
