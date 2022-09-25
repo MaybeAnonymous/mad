@@ -1,4 +1,4 @@
 {
   "rust-analyzer.diagnostics.disabled": ["unresolved-import"],
-  "rust-analyzer.experimental.procAttrMacros": true,
+  "rust-analyzer.experimental.procAttrMacros": true
 }

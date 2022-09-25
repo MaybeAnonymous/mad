@@ -28,6 +28,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'vim-airline/vim-airline' " Airline status
   Plug 'vim-airline/vim-airline-themes' " Airline themes ( requires vim-airline )
   Plug 'vim-syntastic/syntastic' " More syntax
+  Plug 'zah/nim.vim' " Nim support
 
   Plug 'ryanoasis/vim-devicons' " Nice icons, must be last plugin
 call plug#end()
@@ -58,4 +59,3 @@ syntax enable
 set termguicolors
 colorscheme catppuccin
 set background=dark
-"hi Normal guibg=NONE ctermbg=NONE " Hide background color
