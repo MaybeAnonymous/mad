@@ -21,10 +21,10 @@ static const int smartgaps_fact          = 1;
 static const int swallowfloating         = 0; // swallow floating windows? 1 or 0
 static const int topbar                  = 1; // 1 = bar on top; 0 = bar on bottom
 static const unsigned int borderpx       = 2;
-static const unsigned int gappih         = 2; // gap inner horizontal
-static const unsigned int gappiv         = 2; // gap innver vertical
-static const unsigned int gappoh         = 2; // gap outer horizontal
-static const unsigned int gappov         = 2; // gap outer vertical
+static const unsigned int gappih         = 4; // gap inner horizontal
+static const unsigned int gappiv         = 4; // gap innver vertical
+static const unsigned int gappoh         = 4; // gap outer horizontal
+static const unsigned int gappov         = 4; // gap outer vertical
 static const unsigned int snap           = 16;
 
 // Status is to be shown on: -1 = all monitors; 0 = a specific monitor by index; 'A' = active monitor
@@ -260,6 +260,7 @@ static const char *dmenucmd[] = {
 };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browser[]  = { "chromium", NULL };
+static const char *browsertwo[]={ "librewolf", NULL};
 static const char *filemngr[] = { "thunar", NULL };
 static const char *scsh[]     = { "sh", "-c", "maim -s -u | xclip -selection clipboard -t image/png", NULL};
 static const char *fullscsh[] = { "sh", "-c", "maim | xclip -selection clipboard -t image/png", NULL };
@@ -289,6 +290,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,          spawn,                  {.v = dmenucmd } },
 	{ MODKEY,		                 XK_Return,     spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_c,          spawn,                  {.v = browser } },
+	{ MODKEY,							  XK_f,			  spawn,                  {.v = browsertwo } },
 	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = filemngr } },
 	{ MODKEY|ShiftMask,             XK_z,          spawn,                  {.v = fullscsh } },
 	{ MODKEY|ShiftMask,             XK_s,          spawn,                  {.v = scsh } },
@@ -342,7 +344,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_e,          quit,                   {0} },
 
 	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[1]} },
-	{ MODKEY,                       XK_f,          setlayout,              {.v = &layouts[2]} },
+	{ MODKEY|ControlMask,           XK_f,          setlayout,              {.v = &layouts[2]} },
 	{ MODKEY,                       XK_m,          setlayout,              {.v = &layouts[3]} },
 	{ MODKEY|ControlMask,           XK_w,          setlayout,              {.v = &layouts[4]} },
 	{ MODKEY|ControlMask|ShiftMask, XK_w,          setlayout,              {.v = &layouts[8]} },
