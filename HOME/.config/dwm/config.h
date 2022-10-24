@@ -14,7 +14,7 @@
 /*
 * appearence
  */
-static const int bar_height              = 24;// height of bar
+static const int bar_height              = 28;// height of bar
 static const int focusonwheel            = 0; // focus once you scroll; 1 or 0
 static const int showbar                 = 1;
 static const int smartgaps_fact          = 1;
@@ -71,10 +71,10 @@ static char titlenormbordercolor[]       = "#444444";
 static char titlenormfgcolor[]           = "#bbbbbb";
 static char titlenormfloatcolor[]        = "#db8fd9";
 
-static char titleselbgcolor[]            = "#f2cdcd";
-static char titleselbordercolor[]        = "#005577";
-static char titleselfgcolor[]            = "#161320";
-static char titleselfloatcolor[]         = "#005577";
+static char titleselbgcolor[]            = "#1a1826"; // #f2cdcd
+static char titleselbordercolor[]        = "#444444"; // #005577
+static char titleselfgcolor[]            = "#bbbbbb"; // #161320
+static char titleselfloatcolor[]         = "#db8fd9"; // #005577
 
 static char urgbgcolor[]                 = "#222222";
 static char urgbordercolor[]             = "#ff0000";

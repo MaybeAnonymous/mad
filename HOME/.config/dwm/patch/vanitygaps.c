@@ -24,11 +24,6 @@ togglegaps(const Arg *arg)
 {
 	enablegaps = !enablegaps;
 
-	updatebarpos(selmon);
-	for (Bar *bar = selmon->bar; bar; bar = bar->next)
-		XMoveResizeWindow(dpy, bar->win, bar->bx, bar->by, bar->bw, bar->bh);
-
-	drawbarwin(systray->bar);
 	arrange(NULL);
 }
 

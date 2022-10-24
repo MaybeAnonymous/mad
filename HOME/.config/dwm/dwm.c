@@ -45,6 +45,9 @@
 #include "util.h"
 
 
+
+
+
 /* macros */
 #define Button6                 6
 #define Button7                 7
@@ -2353,11 +2356,6 @@ updatebarpos(Monitor *m)
 	Bar *bar;
 	int y_pad = 0;
 	int x_pad = 0;
-	if (enablegaps)
-	{
-		y_pad = gappoh;
-		x_pad = gappov;
-	}
 
 
 	for (bar = m->bar; bar; bar = bar->next) {
@@ -2503,7 +2501,6 @@ updatesizehints(Client *c)
 	if (!XGetWMNormalHints(dpy, c->win, &size, &msize))
 		/* size is uninitialized, ensure that size.flags aren't used */
 		size.flags = PSize;
-
 	if (size.flags & PBaseSize) {
 		c->basew = size.base_width;
 		c->baseh = size.base_height;
