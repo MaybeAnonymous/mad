@@ -30,7 +30,13 @@ I must warn you that the main focus of this repository is to keep my dotfiles so
 
 ### Requirements
 
-**Applets>** nm-applet, blueman-applet, xfce4-clipman
+**Applets**
+
+* nm-applet
+
+* blueman-applet
+
+* xfce4-clipman
 
 **General**
 
