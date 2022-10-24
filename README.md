@@ -20,6 +20,8 @@ I must warn you that the main focus of this repository is to keep my dotfiles so
 
 * [Fish shell](https://fishshell.com)
 
+* [LightDM](https://github.com/canonical/lightdm)
+
 * Configured for [Xorg](https://www.x.org)
 
 * Tiling window managers ( [bspwm](https://github.com/baskerville/bspwm), [dwm](https://dwm.suckless.org), [i3](https://i3wm.org) and [qtile](https://www.qtile.org) )
