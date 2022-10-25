@@ -27,6 +27,7 @@ emoji = "rofi -show emoji"
 fshot = "sh -c 'maim | xclip -selection clipboard -t image/png'"
 shot = "sh -c 'maim -s -u | xclip -selection clipboard -t image/png'"
 browser = "chromium"
+browser_two = "librewolf"
 files = "thunar"
 
 #------------------#
@@ -112,6 +113,7 @@ keys = [
     Key([mod], "bracketright",         lazy.spawn(terminalsec),desc="Launch secondary terminal"),
     Key([mod,  "shift"], "Return",     lazy.spawn(files),      desc="Launch file browser"),
     Key([mod], "c",                    lazy.spawn(browser),    desc="Launch the web browser"),
+    Key([mod], "f",                    lazy.spawn(browser_two),desc="Launch the alternative browser"),
     Key([],    "XF86AudioRaiseVolume", lazy.spawn(raisevol)),
     Key([],    "XF86AudioLowerVolume", lazy.spawn(lowervol)),
     Key([],    "XF86AudioMute",        lazy.spawn(togglevol)),
@@ -185,7 +187,7 @@ LBLACK   = "#1e1d2f" # custom ( fits catppuccin )
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
                 widget.CurrentLayout(foreground=WHITE),
                 widget.GroupBox(active=FLAMINGO, inactive="#6e6c7e", highlight_method="block", block_highlight_text_color=BLACK, this_screen_border=FLAMINGO, 
@@ -206,16 +208,16 @@ screens = [
                 widget.Battery(charge_char="^", discharge_char="v", empty_char="x", notify_below=15, notification_timeout=5, update_interval=2,
                     foreground=WHITE),
                 widget.TextBox("|", foreground=WHITE),
-                widget.Clock(format="%Y-%m-%d %a %H:%M", foreground=WHITE),
+                widget.Clock(format="%Y-%m-%d (%a) %H:%M", foreground=WHITE),
                 widget.Systray(),
             ],
             24,
             background=LBLACK,
             margin=[
-                0, # top
-                8, # right
+                4, # top
+                4, # right
                 2, # bottom
-                8, # left
+                4, # left
                 ],
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
@@ -286,10 +288,6 @@ def _swallow(window):
 def _unswallow(window):
     if hasattr(window, 'parent'):
         window.parent.minimized = False
-
-
-
-
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
