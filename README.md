@@ -69,7 +69,10 @@ I must warn you that the main focus of this repository is to keep my dotfiles so
 **Dwm**
 
 * Read the [Flexipatch](https://github.com/bakkeby/dwm-flexipatch) documentation.
+
 * Optionally, [dmenu](https://tools.suckless.org/dmenu/).
+
+* [libxft-bgra](https://github.com/uditkarode/libxft-bgra)
 
 **Fonts**
 
