@@ -72,8 +72,6 @@ I must warn you that the main focus of this repository is to keep my dotfiles so
 
 * Optionally, [dmenu](https://tools.suckless.org/dmenu/).
 
-* [libxft-bgra](https://github.com/uditkarode/libxft-bgra)
-
 **Fonts**
 
 * [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
