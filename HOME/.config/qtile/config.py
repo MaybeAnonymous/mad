@@ -151,10 +151,10 @@ def init_basic_layout():
     return {
             "margin": 2,
             "border_width": 2,
-            "border_focus": "#f2cdcd",
-            "border_normal": "#6e6c7e",
-            "border_focus_stack": "#f2cdcd",
-            "border_normal_stack": "#6e6c7e"
+            "border_focus": "#fb4934",
+            "border_normal": "#3c3836",
+            "border_focus_stack": "#fb4934",
+            "border_normal_stack": "#3c3836"
     }
 basic_layout = init_basic_layout()
 
@@ -180,39 +180,39 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-FLAMINGO = "#f2cdcd" # flamingo ( catppuccin )
-WHITE    = "#d9e0ee" # white ( catppuccin )
-BLACK    = "#161320" # black0 ( catppuccin )
-LBLACK   = "#1e1d2f" # custom ( fits catppuccin )
+SELECTED   = "#f2cdcd"
+FG         = "#d9e0ee"
+SELECTEDFG = "#161320"
+BG         = "#1e1d2f" 
 
 screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayout(foreground=WHITE),
-                widget.GroupBox(active=FLAMINGO, inactive="#6e6c7e", highlight_method="block", block_highlight_text_color=BLACK, this_screen_border=FLAMINGO, 
-                    this_current_screen_border=FLAMINGO, rounded=False, padding=6, disable_drag=True),
-                widget.Prompt(foreground=WHITE),
-                widget.WindowName(foreground=WHITE),
+                widget.CurrentLayout(foreground=FG),
+                widget.GroupBox(active=SELECTED, inactive="#6e6c7e", highlight_method="block", block_highlight_text_color=SELECTEDFG, this_screen_border=SELECTED, 
+                    this_current_screen_border=SELECTED, rounded=False, padding=6, disable_drag=True),
+                widget.Prompt(foreground=FG),
+                widget.WindowName(foreground=FG),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("br", foreground=WHITE),
-                widget.Backlight(foreground=WHITE, backlight_name="intel_backlight"),
-                widget.TextBox("| vol", foreground=WHITE),
-                widget.Volume(foreground=WHITE),
-                widget.TextBox("| BAT", foreground=WHITE),
+                widget.TextBox("br", foreground=FG),
+                widget.Backlight(foreground=FG, backlight_name="intel_backlight"),
+                widget.TextBox("| vol", foreground=FG),
+                widget.Volume(foreground=FG),
+                widget.TextBox("| BAT", foreground=FG),
                 widget.Battery(charge_char="^", discharge_char="v", empty_char="x", notify_below=15, notification_timeout=5, update_interval=2,
-                    foreground=WHITE),
-                widget.TextBox("|", foreground=WHITE),
-                widget.Clock(format="%Y-%m-%d (%a) %H:%M", foreground=WHITE),
+                    foreground=FG),
+                widget.TextBox("|", foreground=FG),
+                widget.Clock(format="%Y-%m-%d (%a) %H:%M", foreground=FG),
                 widget.Systray(),
             ],
             24,
-            background=LBLACK,
+            background=BG,
             margin=[
                 4, # top
                 4, # right
