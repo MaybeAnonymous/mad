@@ -1,4 +1,4 @@
-New, work in progress README file.
+This is the catppuccin branch. It will not be updated.
 
 # MAD
 
@@ -89,5 +89,3 @@ I must warn you that the main focus of this repository is to keep my dotfiles so
 * Run `:PlugInstall` in Neovim when you first install it.
 
 * To build dwm, run `cd ~/.config/dwm && sudo make install; cd ~/.config/dmenu && sudo make install; cd ~/.config/dwmblocks && sudo make install`
-
-**Pictures will be added.**
