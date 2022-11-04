@@ -180,18 +180,19 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-SELECTED   = "#f2cdcd"
-FG         = "#d9e0ee"
-SELECTEDFG = "#161320"
-BG         = "#1e1d2f" 
+ACTIVE     = "#7c6f64"
+SELECTED   = "#32302f"
+SELECTEDFG = "#fbf1c7"
+BG         = "#282828" 
+FG         = "#ebdbb2"
 
 screens = [
     Screen(
         top=bar.Bar(
             [
                 widget.CurrentLayout(foreground=FG),
-                widget.GroupBox(active=SELECTED, inactive="#6e6c7e", highlight_method="block", block_highlight_text_color=SELECTEDFG, this_screen_border=SELECTED, 
-                    this_current_screen_border=SELECTED, rounded=False, padding=6, disable_drag=True),
+                widget.GroupBox(active=ACTIVE, inactive="#504945", highlight_method="block", block_highlight_text_color=SELECTEDFG, this_screen_border=SELECTED, 
+                    this_current_screen_border=SELECTED, rounded=False, padding=4, disable_drag=True),
                 widget.Prompt(foreground=FG),
                 widget.WindowName(foreground=FG),
                 widget.Chord(
