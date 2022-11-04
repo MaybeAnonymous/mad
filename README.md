@@ -28,7 +28,7 @@ I must warn you that the main focus of this repository is to keep my dotfiles so
 
 * [Alacritty](https://alacritty.org) terminal
 
-* [Catppuccin](https://github.com/catppuccin/catppuccin) color scheme
+* [Gruvbox](https://github.com/morhetz/gruvbox) colorscheme
 
 ### Requirements
 

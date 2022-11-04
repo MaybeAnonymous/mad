@@ -6,7 +6,7 @@
 call plug#begin("~/.vim/plugged")
   Plug 'SirVer/ultisnips'
   Plug 'airblade/vim-gitgutter'
-  Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+  Plug 'morhetz/gruvbox'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'elkowar/yuck.vim' " .yuck EWW config language filetype support
   Plug 'fladson/vim-kitty' " kitty.conf syntax highlighting
@@ -39,7 +39,7 @@ call plug#end()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'default'
-let g:airline_theme='atomic'
+let g:airline_theme='gruvbox'
 
 "
 " fzf
@@ -57,5 +57,6 @@ set shiftwidth=3
 
 syntax enable
 set termguicolors
-colorscheme catppuccin
+let g:gruvbox_italic=1
+colorscheme gruvbox
 set background=dark
