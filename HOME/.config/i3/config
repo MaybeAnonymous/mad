@@ -11,7 +11,7 @@ gaps top 23
 gaps inner 6
 for_window [class="^.*"] border pixel 1
 # class                  border  bground text    indicator child_border
-client.focused           #f2cdcd #0000ff #ffff33 #f2cdcd   #f2cdcd
+client.focused           #fb4934 #0000ff #ffff33 #fb4934   #fb4934
 client.unfocused         #575268 #424242 #1d1f21 #1d1f21   #575268
 
 focus_follows_mouse no
@@ -31,7 +31,7 @@ exec        --no-startup-id redshift-gtk
 exec        --no-startup-id xfce4-clipman
 exec        --no-startup-id xss-lock -l env XSECURELOCK_SHOW_USERNAME=0 XSECURELOCK_SHOW_HOSTNAME=0 XSECURELOCK_FONT=Jetbrains\ Mono XSECURELOCK_PASSWORD_PROMPT=time_hex xsecurelock
 exec_always --no-startup-id nitrogen --set-auto ~/Pictures/Backgrounds/wallpaper.png
-exec_always --no-startup-id $HOME/.config/polybar/scripts/startup.sh &
+exec_always --no-startup-id $HOME/.config/polybar/scripts/startup-i3.sh &
 
 #---------#
 # Devices #
@@ -55,6 +55,7 @@ bindsym $mod+Shift+s          exec --no-startup-id maim -s -u | xclip -selection
 bindsym $mod+Shift+z          exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym $mod+c                exec --no-startup-id chromium
 bindsym $mod+d                exec --no-startup-id rofi -show run -show-icons
+bindsym $mod+f                exec --no-startup-id librewolf
 bindsym XF86AudioLowerVolume  exec --no-startup-id pamixer -d5
 bindsym XF86AudioMute         exec --no-startup-id pamixer -t
 bindsym XF86AudioRaiseVolume  exec --no-startup-id pamixer -i5
@@ -144,7 +145,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+Control+e exec "i3-msg exit"
+bindsym $mod+Shift+e exec "i3-msg exit"
 
 # Resize mode | I did not really change much here, this is pretty much the default
 mode "resize" {
