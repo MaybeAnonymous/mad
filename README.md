@@ -54,7 +54,7 @@ I must warn you that the main focus of this repository is to keep my dotfiles so
 
 * [maim](https://github.com/naelstrof/maim)
 
-* [Neovim](https://neovim.io/) or [Helix](https://helix-editor.com)
+* [Neovim](https://neovim.io/)
 
 * [Nitrogen](https://github.com/l3ib/nitrogen)
 
