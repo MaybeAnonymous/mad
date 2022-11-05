@@ -90,4 +90,8 @@ I must warn you that the main focus of this repository is to keep my dotfiles so
 
 * To build dwm, run `cd ~/.config/dwm && sudo make install; cd ~/.config/dmenu && sudo make install; cd ~/.config/dwmblocks && sudo make install`
 
-**Pictures will be added.**
+### Pictures
+
+**dwm**
+
+![dwm.png](screenshots/dwm.png)
