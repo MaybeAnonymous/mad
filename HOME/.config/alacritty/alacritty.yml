@@ -39,7 +39,7 @@ window:
   decorations: full
 
   #  Background opacity, 0.0 is fully transparent, 1.0 is fully opaque. 
-  opacity: 1.0
+  opacity: 0.7
 
   #  Startup mode, valie values are: Windowed, Maximized, Fullscreen;
   # MacOS has extra values: SimpleFullscreen.
