@@ -9,8 +9,6 @@ super + Return
 	alacritty
 
 # browser
-super + c
-	chromium
 super + f
 	librewolf
 

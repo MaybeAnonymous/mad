@@ -53,7 +53,6 @@ bindsym $mod+Shift+d          exec --no-startup-id rofi -show drun -show-icons
 bindsym $mod+Shift+q          kill
 bindsym $mod+Shift+s          exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+z          exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym $mod+c                exec --no-startup-id chromium
 bindsym $mod+d                exec --no-startup-id rofi -show run -show-icons
 bindsym $mod+f                exec --no-startup-id librewolf
 bindsym XF86AudioLowerVolume  exec --no-startup-id pamixer -d5

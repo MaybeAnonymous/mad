@@ -46,40 +46,40 @@ static char hidnormfgcolor[]             = "#005577";
 static char hidselbgcolor[]              = "#222222";
 static char hidselfgcolor[]              = "#227799";
 
-static char normbgcolor[]                = "#282828";
+static char normbgcolor[]                = "#181825";
 static char normbordercolor[]            = "#444444";
-static char normfgcolor[]                = "#fbf1c7";
-static char normfloatcolor[]             = "#fb4934";
+static char normfgcolor[]                = "#bac2de";
+static char normfloatcolor[]             = "#f2cdcd";
 
-static char selbgcolor[]                 = "#fb4934";
-static char selbordercolor[]             = "#fb4934";
+static char selbgcolor[]                 = "#f2cdcd";
+static char selbordercolor[]             = "#f2cdcd";
 static char selfgcolor[]                 = "#cdd6f4";
-static char selfloatcolor[]              = "#fb4934";
+static char selfloatcolor[]              = "#f2cdcd";
 
-static char tagsnormbgcolor[]            = "#282828";
+static char tagsnormbgcolor[]            = "#181825";
 static char tagsnormbordercolor[]        = "#444444";
-static char tagsnormfgcolor[]            = "#ebdbb2";
-static char tagsnormfloatcolor[]         = "#fb4934";
+static char tagsnormfgcolor[]            = "#bac2de";
+static char tagsnormfloatcolor[]         = "#f2cdcd";
 
-static char tagsselbgcolor[]             = "#3c3836";
+static char tagsselbgcolor[]             = "#313244";
 static char tagsselbordercolor[]         = "#005577";
-static char tagsselfgcolor[]             = "#fbf1c7";
+static char tagsselfgcolor[]             = "#cdd6f4";
 static char tagsselfloatcolor[]          = "#005577";
 
-static char titlenormbgcolor[]           = "#282828";
+static char titlenormbgcolor[]           = "#181825";
 static char titlenormbordercolor[]       = "#444444";
-static char titlenormfgcolor[]           = "#fbf1c7";
-static char titlenormfloatcolor[]        = "#fb4934";
+static char titlenormfgcolor[]           = "#bac2de";
+static char titlenormfloatcolor[]        = "#f2cdcd";
 
-static char titleselbgcolor[]            = "#282828";
-static char titleselbordercolor[]        = "#444444";
-static char titleselfgcolor[]            = "#fbf1c7";
-static char titleselfloatcolor[]         = "#fb4934";
+static char titleselbgcolor[]            = "#181825"; // #f2cdcd
+static char titleselbordercolor[]        = "#444444"; // #005577
+static char titleselfgcolor[]            = "#bac2de"; // #161320
+static char titleselfloatcolor[]         = "#f2cdcd"; // #005577
 
 static char urgbgcolor[]                 = "#222222";
 static char urgbordercolor[]             = "#ff0000";
-static char urgfgcolor[]                 = "#fbf1c7";
-static char urgfloatcolor[]              = "#fb4934";
+static char urgfgcolor[]                 = "#bac2de";
+static char urgfloatcolor[]              = "#f2cdcd";
 
 static char *colors[][ColCount] = {
 	/*                       fg                bg                border                float */
@@ -259,7 +259,8 @@ static const char *dmenucmd[] = {
 	NULL
 };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *browser[]  = { "librewolf", NULL};
+static const char *browser[]  = { "chromium", NULL };
+static const char *browsertwo[]={ "librewolf", NULL};
 static const char *filemngr[] = { "thunar", NULL };
 static const char *scsh[]     = { "sh", "-c", "maim -s -u | xclip -selection clipboard -t image/png", NULL};
 static const char *fullscsh[] = { "sh", "-c", "maim | xclip -selection clipboard -t image/png", NULL };
@@ -288,7 +289,8 @@ static Key keys[] = {
 
 	{ MODKEY,                       XK_p,          spawn,                  {.v = dmenucmd } },
 	{ MODKEY,		                 XK_Return,     spawn,                  {.v = termcmd } },
-	{ MODKEY,                       XK_f,          spawn,                  {.v = browser } },
+	{ MODKEY,                       XK_c,          spawn,                  {.v = browser } },
+	{ MODKEY,							  XK_f,			  spawn,                  {.v = browsertwo } },
 	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = filemngr } },
 	{ MODKEY|ShiftMask,             XK_z,          spawn,                  {.v = fullscsh } },
 	{ MODKEY|ShiftMask,             XK_s,          spawn,                  {.v = scsh } },

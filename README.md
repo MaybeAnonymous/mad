@@ -14,7 +14,7 @@ I must warn you that the main focus of this repository is to keep my dotfiles so
 
 * Acer Aspire laptop
 
-* [Artix Linux](https://artixlinux.org) x86_64
+* [Artix Linux](https://artixlinux.org) x86\_64
 
 * [OpenRC](https://github.com/OpenRC/openrc)
 
@@ -47,6 +47,10 @@ I must warn you that the main focus of this repository is to keep my dotfiles so
 * [BrightnessCTL](https://github.com/Hummer12007/brightnessctl)
 
 * [Conky](https://github.com/brndnmtthws/conky) ( I no longer use it but the config's there )
+
+* [Librewolf](https://librewolf.net)
+
+* [pamixer](https://github.com/cdemoulins/pamixer)
 
 * [Rofi](https://github.com/davatorium/rofi)
 

@@ -26,8 +26,7 @@ drun = "rofi -show drun -show-icons"
 emoji = "rofi -show emoji"
 fshot = "sh -c 'maim | xclip -selection clipboard -t image/png'"
 shot = "sh -c 'maim -s -u | xclip -selection clipboard -t image/png'"
-browser = "chromium"
-browser_two = "librewolf"
+browser = "librewolf"
 files = "thunar"
 
 #------------------#
@@ -112,8 +111,7 @@ keys = [
     Key([mod], "Return",               lazy.spawn(terminal),   desc="Launch terminal"),
     Key([mod], "bracketright",         lazy.spawn(terminalsec),desc="Launch secondary terminal"),
     Key([mod,  "shift"], "Return",     lazy.spawn(files),      desc="Launch file browser"),
-    Key([mod], "c",                    lazy.spawn(browser),    desc="Launch the web browser"),
-    Key([mod], "f",                    lazy.spawn(browser_two),desc="Launch the alternative browser"),
+    Key([mod], "f",                    lazy.spawn(browser),    desc="Launch the web browser"),
     Key([],    "XF86AudioRaiseVolume", lazy.spawn(raisevol)),
     Key([],    "XF86AudioLowerVolume", lazy.spawn(lowervol)),
     Key([],    "XF86AudioMute",        lazy.spawn(togglevol)),
@@ -201,15 +199,15 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("br", foreground=FG),
+                widget.TextBox("☀️", foreground=FG),
                 widget.Backlight(foreground=FG, backlight_name="intel_backlight"),
-                widget.TextBox("| vol", foreground=FG),
-                widget.Volume(foreground=FG),
-                widget.TextBox("| BAT", foreground=FG),
-                widget.Battery(charge_char="^", discharge_char="v", empty_char="x", notify_below=15, notification_timeout=5, update_interval=2,
+                widget.TextBox("| 📢", foreground=FG),
+                widget.PulseVolume(foreground=FG, get_volume_command="pamixer"),
+                widget.TextBox("| 🔋", foreground=FG),
+                widget.Battery(charge_char="🔺", discharge_char="🔻", empty_char="🪫", notify_below=15, notification_timeout=5, update_interval=2,
                     foreground=FG),
                 widget.TextBox("|", foreground=FG),
-                widget.Clock(format="%Y-%m-%d (%a) %H:%M", foreground=FG),
+                widget.Clock(format="📅 %Y-%m-%d (%a) %H:%M", foreground=FG),
                 widget.Systray(),
             ],
             24,
