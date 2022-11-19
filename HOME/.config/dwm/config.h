@@ -36,7 +36,7 @@ static const int showsystray             = 1;
 static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
-static const char *fonts[]               = { "Jetbrains\\ Mono:size=8", "Noto\\ Color\\ Emoji:pixelsize=8:style=Regular" };
+static const char *fonts[]               = { "Jetbrains\\ Mono:size=8", "Noto\\ Color\\ Emoji:pixelsize=16:style=Regular" };
 static const char dmenufont[]            = "Jetbrains\\ Mono:size=8";
 
 static char c000000[]                    = "#000000"; // placeholder
