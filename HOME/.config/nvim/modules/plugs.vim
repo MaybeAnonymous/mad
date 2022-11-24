@@ -59,4 +59,5 @@ syntax enable
 set termguicolors
 let g:gruvbox_italic=1
 colorscheme gruvbox
-set background=dark
+" set background=dark
+hi Normal guibg=NONE ctermbg=NONE
