@@ -1,0 +1,19 @@
+List of folders that should be here:
+alacritty
+bspwm
+dmenu
+dunst
+dwm
+dwm-full
+dwmblocks
+fish
+fontconfig
+i3
+kitty
+neofetch
+nvim
+picom
+polybar
+qtile
+rofi
+sxhkd
