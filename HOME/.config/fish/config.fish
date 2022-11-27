@@ -4,15 +4,13 @@
 # | |_| / __| '_ \ <>< o O
 # |  _| \__ \ | | |  O  o
 # |_| |_|___/_| |_| ><>   .
-# friendly, interactive shell
-
-fish_add_path $HOME/.cargo/bin
+# friendly interactive shell
 
 #--------------#
 # My Variables #
 #--------------#
 set EDITOR nvim
-set -U MICRO_TRUECOLOR 1
+
 
 #----------------#
 # Fish Variables #
@@ -30,9 +28,9 @@ set fish_greeting
 set fish_pager_color_completion -o cyan # pager autocompletion
 set fish_pager_color_description yellow
 
-#---------------------------#
+#----------------------------#
 # Functions && Abbreviations #
-#---------------------------#
+#----------------------------#
 abbr "clr" "builtin history --clear && clear"
 abbr "l" "exa -l -a"
 abbr "la" "exa -a"

@@ -2,7 +2,8 @@
 # VERSION: 3.0
 SETUVAR EDITOR:nvim
 SETUVAR MICRO_TRUECOLOR:1
-SETUVAR __fish_initialized:3100
+SETUVAR --export --path PATH:/home/mainu/\x2elocal/bin/\x1e/home/mainu/\x2elocal/bin/\x1e/home/mainu/\x2ecargo/bin\x1e/usr/local/bin\x1e/usr/bin\x1e/bin\x1e/usr/local/sbin\x1e/home/mainu/\x2edotnet/tools\x1e/usr/lib/jvm/default/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_clr:builtin\x20history\x20\x2d\x2dclear\x20\x26\x26\x20clear
 SETUVAR _fish_abbr_ga:git\x20add\x20\x2e
 SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dm
@@ -45,4 +46,5 @@ SETUVAR fish_pager_color_completion:\x2do\x1ecyan
 SETUVAR fish_pager_color_description:yellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/home/mainu/\x2eemacs\x2ed/bin\x1e/home/mainu/\x2ecargo/bin
+SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_user_paths:/home/mainu/\x2elocal/bin
