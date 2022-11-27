@@ -13,7 +13,7 @@
 exec $HOME/.config/dunst/scripts/startup.sh &
 exec $HOME/.config/polybar/scripts/startup.sh &
 lxpolkit &
-nitrogen --set-auto "$HOME/Pictures/Backgrounds/wallpaper.png" &
+feh --bg-scale "$HOME/Pictures/Backgrounds/wallpaper.png" &
 pgrep blueman-applet || blueman-applet &
 #pgrep conky || conky &
 pgrep nm-applet || nm-applet &
@@ -25,7 +25,7 @@ xss-lock -l env XSECURELOCK_SHOW_USERNAME=0 XSECURELOCK_SHOW_HOSTNAME=0 XSECUREL
 #---------#
 # Devices #
 #---------#
-#setxkbmap -layout br -model abnt2 & # Use X11 settings
+#setxkbmap -layout br -model abnt2 & # Use X11 settings instead
 xinput --set-int-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Natural Scrolling Enabled" 8 1 &
 xinput set-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Disable While Typing Enabled" 1 &
 xinput set-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Tapping Enabled" 1 &
