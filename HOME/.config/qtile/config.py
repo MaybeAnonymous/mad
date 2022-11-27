@@ -4,7 +4,7 @@
 # _|    _|    _|      _|  _|  _|
 #   _|_|_|      _|_|  _|  _|    _|_|_|
 #       _| tiling window managers are great
-#       _| ( no wayland config support, sorry )
+#       _| ( no wayland support, sorry )
 
 
 from typing import List  # noqa: F401
@@ -13,30 +13,31 @@ from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
-mod = "mod4"
+MOD = "mod4"
 
 #----------#
 # Commands #
 #----------#
-terminal = "alacritty"
-terminalsec = "kitty"
-menu = "dmenu_run"
-run = "rofi -show run -show-icons"
-drun = "rofi -show drun -show-icons"
-emoji = "rofi -show emoji"
-fshot = "sh -c 'maim | xclip -selection clipboard -t image/png'"
-shot = "sh -c 'maim -s -u | xclip -selection clipboard -t image/png'"
-browser = "librewolf"
-files = "thunar"
+BROWSER = "librewolf"
+ROFI_DRUN = "rofi -show drun -show-icons"
+EMOJI = "rofi -show emoji"
+FILE_MANAGER = "thunar"
+FULL_SCREENSHOT = "sh -c 'maim | xclip -selection clipboard -t image/png'"
+DMENU = "dmenu_run"
+ROFI_RUN = "rofi -show run -show-icons"
+SCREENSHOT = "sh -c 'maim -s -u | xclip -selection clipboard -t image/png'"
+TERM = "alacritty"
 
 #------------------#
 # Control Commands #
 #------------------#
-raisevol = "pamixer -i5"
-lowervol = "pamixer -d5"
-togglevol = "pamixer -t"
-raisebr = "brightnessctl s 5%+"
-lowerbr = "brightnessctl s 5%-"
+# VOL is short for volume;
+# BR is short for brightness.
+RAISE_VOL = "pamixer -i5"
+LOWER_VOL = "pamixer -d5"
+TOGGLE_MUTE = "pamixer -t"
+RAISE_BR = "brightnessctl s 5%+"
+LOWER_BR = "brightnessctl s 5%-"
 
 import os
 import subprocess
@@ -56,25 +57,25 @@ keys = [
     #------------------#
     # Window Switching #
     #------------------#
-    Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
-    Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([MOD], "h", lazy.layout.left(), desc="Move focus to left"),
+    Key([MOD], "l", lazy.layout.right(), desc="Move focus to right"),
+    Key([MOD], "j", lazy.layout.down(), desc="Move focus down"),
+    Key([MOD], "k", lazy.layout.up(), desc="Move focus up"),
+    Key([MOD], "space", lazy.layout.next(), desc="Move window focus to other window"),
    
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
+    Key([MOD, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
+    Key([MOD, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
+    Key([MOD, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
+    Key([MOD, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
    
-    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
-    Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
-    Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([MOD, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
+    Key([MOD, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
+    Key([MOD, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
+    Key([MOD, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
+    Key([MOD], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
  
     Key(
-        [mod, "control"],
+        [MOD, "control"],
         "Return",
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
@@ -83,92 +84,98 @@ keys = [
     #-------#
     # Menus #
     #-------#
-    Key([mod], "p", lazy.spawn(menu), desc="Launch dmenu"),
-    Key([mod, "shift"], "d", lazy.spawn(drun)),
-    Key([mod, "control"], "d", lazy.spawn(run)),
-    Key([mod], "period", lazy.spawn(emoji)),
+    Key([MOD], "p", lazy.spawn(DMENU), desc="Launch dmenu"),
+    Key([MOD, "shift"], "d", lazy.spawn(ROFI_DRUN)),
+    Key([MOD, "control"], "d", lazy.spawn(ROFI_RUN)),
+    Key([MOD], "period", lazy.spawn(EMOJI)),
 
     #---------#
     # Layouts #
     #---------#
-    Key([mod],          "Tab",  lazy.next_layout(),  desc="Toggle between layouts"),
-    Key([mod, "shift"], "q",    lazy.window.kill(),  desc="Kill focused window"),
-    Key([mod, "shift"], "r",    lazy.reload_config(),desc="Reload the config"),
-    Key([mod, "shift"], "e",    lazy.shutdown(),     desc="Shutdown Qtile"),
-    Key([mod],          "r",    lazy.spawncmd(),     desc="Spawn a command using a prompt widget"),
-    Key([mod, "shift"], "f",    lazy.window.toggle_fullscreen()),
-    Key([mod, "shift"], "space",lazy.window.toggle_floating()),
+    Key([MOD, "shift"], "e",    lazy.shutdown(),     desc="Shutdown Qtile"),
+    Key([MOD, "shift"], "f",    lazy.window.toggle_fullscreen()),
+    Key([MOD, "shift"], "q",    lazy.window.kill(),  desc="Kill focused window"),
+    Key([MOD, "shift"], "r",    lazy.reload_config(),desc="Reload the config"),
+    Key([MOD, "shift"], "space",lazy.window.toggle_floating()),
+    Key([MOD],          "r",    lazy.spawncmd(),     desc="Spawn a command using a prompt widget"),
+    Key([MOD],          "Tab",  lazy.next_layout(),  desc="Toggle between layouts"),
 
     #-------------#
     # Screenshots #
     #-------------#
-    Key([mod, "shift"], "z", lazy.spawn(fshot), desc="Take a full screenshot"),
-    Key([mod, "shift"], "s", lazy.spawn(shot), desc="Take a selected screenshot"),
+    Key([MOD, "shift"], "s", lazy.spawn(SCREENSHOT), desc="Take a selected screenshot"),
+    Key([MOD, "shift"], "z", lazy.spawn(FULL_SCREENSHOT), desc="Take a full screenshot"),
 
     #-----------#
     # Utilities #
     #-----------#
-    Key([mod], "Return",               lazy.spawn(terminal),   desc="Launch terminal"),
-    Key([mod], "bracketright",         lazy.spawn(terminalsec),desc="Launch secondary terminal"),
-    Key([mod,  "shift"], "Return",     lazy.spawn(files),      desc="Launch file browser"),
-    Key([mod], "f",                    lazy.spawn(browser),    desc="Launch the web browser"),
-    Key([],    "XF86AudioRaiseVolume", lazy.spawn(raisevol)),
-    Key([],    "XF86AudioLowerVolume", lazy.spawn(lowervol)),
-    Key([],    "XF86AudioMute",        lazy.spawn(togglevol)),
-    Key([],    "XF86MonBrightnessUp",  lazy.spawn(raisebr)),
-    Key([],    "XF86MonBrightnessDown",lazy.spawn(lowerbr)),
+    Key([MOD,  "shift"], "Return",     lazy.spawn(FILE_MANAGER),      desc="Launch file browser"),
+    Key([MOD], "f",                    lazy.spawn(BROWSER),    desc="Launch the web browser"),
+    Key([MOD], "Return",               lazy.spawn(TERM),   desc="Launch terminal"),
+
+    Key([],    "XF86AudioLowerVolume", lazy.spawn(LOWER_VOL)),
+    Key([],    "XF86AudioMute",        lazy.spawn(TOGGLE_MUTE)),
+    Key([],    "XF86AudioRaiseVolume", lazy.spawn(RAISE_VOL)),
+    Key([],    "XF86MonBrightnessDown",lazy.spawn(LOWER_BR)),
+    Key([],    "XF86MonBrightnessUp",  lazy.spawn(RAISE_BR)),
 ]
 
-groups = [Group(i) for i in "123456789"]
+# List from "1" to "9", the amount of desktops.
+GROUPS = [Group(i) for i in "123456789"]
 
-for i in groups:
+for i in GROUPS:
     keys.extend(
         [
             # mod1 + letter of group = switch to group
             Key(
-                [mod],
+                [MOD],
                 i.name,
                 lazy.group[i.name].toscreen(),
                 desc="Switch to group {}".format(i.name),
             ),
             # mod1 + shift + letter of group = switch to & move focused window to group
             Key(
-                [mod, "shift"],
+                [MOD, "shift"],
                 i.name,
                 lazy.window.togroup(i.name, switch_group=True),
                 desc="Switch to & move focused window to group {}".format(i.name),
             ),
             # Or, use below if you prefer not to switch to that group.
             # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+            # Key([MOD, "shift"], i.name, lazy.window.togroup(i.name),
             #     desc="move focused window to group {}".format(i.name)),
         ]
     )
 
+MARGIN = 2
+BORDER_WIDTH = 2
+BORDER_FOCUS = "#fb4934"
+BORDER_NORMAL = "#3c3836"
+
 def init_basic_layout():
     return {
-            "margin": 2,
-            "border_width": 2,
-            "border_focus": "#fb4934",
-            "border_normal": "#3c3836",
-            "border_focus_stack": "#fb4934",
-            "border_normal_stack": "#3c3836"
+            "margin": MARGIN, # Gap
+            "border_width": BORDER_WIDTH,
+            "border_focus": BORDER_FOCUS,
+            "border_normal": BORDER_NORMAL,
+            "border_focus_stack": BORDER_FOCUS,
+            "border_normal_stack": BORDER_NORMAL
     }
-basic_layout = init_basic_layout()
+BASIC_LAYOUT = init_basic_layout()
 
 layouts = [
-    layout.Columns(**basic_layout),
+    layout.Columns(**BASIC_LAYOUT),
     # layout.MonadTall(),
     # layout.MonadWide(),
-    # layout.RatioTile(**basic_layout),
+    # layout.RatioTile(**BASIC_LAYOUT),
     # layout.Stack(num_stacks=2),
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
-    layout.Bsp(**basic_layout),
-    # layout.Matrix(**basic_layout),
-    layout.Max(**basic_layout),
-    layout.Zoomy(**basic_layout),
+    layout.Bsp(**BASIC_LAYOUT),
+    # layout.Matrix(**BASIC_LAYOUT),
+    layout.Max(**BASIC_LAYOUT),
+    layout.Zoomy(**BASIC_LAYOUT),
 ]
 
 widget_defaults = dict(
@@ -179,10 +186,10 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 ACTIVE     = "#7c6f64"
+BG         = "#282828" # BackGround
+FG         = "#ebdbb2" # ForeGround
 SELECTED   = "#32302f"
 SELECTEDFG = "#fbf1c7"
-BG         = "#282828" 
-FG         = "#ebdbb2"
 
 screens = [
     Screen(
@@ -210,13 +217,13 @@ screens = [
                 widget.Clock(format="📅 %Y-%m-%d (%a) %H:%M", foreground=FG),
                 widget.Systray(),
             ],
-            24,
+            28, # Height
             background=BG,
             margin=[
-                4, # top
-                4, # right
-                2, # bottom
-                4, # left
+                0, # Top
+                0, # Right
+                MARGIN, # Bottom
+                0, # Left
                 ],
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
@@ -228,9 +235,9 @@ screens = [
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front()),
+    Drag([MOD], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+    Drag([MOD], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Click([MOD], "Button2", lazy.window.bring_to_front()),
 ]
 
 dgroups_key_binder = None
@@ -249,9 +256,9 @@ floating_layout = layout.Floating(
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
     ],
-    border_width=2,
-    border_focus="#f2cdcd",
-    border_normal="#6e6c7e",
+    border_width = BORDER_WIDTH,
+    border_focus = BORDER_FOCUS,
+    border_normal = BORDER_NORMAL,
 )
 auto_fullscreen = True
 focus_on_window_activation = "smart"
