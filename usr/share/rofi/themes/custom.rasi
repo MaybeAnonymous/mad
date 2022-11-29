@@ -13,11 +13,11 @@
     foreground:                  rgba ( 235, 219, 178, 100 % );
     background:                  rgba ( 29, 32, 33, 100 % );
     background-color:            rgba ( 30, 29, 47, 0 % );
-    scrollbar-color:		     @lightfg;
+    scrollbar-color:	         @blue;
     separatorcolor:              @foreground;
     border-color:                @foreground;
     selected-normal-foreground:  @lightbg;
-    selected-normal-background:  @lightfg;
+    selected-normal-background:  @red;
     selected-active-foreground:  @background;
     selected-active-background:  @blue;
     selected-urgent-foreground:  @background;
@@ -38,17 +38,17 @@
 window {
     background-color: @background;
     border:           0;
-    padding:          5;
-    border-radius: 0px;
+    padding:          6px;
+    border-radius:    0px;
 }
 mainbox {
-    border:  0;
-    padding: 0;
+    border: 0;
+    padding: 0px;
 }
 message {
     border:       2px 0px 0px ;
     border-color: @separatorcolor;
-    padding:      1px ;
+    padding:      1px;
 }
 textbox {
     text-color: @foreground;
