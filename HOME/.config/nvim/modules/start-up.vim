@@ -10,6 +10,8 @@ if has('syntax')
 endif
 
 " Variables
+" Lines with " vim-sleuth should be managed by vim-sleuth but had to
+" be manually set for some reason.
 set autoindent
 set backspace=indent,eol,start
 set clipboard=unnamedplus " Use system clipboard.
@@ -30,11 +32,12 @@ set notimeout ttimeout ttimeoutlen=200
 set number " Show line numbers, use this and relativenumber to get relative line numbers.
 set pastetoggle=<F11>
 set ruler
-"set shiftwidth=3 " vim-sleuth
+set shiftwidth=4 " vim-sleuth
 set showcmd
 set showmatch 
 set smartcase
-"set softtabstop=3 " vim-sleuth
+set softtabstop=4 " vim-sleuth
+set tabstop=4 " vim-sleuth
 set t_vb=
 set ttyfast " Speed up scrolling.
 set visualbell

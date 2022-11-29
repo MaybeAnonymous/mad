@@ -1,3 +1,8 @@
+
+" Must be put before plugins are loaded.
+" Makes ALE and CoC work together.
+let g:ale_disable_lsp = 1
+
 " Plugins
 call plug#begin("~/.vim/plugged")
   Plug 'airblade/vim-gitgutter' " Show what changed in a file in a git repo.
@@ -5,6 +10,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'dense-analysis/ale' " Linting
   Plug 'editorconfig/editorconfig-vim' " Support for .editorconfig files.
   Plug 'fladson/vim-kitty' " Support for kitty.conf.
+  Plug 'honza/vim-snippets'
   Plug 'itchyny/vim-gitbranch' " Show current git branch. -- May be removed as there is already vim-fugitive.
   Plug 'khaveesh/vim-fish-syntax' " Support for .fish files.
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
