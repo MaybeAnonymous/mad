@@ -17,17 +17,26 @@ set splitright
 " ==gi means to go back to insert mode.
 " inoremap is used for insert move, nnoremap is for normal mode.
 " <CR> is the Return key.
-inoremap <A-Down> <Esc>:m .+1<CR>==gi " Move the selected line down.
-inoremap <A-Up> <Esc>:m .-2<CR>==gi " Move the selected line up.
+" Move the selected line down.
+inoremap <A-Down> <Esc>:m .+1<CR>==gi 
+" Move the selected line up.
+inoremap <A-Up> <Esc>:m .-2<CR>==gi
 inoremap <silent> <A-y> <Esc>:redo<CR>==gi
 inoremap <silent> <A-z> <Esc>:undo<CR>==gi
-nnoremap <silent> <C-Q> :bd<CR> " Close selected buffer.
-nnoremap <silent> <C-s> :w<CR> " Save the current file.
-nnoremap <silent> <C-z> za<CR> " Toggle folds.
-nnoremap <silent> <esc> :noh<esc> " Remove highlighting from search.
-nnoremap <silent> <C-Left> :tabprevious<CR> " Go to previous tab.
-nnoremap <silent> <C-Right> :tabnext<CR> " Go to next tab.
-nnoremap <silent> <A-t> :tabnew<CR> " Open a new tab.
+" Close selected buffer.
+nnoremap <silent> <C-Q> :bd<CR> 
+" Save the current file.
+nnoremap <silent> <C-s> :w<CR> 
+" Toggle folds.
+nnoremap <silent> <C-z> za<CR> 
+" Remove highlighting from search.
+nnoremap <silent> <esc> :noh<esc> 
+" Go to previous tab.
+nnoremap <silent> <C-Left> :tabprevious<CR> 
+" Go to next tab.
+nnoremap <silent> <C-Right> :tabnext<CR> 
+" Open a new tab.
+nnoremap <silent> <A-t> :tabnew<CR> 
 
 " Open multiple files as tabs by default
 augroup open-tabs

@@ -46,7 +46,9 @@ I must warn you that the main focus of this repository is to keep my dotfiles so
 
 * [BrightnessCTL](https://github.com/Hummer12007/brightnessctl)
 
-* [Conky](https://github.com/brndnmtthws/conky) ( I no longer use it but the config's there )
+* [Conky](https://github.com/brndnmtthws/conky)
+
+* [feh](https://github.com/derf/feh)
 
 * [Librewolf](https://librewolf.net)
 
@@ -60,9 +62,7 @@ I must warn you that the main focus of this repository is to keep my dotfiles so
 
 * [Neovim](https://neovim.io/)
 
-* [Nitrogen](https://github.com/l3ib/nitrogen)
-
-* [picom-jonaburg-fix](https://github.com/Arian8j2/picom-jonaburg-fix)
+* [Jonaburg's Picom](https://github.com/jonaburg/picom)
 
 * [Xsecurelock](https://github.com/google/xsecurelock)
 

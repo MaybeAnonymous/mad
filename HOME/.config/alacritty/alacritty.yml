@@ -66,8 +66,6 @@ scrolling:
 #-------#
 # Fonts #
 #-------#
-# Note:
-#  These are all mostly self-explanatory, there will not be many comments in this section.
 font:
   normal:
     family: Jetbrains Mono
@@ -85,12 +83,12 @@ font:
   size: 10.0 # Font size
 
   offset:
-    x: 0 # Letter spacing
+    x: 1 # Letter spacing
     y: 0 # Line spacing
 
   #  Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
-  # right, increasing `y` moves the glyph upward. ( This default comment explains well! )
+  # right, increasing `y` moves the glyph upward.
   glyph_offset:
     x: 0
     y: 0
