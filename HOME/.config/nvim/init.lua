@@ -4,8 +4,8 @@
 local Plug = vim.fn['plug#']
 local set = vim.opt
 
--- Runtime
--- set.runtimepath = set.runtimepath
+-- Before plugins are loaded
+vim.g['ale_disable_lsp'] = 1
 
 -- Plugins
 vim.call('plug#begin', '~/.config/nvim/plugged')
