@@ -33,6 +33,10 @@ Plug 'ryanoasis/vim-devicons'
 vim.call('plug#end')
 
 -- Neovim variables
+if vim.fn.has('filetype') then
+	vim.cmd('filetype indent plugin on')
+end
+
 if vim.fn.has('mouse') then
 	set.mouse = 'a'
 end
