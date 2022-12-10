@@ -10,23 +10,24 @@ vim.g['ale_disable_lsp'] = 1
 -- Plugins
 vim.call('plug#begin', '~/.config/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
-Plug 'morhetz/gruvbox'
 Plug 'dense-analysis/ale' -- Linting
 Plug 'editorconfig/editorconfig-vim' -- Support for .editorconfig files.
 Plug 'fladson/vim-kitty' -- Support for kitty.conf.
 Plug 'honza/vim-snippets'
 Plug 'khaveesh/vim-fish-syntax' -- Support for .fish files.
-Plug ('mg979/vim-visual-multi', {branch = 'master'})
 Plug 'mhinz/vim-startify' -- Start screen.
-Plug ('neoclide/coc.nvim', {branch = 'release'}) -- VSCode-like code completion.
+Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdcommenter' -- Automatic text commenter.
 Plug 'scrooloose/nerdtree' -- Tree file management.
 Plug 'tmsvg/pear-tree' -- Pair quotes, parentheses, HTML tags, etc.
 Plug 'tpope/vim-fugitive' -- Good git support.
 Plug 'tpope/vim-sleuth' -- Indentation management.
-Plug('turbio/bracey.vim', {['do'] = 'npm install --prefix server'}) -- Live-edit HTML, CSS and JS.
 Plug 'vim-airline/vim-airline' -- A status bar.
 Plug 'vim-airline/vim-airline-themes'
+Plug ('mg979/vim-visual-multi', {branch = 'master'})
+Plug ('neoclide/coc.nvim', {branch = 'release'}) -- VSCode-like code completion.
+Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'}) -- Better syntax highlighting.
+Plug('turbio/bracey.vim', {['do'] = 'npm install --prefix server'}) -- Live-edit HTML, CSS and JS.
 
 -- This must be the last plugin.
 Plug 'ryanoasis/vim-devicons'
