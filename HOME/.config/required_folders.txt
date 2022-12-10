@@ -15,5 +15,6 @@ nvim
 picom
 polybar
 qtile
+redshift
 rofi
 sxhkd
