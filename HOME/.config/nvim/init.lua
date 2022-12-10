@@ -100,6 +100,7 @@ vim.g['gruvbox_italic'] = 1
 	<CR> is the return key.
 ]]
 local map = vim.keymap.set
+vim.g.mapleader = ' '
 
 map('i', '<A-Down>', '<Esc>:m .+1<CR>==gi', {silent = true}) -- Move the selected line up.
 map('i', '<A-Up>', '<Esc>:m .-2<CR>==gi', {silent = true}) -- Move the selected line down.
@@ -114,6 +115,9 @@ map('n', '<C-s>', ':w<CR>', {silent = true})
 map('n', '<C-z>', 'za', {silent = true})
 map('n', '<Esc>', ':noh<Esc>', {silent = true})
 map('n', '<A-t>', ':tabnew<CR>', {silent = true})
+
+map('n', '<Leader>v', ':vsplit<CR>', {silent = true})
+map('n', '<Leader>h', ':split<CR>', {silent = true})
 
 -- Augroup (vimscript)
 vim.cmd [[
