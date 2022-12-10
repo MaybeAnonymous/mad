@@ -123,6 +123,14 @@ map('n', '<A-t>', ':tabnew<CR>', {silent = true})
 map('n', '<Leader>v', ':vsplit<CR>', {silent = true})
 map('n', '<Leader>h', ':split<CR>', {silent = true})
 
+-- Keybinds (vimscript)
+--[[
+	These are specifically for changing the CoC completion key to Tab.
+	Couldn't figure out how to do this in Lua.
+]]
+vim.cmd('inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\\<C-g>u\\<TAB>"')
+vim.cmd('inoremap <silent><expr> <CR> "\\<c-g>u\\<CR>"')
+
 -- Augroup (vimscript)
 vim.cmd [[
 :augroup open-tabs
