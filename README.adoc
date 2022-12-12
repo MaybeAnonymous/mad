@@ -22,13 +22,15 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 * *Window managers:*
 
+** https://i3wm.org[i3]
+
 ** https://github.com/baskerville/bspwm[bspwm]
 
 ** https://dwm.suckless.org[dwm]
 
-** https://i3wm.org[i3]
-
 ** https://www.qtile.org[qtile]
+
+** https://awesomewm.org[awesomewm]
 
 * *Terminal:* https://alacritty.org[Alacritty]
 
