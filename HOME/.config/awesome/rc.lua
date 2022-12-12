@@ -47,14 +47,10 @@ do
 end
 -- }}}
 
--- {{{ Start up and signals
+-- {{{ Start up
 -- Run the initialization script
 awful.util.spawn_with_shell("~/.config/awesome/autostart.sh")
 
--- Disable minimization
-client.connect_signal("property::minimized", function(c)
-    c.minimized = false
-end)
 -- }}}
 
 -- {{{ Variable definitions
@@ -332,18 +328,6 @@ globalkeys = gears.table.join(
     awful.key({ mod, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
 
-    awful.key({ mod, "Control" }, "n",
-              function ()
-                  local c = awful.client.restore()
-                  -- Focus restored client
-                  if c then
-                    c:emit_signal(
-                        "request::activate", "key.unminimize", {raise = true}
-                    )
-                  end
-              end,
-              {description = "restore minimized", group = "client"}),
-
     -- Prompt
     awful.key({ mod }, "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
@@ -588,4 +572,18 @@ end) ]]
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+-- Floating windows always on top
+client.connect_signal("property::floating", function(c)
+    if c.floating then
+        c.ontop = true
+    else
+        c.ontop = false
+    end
+end)
+
+-- Disable minimization
+client.connect_signal("property::minimized", function(c)
+    c.minimized = false
+end)
 -- }}}
