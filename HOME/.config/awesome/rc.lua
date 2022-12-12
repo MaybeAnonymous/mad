@@ -22,6 +22,10 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+-- User widgets
+local brightness_widget = require("widgets.brightness-widget.brightness")
+local volume_widget = require("widgets.volume-widget.volume")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -57,13 +61,20 @@ awful.util.spawn_with_shell("~/.config/awesome/autostart.sh")
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("~/.config/awesome/themes/default/theme.lua")
 
--- This is used later as the default terminal and editor to run.
+-- Default apps
 local terminal = "alacritty"
 local editor = os.getenv("EDITOR") or "nvim"
 local editor_cmd = terminal .. " -e " .. editor
 local app_launcher = "rofi -show drun -show-icons"
 local browser = "librewolf"
 local file_manager = "thunar"
+
+-- Utilities
+local volume_up = "pamixer -i5"
+local volume_down = "pamider -d5"
+local volume_toggle = "pamixer -t"
+
+local lock = "xset s activate"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -228,8 +239,17 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            wibox.container.margin(volume_widget{
+                widget_type = "horizontal_bar"
+            }, 4, 4),
+            wibox.container.margin(brightness_widget{
+                type = "arc",
+                program = "brightnessctl",
+                step = 5,
+                tooltip = true
+            }, 4, 4),
             keyboard_layout,
-            wibox.layout.margin(wibox.widget.systray(), 4, 4, 4, 4),
+            wibox.layout.margin(wibox.widget.systray(), 4, 4),
             clock_widget,
             s.mylayoutbox,
         },
@@ -297,7 +317,7 @@ globalkeys = gears.table.join(
         end,
         {description = "go back", group = "client"}),
 
-    -- Standard program
+    -- Default apps
     awful.key({ mod,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ mod, "Shift"   }, "d", function () awful.spawn(app_launcher) end,
@@ -306,6 +326,23 @@ globalkeys = gears.table.join(
               {description = "open the browser", group = "launcher"}),
     awful.key({ mod, "Shift" }, "Return", function () awful.spawn(file_manager) end,
               {description = "open the file manager", group = "launcher"}),
+
+    -- Utilities
+    awful.key({                }, "XF86MonBrightnessUp", function () brightness_widget:inc() end,
+              {description = "raise the brightness", group = "custom"}),
+    awful.key({                }, "XF86MonBrightnessDown", function () brightness_widget:dec() end,
+              {description = "lower the brightness", group = "custom"}),
+
+    awful.key({                }, "XF86AudioRaiseVolume", function () volume_widget:inc(5) end,
+              {description = "raise the volume", group = "custom"}),
+    awful.key({                }, "XF86AudioLowerVolume", function () volume_widget:dec(5) end,
+              {description = "lower the volume", group = "custom"}),
+    awful.key({                }, "XF86AudioMute", function () volume_widget:toggle() end,
+              {description = "toggle mute", group = "custom"}),
+
+    awful.key({ mod,           }, "l", function () awful.spawn(lock) end,
+              {description = "activate the locker", group = "custom"}),
+
     awful.key({ mod, "Shift"   }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ mod, "Shift"   }, "e", awesome.quit,
