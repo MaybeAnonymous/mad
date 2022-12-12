@@ -70,10 +70,6 @@ local browser = "librewolf"
 local file_manager = "thunar"
 
 -- Utilities
-local volume_up = "pamixer -i5"
-local volume_down = "pamider -d5"
-local volume_toggle = "pamixer -t"
-
 local lock = "xset s activate"
 
 -- Default modkey.
@@ -133,6 +129,11 @@ local keyboard_layout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 local clock_widget = wibox.widget.textclock()
 clock_widget.format = " %Y-%m-%d %H:%M "
+
+-- The battery widget, default is BAT1
+local battery_widget = awful.widget.watch("bash -c 'echo $(cat /sys/class/power_supply/BAT1/capacity)%'", 5)
+
+local separator = wibox.widget.textbox(" | ")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -239,16 +240,18 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.container.margin(volume_widget{
+            volume_widget{
                 widget_type = "horizontal_bar"
-            }, 4, 4),
-            wibox.container.margin(brightness_widget{
+            },
+            separator,
+            brightness_widget{
                 type = "arc",
                 program = "brightnessctl",
-                step = 5,
-                tooltip = true
-            }, 4, 4),
+                step = 5
+            },
             keyboard_layout,
+            separator,
+            battery_widget,
             wibox.layout.margin(wibox.widget.systray(), 4, 4),
             clock_widget,
             s.mylayoutbox,
