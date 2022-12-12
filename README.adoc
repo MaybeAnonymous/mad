@@ -46,6 +46,8 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 * xfce4-clipman
 
+* redshift-gtk
+
 === General
 
 * https://github.com/Hummer12007/brightnessctl[BrightnessCTL]

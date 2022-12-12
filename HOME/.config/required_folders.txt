@@ -1,5 +1,6 @@
 List of folders that should be here:
 alacritty
+awesome
 bspwm
 dmenu
 dunst

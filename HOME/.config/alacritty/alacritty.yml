@@ -43,7 +43,7 @@ window:
 
   #  Startup mode, valie values are: Windowed, Maximized, Fullscreen;
   # MacOS has extra values: SimpleFullscreen.
-  startup_mode: Maximized
+  startup_mode: Windowed
 
   #  Default Window title
   title: Alacritty
