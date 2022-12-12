@@ -340,8 +340,8 @@ globalkeys = gears.table.join(
     awful.key({                }, "XF86AudioMute", function () volume_widget:toggle() end,
               {description = "toggle mute", group = "custom"}),
 
-    awful.key({ mod,           }, "l", function () awful.spawn(lock) end,
-              {description = "activate the locker", group = "custom"}),
+    awful.key({ mod,           }, ";", function () awful.spawn(lock) end,
+              {description = "lock the session", group = "custom"}),
 
     awful.key({ mod, "Shift"   }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
