@@ -52,7 +52,7 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 === General
 
-* https://github.com/Hummer12007/brightnessctl[BrightnessCTL]
+* https://github.com/Hummer12007/brightnessctl[brightnessctl-git]
 
 * https://github.com/brndnmtthws/conky[Conky]
 
