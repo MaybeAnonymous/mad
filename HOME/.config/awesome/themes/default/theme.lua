@@ -96,7 +96,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "$HOME/Pictures/Backgrounds/wallpaper.png" 
+theme.wallpaper = "~/Pictures/Backgrounds/wallpaper.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
@@ -123,7 +123,7 @@ theme.awesome_icon = theme_assets.awesome_icon(
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = "gruvbox-dark-icons-gtk"
+-- theme.icon_theme = "gruvbox-dark-icons-gtk"
 
 -- User-set
 theme.tasklist_disable_icon = true
