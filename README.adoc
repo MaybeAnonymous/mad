@@ -1,0 +1,100 @@
+= MAD
+
+*MaybeAnonymous' Dotfiles*
+
+== Before installing
+
+This repository's focus is to backup my dotfiles, if you're not me or an experienced user, I wouldn't recommend installing these.
+
+== My setup
+
+* *Device:* Acer Aspire Laptop
+
+* *OS:* https://artixlinux.org[Artix Linux]
+
+* *Init:* https://github.com/OpenRC/openrc[OpenRC]
+
+* *Shell:* https://fishshell.com[Fish]
+
+* *Display manager:* https://github.com/canonical/lightdm[LightDM]
+
+* *Server:* https://www.x.org[Xorg]
+
+* *Window managers:*
+
+** https://github.com/baskerville/bspwm[bspwm]
+
+** https://dwm.suckless.org[dwm]
+
+** https://i3wm.org[i3]
+
+** https://www.qtile.org[qtile]
+
+* *Terminal:* https://alacritty.org[Alacritty]
+
+* *Browser:* https://librewolf.net[Librewolf]
+
+* *Color scheme:* https://github.com/morhetz/gruvbox[Gruvbox]
+
+== Requirements
+
+=== Applets
+
+* nm-applet
+
+* blueman-applet
+
+* xfce4-clipman
+
+=== General
+
+* https://github.com/Hummer12007/brightnessctl[BrightnessCTL]
+
+* https://github.com/brndnmtthws/conky[Conky]
+
+* https://github.com/derf/feh[feh]
+
+* https://github.com/cdemoulins/pamixer[pamixer]
+
+* https://github.com/davatorium/rofi[Rofi]
+
+** https://github.com/Mange/rofi-emoji[Emoji plugin]
+
+* https://github.com/naelstrof/maim[maim]
+
+* https://neovim.io/[Neovim]
+
+* https://github.com/jonaburg/picom[Picom]
+
+* https://github.com/google/xsecurelock[xsecurelock]
+
+=== bspwm
+
+* https://github.com/MaybeAnonymous/bspswallow[bspswallow]
+
+=== dwm
+
+* Read the https://github.com/bakkeby/dwm-flexipatch[Flexipatch] documentation.
+
+=== Fonts
+
+* https://www.jetbrains.com/lp/mono/[Jetbrains Mono]
+
+* Siji
+
+* Powerline fonts
+
+* https://www.nerdfonts.com/[Symbols Nerd Fonts]
+
+* Ubuntu Font
+
+== Notes
+
+* Run `:PlugInstall` in Neovim to install the plugins.
+
+* Build dwm with `cd ~/.config/dwm && sudo make install; cd ~/.config/dmenu && sudo make install; cd ~/.config/dwmblocks && sudo make install`
+
+== Pictures
+
+image::screenshots/dwm.png[Screenshot of dwm]
+
