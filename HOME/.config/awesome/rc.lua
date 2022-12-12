@@ -70,6 +70,8 @@ local browser = "librewolf"
 local file_manager = "thunar"
 
 -- Utilities
+local screenshot = "bash -c 'maim | xclip -selection clipboard -t image/png'"
+local screenshot_sel = "bash -c 'maim -s -u | xclip -selection clipboard -t image/png'"
 local lock = "xset s activate"
 
 -- Default modkey.
@@ -332,19 +334,23 @@ globalkeys = gears.table.join(
 
     -- Utilities
     awful.key({                }, "XF86MonBrightnessUp", function () brightness_widget:inc() end,
-              {description = "raise the brightness", group = "custom"}),
+              {description = "raise the brightness", group = "control"}),
     awful.key({                }, "XF86MonBrightnessDown", function () brightness_widget:dec() end,
-              {description = "lower the brightness", group = "custom"}),
+              {description = "lower the brightness", group = "control"}),
 
     awful.key({                }, "XF86AudioRaiseVolume", function () volume_widget:inc(5) end,
-              {description = "raise the volume", group = "custom"}),
+              {description = "raise the volume", group = "control"}),
     awful.key({                }, "XF86AudioLowerVolume", function () volume_widget:dec(5) end,
-              {description = "lower the volume", group = "custom"}),
+              {description = "lower the volume", group = "control"}),
     awful.key({                }, "XF86AudioMute", function () volume_widget:toggle() end,
-              {description = "toggle mute", group = "custom"}),
-
+              {description = "toggle mute", group = "control"}),
     awful.key({ mod,           }, ";", function () awful.spawn(lock) end,
-              {description = "lock the session", group = "custom"}),
+              {description = "lock the session", group = "control"}),
+
+    awful.key({ mod, "Shift" }, "z", function () awful.spawn(screenshot) end,
+              {description = "screenshot the screen", group = "screenshot"}),
+    awful.key({ mod, "Shift" }, "s", function () awful.spawn(screenshot_sel) end,
+              {description = "screenshot the selection", group = "screenshot"}),
 
     awful.key({ mod, "Shift"   }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
