@@ -268,15 +268,7 @@ end)
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
-    awful.button({ mod }, 1,
-    function (c)
-        c.maximized_horizontal = false
-        c.maximized_vertical   = false
-        awful.mouse.client.move(c)
-    end),
-    awful.button({ }, 3, function () main_menu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
+    awful.button({ }, 3, function () main_menu:toggle() end)
 ))
 -- }}}
 
