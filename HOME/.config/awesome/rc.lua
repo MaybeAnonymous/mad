@@ -62,17 +62,20 @@ awful.util.spawn_with_shell("~/.config/awesome/autostart.sh")
 beautiful.init("~/.config/awesome/themes/default/theme.lua")
 
 -- Default apps
-local terminal = "alacritty"
-local editor = os.getenv("EDITOR") or "nvim"
-local editor_cmd = terminal .. " -e " .. editor
-local app_launcher = "rofi -show drun -show-icons"
 local browser = "librewolf"
+local editor = os.getenv("EDITOR") or "nvim"
 local file_manager = "thunar"
+local terminal = "alacritty"
+local editor_cmd = terminal .. " -e " .. editor
 
 -- Utilities
+local lock = "xset s activate"
 local screenshot = "bash -c 'maim | xclip -selection clipboard -t image/png'"
 local screenshot_sel = "bash -c 'maim -s -u | xclip -selection clipboard -t image/png'"
-local lock = "xset s activate"
+
+local app_launcher = "rofi -show drun -show-icons"
+local emoji_selector = "rofi -show emoji -show-icons"
+local program_launcher = "rofi -show run -show-icons"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -326,14 +329,19 @@ globalkeys = gears.table.join(
     -- Default apps
     awful.key({ mod,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ mod, "Shift"   }, "d", function () awful.spawn(app_launcher) end,
-              {description = "open the app launcher", group = "launcher"}),
     awful.key({ mod,           }, "f", function () awful.spawn(browser) end,
               {description = "open the browser", group = "launcher"}),
     awful.key({ mod, "Shift" }, "Return", function () awful.spawn(file_manager) end,
               {description = "open the file manager", group = "launcher"}),
 
     -- Utilities
+    awful.key({ mod, "Shift"   }, "d", function () awful.spawn(app_launcher) end,
+              {description = "open the app launcher", group = "launcher"}),
+    awful.key({ mod,           }, "d", function () awful.spawn(program_launcher) end,
+              {description = "open the program launcher", group = "launcher"}),
+    awful.key({ mod,           }, ".", function () awful.spawn(emoji_selector) end,
+              {description = "open the emoji selector", group = "launcher"}),
+
     awful.key({                }, "XF86MonBrightnessUp", function () brightness_widget:inc() end,
               {description = "raise the brightness", group = "control"}),
     awful.key({                }, "XF86MonBrightnessDown", function () brightness_widget:dec() end,
