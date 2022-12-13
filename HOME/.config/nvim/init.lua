@@ -3,6 +3,7 @@
 -- Variables
 local Plug = vim.fn['plug#']
 local set = vim.opt
+local setwo = vim.o
 
 -- Before plugins are loaded
 vim.g['ale_disable_lsp'] = 1
@@ -54,8 +55,10 @@ set.confirm = true -- Ask for confirmation when quitting Neovim.
 set.cursorline = true -- Highlight selected line.
 set.encoding = 'UTF-8'
 set.foldcolumn = '1'
+set.foldenable = false
+setwo.foldexpr = 'nvim_treesitter#foldexpr()'
 set.foldlevel = 99
-set.foldmethod = 'syntax'
+setwo.foldmethod = 'expr'
 set.hidden = true -- Open multiple files at once
 set.hlsearch = true
 set.ignorecase = true
@@ -98,6 +101,13 @@ set.wildmode = 'longest,list' -- Tab completions
 -- Other plugin variables
 vim.g['fzf_layout'] = {window = {width = 0.8, height = 0.5, highlight = 'Comment'}}
 vim.g['gruvbox_italic'] = 1
+
+-- Treesitter
+require("nvim-treesitter.configs").setup {
+	highlight = {
+		enable = true
+	}
+}
 
 -- Keybinds
 --[[
