@@ -243,7 +243,8 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             volume_widget{
-                widget_type = "horizontal_bar"
+                widget_type = "horizontal_bar",
+                mute_color = beautiful.border_focus
             },
             separator,
             brightness_widget{
