@@ -410,25 +410,7 @@ clientkeys = gears.table.join(
     awful.key({ mod,           }, "o",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
     awful.key({ mod,           }, "t",      function (c) c.ontop = not c.ontop            end,
-              {description = "toggle keep on top", group = "client"}),
-    awful.key({ mod,           }, "m",
-        function (c)
-            c.maximized = not c.maximized
-            c:raise()
-        end ,
-        {description = "(un)maximize", group = "client"}),
-    awful.key({ mod, "Control" }, "m",
-        function (c)
-            c.maximized_vertical = not c.maximized_vertical
-            c:raise()
-        end ,
-        {description = "(un)maximize vertically", group = "client"}),
-    awful.key({ mod, "Shift"   }, "m",
-        function (c)
-            c.maximized_horizontal = not c.maximized_horizontal
-            c:raise()
-        end ,
-        {description = "(un)maximize horizontally", group = "client"})
+              {description = "toggle keep on top", group = "client"})
 )
 
 -- Bind all key numbers to tags.
@@ -625,8 +607,21 @@ client.connect_signal("property::floating", function(c)
     c.ontop = c.floating and not c.fullscreen
 end)
 
--- Disable minimization
+--[[
+    Disable minimization
+    Note: the keybindings for this have been removed,
+          get them from the default configuration file.
+]]
 client.connect_signal("property::minimized", function(c)
     c.minimized = false
+end)
+
+--[[
+    Disable maximization
+    Note: the keybindings for this have been removed,
+          get them from the default configuration file.
+]]
+client.connect_signal("property::maximized", function(c)
+    c.maximized = false
 end)
 -- }}}

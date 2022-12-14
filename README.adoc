@@ -72,6 +72,10 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 * https://github.com/google/xsecurelock[xsecurelock]
 
+=== awesomewm
+
+* Extra widgets from https://github.com/streetturtle/awesome-wm-widgets[here].
+
 === bspwm
 
 * https://github.com/MaybeAnonymous/bspswallow[bspswallow]
