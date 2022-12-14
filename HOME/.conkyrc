@@ -1,5 +1,3 @@
-
-
 conky.config = {
     alignment = 'middle_right',
     background = true,
@@ -15,8 +13,8 @@ conky.config = {
     draw_shades = false,
     extra_newline = false,
     font = 'Jetbrains\\ Mono:size=10',
-    gap_x = 0,
-    gap_y = 0,
+    gap_x = 4,
+    gap_y = 4,
     minimum_height = 5,
     minimum_width = 5,
     net_avg_samples = 2,
@@ -40,7 +38,6 @@ conky.config = {
 }
 
 conky.text = [[
-#${color fb4934}Info:${color ebdbb2} ${scroll 32 Conky $conky_version - $sysname $nodename $kernel $machine}
 ${color fb4934}Hostname:${color ebdbb2} $nodename
 $hr
 ${color fb4934}Uptime:${color ebdbb2} $uptime
@@ -54,7 +51,7 @@ $hr
 ${color fb4934}File systems:
  / ${color ebdbb2}${fs_used /}/${fs_size /} ${fs_bar 6 /}
 $hr
-${color fb4934}Name              PID     CPU%   MEM%
+${color fb4934} Name               PID     CPU%   MEM%
 ${color ebdbb2} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
 ${color ebdbb2} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
 ${color ebdbb2} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}

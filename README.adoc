@@ -104,5 +104,9 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 == Pictures
 
+image::screenshots/awesome.png[Screenshot of awesomewm]
+
+image::screenshots/bspwm.png[Screenshot of bspwm]
+
 image::screenshots/dwm.png[Screenshot of dwm]
 
