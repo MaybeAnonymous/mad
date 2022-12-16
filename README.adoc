@@ -76,6 +76,8 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 * Extra widgets from https://github.com/streetturtle/awesome-wm-widgets[here].
 
+** https://sourceforge.net/projects/acpiclient/files/acpiclient/[acpi]
+
 === bspwm
 
 * https://github.com/MaybeAnonymous/bspswallow[bspswallow]
