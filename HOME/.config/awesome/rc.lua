@@ -22,10 +22,6 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- User widgets
-local brightness_widget = require("widgets.brightness-widget.brightness")
-local volume_widget = require("widgets.volume-widget.volume")
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -54,12 +50,11 @@ end
 -- {{{ Start up
 -- Run the initialization script
 awful.util.spawn_with_shell("~/.config/awesome/autostart.sh")
-
 -- }}}
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("~/.config/awesome/themes/default/theme.lua")
+beautiful.init("~/.config/awesome/theme/theme.lua")
 
 -- Default apps
 local browser = "librewolf"
@@ -133,10 +128,13 @@ local keyboard_layout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 local clock_widget = wibox.widget.textclock()
-clock_widget.format = " %Y-%m-%d %H:%M "
+clock_widget.format = " %Y-%m-%d (%a) %H:%M "
 
--- The battery widget, default is BAT1
-local battery_widget = awful.widget.watch("bash -c 'echo $(cat /sys/class/power_supply/BAT1/capacity)%'", 5)
+-- Battery widget, depends on the `acpi` command
+local battery_widget = require("widgets.batteryarc-widget.batteryarc")
+
+local brightness_widget = require("widgets.brightness-widget.brightness")
+local volume_widget = require("widgets.volume-widget.volume")
 
 local separator = wibox.widget.textbox(" | ")
 
@@ -245,19 +243,30 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            volume_widget{
+            wibox.widget.textbox("vol:"),
+            volume_widget {
                 widget_type = "horizontal_bar",
                 mute_color = beautiful.border_focus
             },
             separator,
-            brightness_widget{
+            wibox.widget.textbox("br:"),
+            brightness_widget {
+                font = beautiful.font,
+                path_to_icon = "~/.config/awesome/widgets/brightness-widget/brightness.svg",
                 type = "arc",
+                percentage = true,
+                tooltip = true,
                 program = "brightnessctl",
                 step = 5
             },
-            keyboard_layout,
             separator,
-            battery_widget,
+            keyboard_layout,
+            wibox.widget.textbox("BAT:"),
+            battery_widget {
+                font = beautiful.font,
+                notification_position = "top_right",
+                timeout = 5
+            },
             wibox.layout.margin(wibox.widget.systray(), 4, 4),
             clock_widget,
             s.mylayoutbox,
