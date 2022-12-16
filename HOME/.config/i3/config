@@ -3,17 +3,19 @@
 #  / / /_ <
 # / /___/ /
 #/_//____/
-#
+
 set $mod Mod4
 set $alt Mod1
 
-gaps top 23
+gaps outer 4
 gaps inner 6
-for_window [class="^.*"] border pixel 1
+gaps top 27
+for_window [class="^.*"] border pixel 2
 
+#  Colors
 # Class                  Border  BG      Text    Indicator Child border
-client.focused           #fb4934 #0000ff #ffff33 #fb4934   #fb4934
-client.unfocused         #575268 #424242 #1d1f21 #1d1f21   #575268
+client.focused           #fb4934 #fb4934 #fbf1c7 #fb4934   #fb4934
+client.unfocused         #575268 #575268 #282828 #1d1f21   #575268
 
 focus_follows_mouse no
 font pango:Jetbrains Mono 11
@@ -25,7 +27,7 @@ exec --no-startup-id dex --autostart --environment i3 &
 # Start Up #
 #----------#
 exec        --no-startup-id blueman-applet &
-#exec        --no-startup-id conky &
+# exec        --no-startup-id conky &
 exec        --no-startup-id nm-applet &
 exec        --no-startup-id picom --vsync --backend glx --config $HOME/.config/picom/picom-i3.conf &
 exec        --no-startup-id redshift-gtk &
@@ -37,39 +39,47 @@ exec_always --no-startup-id $HOME/.config/polybar/scripts/startup-i3.sh &
 #---------#
 # Devices #
 #---------# You may want to remove this if you are using a different computer
-# exec --no-startup-id setxkbmap -model abnt2 -layout br -variant abnt2 # Use X11 settings instead
 exec --no-startup-id xinput --set-int-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Natural Scrolling Enabled" 8 1
 exec --no-startup-id xinput set-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Disable While Typing Enabled" 1
 exec --no-startup-id xinput set-prop 'ELAN0504:00 04F3:3091 Touchpad' 'libinput Tapping Enabled' 1
 exec --no-startup-id xinput set-prop "Logitech M510" 324 0.45
 exec --no-startup-id xset m 0 0
 
-#--------------#
-# Key Bindings #
-#--------------#
+#----------#
+# Keybinds #
+#----------#
+
+#  Programs
 bindcode $mod+60              exec --no-startup-id rofi -show emoji
 bindsym $mod+Return           exec --no-startup-id alacritty
 bindsym $mod+Shift+Return     exec --no-startup-id thunar
 bindsym $mod+Shift+d          exec --no-startup-id rofi -show drun -show-icons
-bindsym $mod+Shift+q          kill
 bindsym $mod+Shift+s          exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+z          exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym $mod+d                exec --no-startup-id rofi -show run -show-icons
 bindsym $mod+f                exec --no-startup-id librewolf
+
+#  Audio control
+bindsym XF86AudioRaiseVolume  exec --no-startup-id pamixer -i5
 bindsym XF86AudioLowerVolume  exec --no-startup-id pamixer -d5
 bindsym XF86AudioMute         exec --no-startup-id pamixer -t
-bindsym XF86AudioRaiseVolume  exec --no-startup-id pamixer -i5
+
+#  Brightness control
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl s 5%+
-floating_modifier         $mod 
+
+#  Other
+bindsym $mod+Shift+q          kill
+floating_modifier             $mod 
 set $refresh_i3status killall -SIGUSR1 i3status
 
-#-----------------------------#
-# Window Manager Key Bindings #
-#-----------------------------#
+
+#-------------------------#
+# Window manager keybinds #
+#-------------------------#
 
 #  Focusing
-#   "Vim Keys"
+#    Vim Keys
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
@@ -79,9 +89,12 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
+#    Other
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
 
 #  Move focused window
-#   "Vim Keys"
+#   Vim Keys
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
@@ -96,20 +109,28 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+h split h
 bindsym $mod+v split v
 
-#  Other && Layouts
+#  Layouts
 bindsym $mod+Shift+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+t layout toggle split
 bindsym $mod+Shift+space floating toggle
-bindsym $mod+Control+space focus mode_toggle # Focus between tiling and floating windows
-bindsym $mod+space layout toggle # Toggle layout
-bindsym $mod+a focus parent
-#bindsym $mod+d focus child
+#    Focus between tiling and floating windows
+bindsym $mod+Control+space focus mode_toggle 
+#    Toggle layout
+bindsym $mod+space layout toggle 
 
-#-------#
-# Other #
-#-------#
+#  Other
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-msg exit"
+
+
+#------------#
+# Workspaces #
+#------------#
+
+#  Variables
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -121,6 +142,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+#  Keybinds
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -143,11 +165,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-msg exit"
-
-# Resize mode | I did not really change much here, this is pretty much the default
+# Resize mode
 mode "resize" {
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
@@ -171,5 +189,3 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# i3bar would be here but I use polybar
