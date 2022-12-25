@@ -4,6 +4,8 @@
 
 == Before installing
 
+*Warning:* this branch is not being updated.
+
 This repository's focus is to backup my dotfiles, if you're not me or an experienced user, I wouldn't recommend installing these.
 
 == My setup
