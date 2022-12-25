@@ -11,7 +11,7 @@
     lightbg:                     #2d353b;
     foreground:                  #d3c6aa;
     background:                  #232a2e;
-    background-color:            @background;
+    background-color:            #00000000;
     scrollbar-color:	         @blue;
     separatorcolor:              @foreground;
     border-color:                @foreground;
