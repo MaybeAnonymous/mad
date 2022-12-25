@@ -25,39 +25,39 @@ xterm*highlightSelection: true
 xterm*scrollBar:       false
 xterm*faceName: Jetbrains\ Mono-10
 
-*background: #1E1E2E
-*foreground: #D9E0EE
+! special
+*.foreground:   #d8caac
+*.background:   #232a2e
+*.cursorColor:  #d8caac
 
-! Gray
-*color0: #6E6C7E
-*color8: #988BA2
+! black
+*.color0:       #868d80
+*.color8:       #868d80
 
-! Red
-*color1: #F28FAD
-*color9: #F28FAD
+! red
+*.color1:       #e68183
+*.color9:       #e68183
 
-! Green
-*color2: #ABE9B3
-*color10: #ABE9B3
+! green
+*.color2:       #a7c080
+*.color10:      #a7c080
 
-! Yellow
-*color3: #FAE3B0
-*color11:  #FAE3B0
+! yellow
+*.color3:       #d9bb80
+*.color11:      #d9bb80
 
-! Blue
-*color4: #96CDFB
-*color12: #96CDFB
+! blue
+*.color4:       #89beba
+*.color12:      #89beba
 
-! Maguve
-*color5: #DDB6F2
-*color13: #DDB6F2
+! magenta
+*.color5:       #d3a0bc
+*.color13:      #d3a0bc
 
-! Pink
-*color6: #F5C2E7
-*color14: #F5C2E7
+! cyan
+*.color6:       #87c095
+*.color14:      #87c095
 
-! Whites
-*color7: #C3BAC6
-*color15: #D9E0EE
-
-
+! white
+*.color7:       #d8caac
+*.color15:      #d8caac
