@@ -3,9 +3,9 @@ conky.config = {
     background = true,
     border_width = 1,
     cpu_avg_samples = 2,
-    default_color = 'ebdbb2',
-    default_outline_color = '1d2021',
-    default_shade_color = 'ebdbb2',
+    default_color = 'd3c6aa',
+    default_outline_color = '232a2e',
+    default_shade_color = 'd3c6aa',
     double_buffer = true,
     draw_borders = false,
     draw_graph_borders = true,
@@ -25,7 +25,7 @@ conky.config = {
     out_to_x = true,
     own_window = true,
     own_window_class = 'Conky',
-    own_window_colour = '282828',
+    own_window_colour = '232a2e',
     own_window_transparent = true,
     own_window_type = 'override',
     show_graph_range = false,
@@ -38,24 +38,24 @@ conky.config = {
 }
 
 conky.text = [[
-${color fb4934}Hostname:${color ebdbb2} $nodename
+${color e67e80}Hostname:${color d3c6aa} $nodename
 $hr
-${color fb4934}Uptime:${color ebdbb2} $uptime
-${color fb4934}Frequency (in MHz):${color ebdbb2} $freq
-${color fb4934}Frequency (in GHz):${color ebdbb2} $freq_g
-${color fb4934}RAM Usage:${color ebdbb2} $mem/$memmax - $memperc% ${membar 4}
-${color fb4934}Swap Usage:${color ebdbb2} $swap/$swapmax - $swapperc% ${swapbar 4}
-${color fb4934}CPU Usage:${color ebdbb2} $cpu% ${cpubar 4}
-${color fb4934}Processes:${color ebdbb2} $processes  ${color fb4934}Running:${color ebdbb2} $running_processes
+${color e67e80}Uptime:${color d3c6aa} $uptime
+${color e67e80}Frequency (in MHz):${color d3c6aa} $freq
+${color e67e80}Frequency (in GHz):${color d3c6aa} $freq_g
+${color e67e80}RAM Usage:${color d3c6aa} $mem/$memmax - $memperc% ${membar 4}
+${color e67e80}Swap Usage:${color d3c6aa} $swap/$swapmax - $swapperc% ${swapbar 4}
+${color e67e80}CPU Usage:${color d3c6aa} $cpu% ${cpubar 4}
+${color e67e80}Processes:${color d3c6aa} $processes  ${color e67e80}Running:${color d3c6aa} $running_processes
 $hr
-${color fb4934}File systems:
- / ${color ebdbb2}${fs_used /}/${fs_size /} ${fs_bar 6 /}
+${color e67e80}File systems:
+ / ${color d3c6aa}${fs_used /}/${fs_size /} ${fs_bar 6 /}
 $hr
-${color fb4934} Name               PID     CPU%   MEM%
-${color ebdbb2} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
-${color ebdbb2} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
-${color ebdbb2} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
-${color ebdbb2} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
-${color ebdbb2} ${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}
-${color ebdbb2} ${top name 6} ${top pid 6} ${top cpu 6} ${top mem 6}
+${color e67e80} Name               PID     CPU%   MEM%
+${color d3c6aa} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color d3c6aa} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color d3c6aa} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color d3c6aa} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+${color d3c6aa} ${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}
+${color d3c6aa} ${top name 6} ${top pid 6} ${top cpu 6} ${top mem 6}
 ]]
