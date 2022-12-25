@@ -20,9 +20,7 @@ from libqtile.lazy import lazy
 
 MOD = "mod4"
 
-#----------#
-# Commands #
-#----------#
+# > Commands
 BROWSER = "librewolf"
 ROFI_DRUN = "rofi -show drun -show-icons"
 EMOJI = "rofi -show emoji"
@@ -33,9 +31,7 @@ ROFI_RUN = "rofi -show run -show-icons"
 SCREENSHOT = "sh -c 'maim -s -u | xclip -selection clipboard -t image/png'"
 TERM = "alacritty"
 
-#------------------#
-# Control Commands #
-#------------------#
+# > Control Commands
 RAISE_VOL = "pamixer -i5"
 LOWER_VOL = "pamixer -d5"
 TOGGLE_MUTE = "pamixer -t"
@@ -52,9 +48,7 @@ keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
 
-    #------------------#
-    # Window Switching #
-    #------------------#
+    # > Window switching
     Key([MOD], "h", lazy.layout.left(),     desc = "Move focus to left"),
     Key([MOD], "l", lazy.layout.right(),    desc = "Move focus to right"),
     Key([MOD], "j", lazy.layout.down(),     desc = "Move focus down"),
@@ -79,17 +73,13 @@ keys = [
         desc = "Toggle between split and unsplit sides of stack",
     ),
 
-    #-------#
-    # Menus #
-    #-------#
+    # > Menus
     Key([MOD], "p", lazy.spawn(DMENU), desc = "Launch dmenu"),
     Key([MOD, "shift"], "d", lazy.spawn(ROFI_DRUN)),
     Key([MOD, "control"], "d", lazy.spawn(ROFI_RUN)),
     Key([MOD], "period", lazy.spawn(EMOJI)),
 
-    #---------#
-    # Layouts #
-    #---------#
+    # > Layouts
     Key([MOD, "shift"], "e",     lazy.shutdown(),      desc = "Shutdown Qtile"),
     Key([MOD, "shift"], "f",     lazy.window.toggle_fullscreen()),
     Key([MOD, "shift"], "q",     lazy.window.kill(),   desc = "Kill focused window"),
@@ -98,15 +88,11 @@ keys = [
     Key([MOD],          "r",     lazy.spawncmd(),      desc = "Spawn a command using a prompt widget"),
     Key([MOD],          "Tab",   lazy.next_layout(),   desc = "Toggle between layouts"),
 
-    #-------------#
-    # Screenshots #
-    #-------------#
+    # > Screenshots
     Key([MOD, "shift"], "s", lazy.spawn(SCREENSHOT),      desc = "Take a selected screenshot"),
     Key([MOD, "shift"], "z", lazy.spawn(FULL_SCREENSHOT), desc = "Take a full screenshot"),
 
-    #-----------#
-    # Utilities #
-    #-----------#
+    # > Utilities
     Key([MOD,  "shift"], "Return", lazy.spawn(FILE_MANAGER), desc = "Launch file browser"),
     Key([MOD], "f",                lazy.spawn(BROWSER),      desc = "Launch the web browser"),
     Key([MOD], "Return",           lazy.spawn(TERM),         desc = "Launch terminal"),
@@ -139,10 +125,10 @@ for i in GROUPS:
         ]
     )
 
-MARGIN = 2
-BORDER_WIDTH = 2
-BORDER_FOCUS = "#fb4934"
-BORDER_NORMAL = "#3c3836"
+MARGIN = 4
+BORDER_WIDTH = 3
+BORDER_FOCUS = "#a7c080"
+BORDER_NORMAL = "#425047"
 
 def init_basic_layout(margin, border_width, border_normal, border_focus):
     return {
@@ -177,20 +163,20 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-ACTIVE = "#7c6f64"
-BG = "#282828"
-FG = "#ebdbb2"
-INACTIVE = "#504945"
-SELECTED = "#32302f"
-SELECTEDFG = "#fbf1c7"
+ACTIVE_TAG_FG = "#4f585e"
+BG = "#232a2e"
+FG = "#d3c6aa"
+INACTIVE_TAG_FG = "#2d353b"
+SELECTED = "#343f44"
+SELECTED_FG = "#e69875"
 
 screens = [
     Screen(
         top=bar.Bar(
             [
                 widget.CurrentLayout(foreground = FG),
-                widget.GroupBox(active = ACTIVE, inactive = INACTIVE, highlight_method = "block",
-                                block_highlight_text_color = SELECTEDFG, this_screen_border = SELECTED, 
+                widget.GroupBox(active = ACTIVE_TAG_FG, inactive = INACTIVE_TAG_FG, highlight_method = "block",
+                                block_highlight_text_color = SELECTED_FG, this_screen_border = SELECTED, 
                                 this_current_screen_border = SELECTED, rounded = False,
                                 padding = 4, disable_drag = True),
                 widget.Prompt(foreground = FG),

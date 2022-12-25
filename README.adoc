@@ -36,7 +36,7 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 * *Browser:* https://librewolf.net[Librewolf]
 
-* *Color scheme:* switching to https://github.com/sainnhe/everforest[Everforest]
+* *Color scheme:* https://github.com/sainnhe/everforest[Everforest]
 
 * *GTK and other theming:*
 
@@ -113,6 +113,8 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 * Build dwm with `cd ~/.config/dwm && sudo make install; cd ~/.config/dmenu && sudo make install; cd ~/.config/dwmblocks && sudo make install`
 
 == Pictures
+
+* These are still in the Gruvbox colorscheme and I will update them eventually.
 
 image::screenshots/awesome.png[Screenshot of awesomewm]
 

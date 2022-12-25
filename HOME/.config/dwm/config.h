@@ -3,17 +3,9 @@
 #include <X11/keysym.h>
 /* See LICENSE file for copyright and license details. */
 
-/*  ____   __        __  __  __
- * |  _ \  \ \      / / |  \/  |
- * | | | |  \ \ /\ / /  | |\/| |
- * | |_| |   \ V  V /   | |  | |
- * |____/     \_/\_/    |_|  |_|
- * * * * * * * * * * * * * * * * */
+// dwm - config.h
 
-
-/*
-* appearence
- */
+// > Appearence
 static const int bar_height              = 28;// height of bar
 static const int focusonwheel            = 0; // focus once you scroll; 1 or 0
 static const int showbar                 = 1;
@@ -23,8 +15,8 @@ static const int topbar                  = 1; // 1 = bar on top; 0 = bar on bott
 static const unsigned int borderpx       = 2;
 static const unsigned int gappih         = 4; // gap inner horizontal
 static const unsigned int gappiv         = 4; // gap innver vertical
-static const unsigned int gappoh         = 4; // gap outer horizontal
-static const unsigned int gappov         = 4; // gap outer vertical
+static const unsigned int gappoh         = 6; // gap outer horizontal
+static const unsigned int gappov         = 6; // gap outer vertical
 static const unsigned int snap           = 16;
 
 // Status is to be shown on: -1 = all monitors; 0 = a specific monitor by index; 'A' = active monitor
@@ -41,45 +33,45 @@ static const char dmenufont[]            = "Jetbrains\\ Mono:size=8";
 
 static char c000000[]                    = "#000000"; // placeholder
 
-static char hidnormbgcolor[]             = "#222222";
-static char hidnormfgcolor[]             = "#005577";
-static char hidselbgcolor[]              = "#222222";
+static char hidnormbgcolor[]             = "#232a2e";
+static char hidnormfgcolor[]             = "#859289";
+static char hidselbgcolor[]              = "#232a2e";
 static char hidselfgcolor[]              = "#227799";
 
-static char normbgcolor[]                = "#282828";
-static char normbordercolor[]            = "#444444";
-static char normfgcolor[]                = "#fbf1c7";
-static char normfloatcolor[]             = "#fb4934";
+static char normbgcolor[]                = "#232a2e";
+static char normbordercolor[]            = "#425047";
+static char normfgcolor[]                = "#d3c6aa";
+static char normfloatcolor[]             = "#e67e80";
 
-static char selbgcolor[]                 = "#fb4934";
-static char selbordercolor[]             = "#fb4934";
+static char selbgcolor[]                 = "#e67e80";
+static char selbordercolor[]             = "#17c080";
 static char selfgcolor[]                 = "#cdd6f4";
-static char selfloatcolor[]              = "#fb4934";
+static char selfloatcolor[]              = "#e67e80";
 
-static char tagsnormbgcolor[]            = "#282828";
-static char tagsnormbordercolor[]        = "#444444";
+static char tagsnormbgcolor[]            = "#232a2e";
+static char tagsnormbordercolor[]        = "#2d353b";
 static char tagsnormfgcolor[]            = "#ebdbb2";
-static char tagsnormfloatcolor[]         = "#fb4934";
+static char tagsnormfloatcolor[]         = "#e67e80";
 
-static char tagsselbgcolor[]             = "#3c3836";
-static char tagsselbordercolor[]         = "#005577";
-static char tagsselfgcolor[]             = "#fbf1c7";
-static char tagsselfloatcolor[]          = "#005577";
+static char tagsselbgcolor[]             = "#343f44";
+static char tagsselbordercolor[]         = "#859289";
+static char tagsselfgcolor[]             = "#d3c6aa";
+static char tagsselfloatcolor[]          = "#859289";
 
-static char titlenormbgcolor[]           = "#282828";
-static char titlenormbordercolor[]       = "#444444";
-static char titlenormfgcolor[]           = "#fbf1c7";
-static char titlenormfloatcolor[]        = "#fb4934";
+static char titlenormbgcolor[]           = "#232a2e";
+static char titlenormbordercolor[]       = "#2d353b";
+static char titlenormfgcolor[]           = "#d3c6aa";
+static char titlenormfloatcolor[]        = "#e67e80";
 
-static char titleselbgcolor[]            = "#282828";
-static char titleselbordercolor[]        = "#444444";
-static char titleselfgcolor[]            = "#fbf1c7";
-static char titleselfloatcolor[]         = "#fb4934";
+static char titleselbgcolor[]            = "#232a2e";
+static char titleselbordercolor[]        = "#2d353b";
+static char titleselfgcolor[]            = "#d3c6aa";
+static char titleselfloatcolor[]         = "#e67e80";
 
-static char urgbgcolor[]                 = "#222222";
+static char urgbgcolor[]                 = "#232a2e";
 static char urgbordercolor[]             = "#ff0000";
-static char urgfgcolor[]                 = "#fbf1c7";
-static char urgfloatcolor[]              = "#fb4934";
+static char urgfgcolor[]                 = "#d3c6aa";
+static char urgfloatcolor[]              = "#e67e80";
 
 static char *colors[][ColCount] = {
 	/*                       fg                bg                border                float */
