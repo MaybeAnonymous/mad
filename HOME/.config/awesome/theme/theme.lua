@@ -12,12 +12,13 @@ local theme = {}
 
 theme.font = "Jetbrains Mono 8"
 
--- User-set
+-- > Other
 theme.tasklist_disable_icon = true
-
 theme.systray_icon_spacing = dpi(2)
 
--- Colors
+theme.muted = "#f85552"
+
+-- > Colors
 theme.bg_normal     = "#232a2e"
 theme.bg_focus      = "#2d353b"
 theme.bg_urgent     = "#4c3743"

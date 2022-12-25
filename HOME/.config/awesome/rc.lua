@@ -246,7 +246,7 @@ awful.screen.connect_for_each_screen(function(s)
             wibox.widget.textbox("vol:"),
             volume_widget {
                 widget_type = "horizontal_bar",
-                mute_color = beautiful.border_focus
+                mute_color = beautiful.muted
             },
             separator,
             wibox.widget.textbox("br:"),
