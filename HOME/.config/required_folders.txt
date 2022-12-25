@@ -9,6 +9,8 @@ dwm-full
 dwmblocks
 fish
 fontconfig
+gtk-3.0
+gtk-4.0
 i3
 kitty
 neofetch

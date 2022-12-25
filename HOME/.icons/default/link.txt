@@ -1,0 +1,2 @@
+There should be a symlink to `phinger-cursors-light` named `cursors` here.
+Run `ln -s /usr/share/icons/phinger-cursors-light cursors`
