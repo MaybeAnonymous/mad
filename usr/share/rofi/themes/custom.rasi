@@ -5,14 +5,13 @@
  ***********************************************/
 
 * {
-    /* Gruvbox Dark */
-    red:                         rgba ( 251, 73, 52, 100 % );
-    blue:                        rgba ( 131, 165, 152, 100 % );
-    lightfg:                     rgba ( 235, 219, 178, 100 % );
-    lightbg:                     rgba ( 40, 40, 40, 100 % );
-    foreground:                  rgba ( 235, 219, 178, 100 % );
-    background:                  rgba ( 29, 32, 33, 100 % );
-    background-color:            rgba ( 30, 29, 47, 0 % );
+    /* Everforest Dark */
+    red:                         #e67e80;
+    blue:                        #7fbbb3;
+    lightbg:                     #2d353b;
+    foreground:                  #d3c6aa;
+    background:                  #232a2e;
+    background-color:            @background;
     scrollbar-color:	         @blue;
     separatorcolor:              @foreground;
     border-color:                @foreground;

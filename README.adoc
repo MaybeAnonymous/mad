@@ -36,7 +36,15 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 * *Browser:* https://librewolf.net[Librewolf]
 
-* *Color scheme:* https://github.com/morhetz/gruvbox[Gruvbox]
+* *Color scheme:* switching to https://github.com/sainnhe/everforest[Everforest]
+
+* *GTK and other theming:*
+
+** *Theme:* https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme[Everforest GTK Theme] BL
+
+** *Icons:* https://github.com/vinceliuice/Tela-circle-icon-theme[Tela Circle Icon Theme] green
+
+** *Cursor:* https://github.com/Apeiros-46B/phinger-cursors-everforest[Phinger Cursors Everforest] light
 
 == Requirements
 
