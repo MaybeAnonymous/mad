@@ -7,7 +7,7 @@
 #| |_| |  _|  __/ || (__| | | |
 # \__,_|_|  \___|\__\___|_| |_|
 
-# user is already defined
+# --- $USER is already defined
 host="$(hostname)"
 os='Artix Linux'
 kernel="$(uname -sr)"
@@ -15,8 +15,7 @@ uptime="$(uptime -p | sed 's/up //')"
 packages="$(pacman -Q | wc -l)"
 shell="$(basename "${SHELL}")"
 
-## UI DETECTION
-
+# > UI DETECTION
 parse_rcs() {
 	for f in "${@}"; do
 		wm="$(tail -n 1 "${f}" 2> /dev/null | cut -d ' ' -f 2)"
@@ -49,9 +48,7 @@ fi
 
 ui="$(basename "${ui}")"
 
-## DEFINE COLORS
-
-# probably don't change these
+# > Colors
 if [ -x "$(command -v tput)" ]; then
 	bold="$(tput bold)"
 	black="$(tput setaf 0)"
@@ -65,13 +62,13 @@ if [ -x "$(command -v tput)" ]; then
 	reset="$(tput sgr0)"
 fi
 
-# you can change these
-lc="${reset}${bold}${magenta}"         # labels
-nc="${reset}${bold}${magenta}"         # user and hostname
-ic="${reset}"                       # info
-c0="${reset}${magenta}"                # first color
+# --- You can change these.
+lc="${reset}${bold}${red}"           # labels
+nc="${reset}${bold}${red}"           # user and hostname
+ic="${reset}"                        # info
+c0="${reset}${red}"                  # first color
 
-## OUTPUT
+# >  OUTPUT
 #${nc}${USER}${ic}@${nc}${host}${reset}
 
 cat <<EOF
