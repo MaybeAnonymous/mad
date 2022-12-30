@@ -110,9 +110,9 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 == Notes
 
-* Run `:PlugInstall` in Neovim to install the plugins.
+* Run `:PackerInstall` in Neovim to install the plugins.
 
-* Build dwm with `cd ~/.config/dwm && sudo make install; cd ~/.config/dmenu && sudo make install; cd ~/.config/dwmblocks && sudo make install`
+* Build dwm: `cd ~/.config/dwm && sudo make install; cd ~/.config/dmenu && sudo make install; cd ~/.config/dwmblocks && sudo make install`
 
 == Pictures
 
