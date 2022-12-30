@@ -70,11 +70,13 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 * https://github.com/davatorium/rofi[Rofi]
 
-** https://github.com/Mange/rofi-emoji[Emoji plugin]
+** https://github.com/Mange/rofi-emoji[Rofi Emoji]
 
 * https://github.com/naelstrof/maim[maim]
 
 * https://neovim.io/[Neovim]
+
+** https://github.com/wbthomason/packer.nvim[Packer]
 
 * https://github.com/jonaburg/picom[Picom]
 
