@@ -11,7 +11,6 @@ return require('packer').startup(function(use)
     use 'editorconfig/editorconfig-vim' -- Support for .editorconfig files.
     use 'fladson/vim-kitty' -- Support for kitty.conf.
     use 'honza/vim-snippets' -- Some snippets.
-    use 'khaveesh/vim-fish-syntax' -- Support for .fish files.
     use 'mhinz/vim-startify' -- Start screen.
     use 'sainnhe/everforest' -- Everforest colorscheme.
     use 'preservim/nerdcommenter' -- Automatic text commenter.
