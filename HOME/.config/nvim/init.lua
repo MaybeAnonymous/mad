@@ -5,12 +5,35 @@ require('nvim_variables')
 -- > Shorthands
 local set = vim.opt
 
--- > Color schemes
+-- > Colorschemes
+--	Some color settings may also be in the Neovide support section.
 set.background = 'dark'
 vim.g['everforest_background'] = 'hard'
 vim.g['everforest_better_performance'] = 1
-vim.g['everforest_transparent_background'] = 2
 
+-- > Neovide support
+if vim.g['neovide'] then
+	-- >> Neovide-only settings
+	--  Opaque background.
+	vim.g['everforest_transparent_background'] = 0
+
+	--	Neovide options.
+	vim.g['neovide_confirm_quit'] = true
+	vim.g['neovide_cursor_animation_length'] = 0.15
+	vim.g['neovide_cursor_trail_size'] = 0.05
+	vim.g['neovide_cursor_vfx_mode'] = 'pixiedust'
+	vim.g['neovide_cursor_vfx_particle_density'] = 30.0
+	vim.g['neovide_hide_mouse_when_typing'] = true
+
+	-- GUI options.
+	set.guifont = 'Jetbrains_Mono:h10'
+else
+	-- >> Only when not in Neovide
+	--	Transparent background.
+	vim.g['everforest_transparent_background'] = 2
+end
+
+--	Must be after all colorscheme configuration.
 vim.cmd('colorscheme everforest')
 
 -- > Tab key
