@@ -46,8 +46,7 @@ set.wildmode = 'longest,list' -- Tab completions
 -- > Plugin configuration
 vim.g['fzf_layout'] = {window = {width = 0.8, height = 0.5, highlight = 'Comment'}}
 
--- >> Barbar/bufferline
---	Tab/buffer line
+-- >> Barbar
 require('bufferline').setup {
 	-- Icons
 	icon_custom_colors = true,
@@ -58,21 +57,30 @@ require('bufferline').setup {
 	icon_pinned = 'v',
 }
 
--- >> Lua Line
---	Status line
+-- >> Git Signs
+require('gitsigns').setup {
+	signs = {
+		add          = { hl = 'GitSignsAdd'   , text = '+', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
+		change       = { hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
+		delete       = { hl = 'GitSignsDelete', text = '-', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
+		topdelete    = { hl = 'GitSignsDelete', text = '-', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
+		changedelete = { hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
+		untracked    = { hl = 'GitSignsAdd'   , text = '+', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
+	}
+}
+
+-- >> Lualine
 require('lualine').setup {
 	options = {
 		theme = 'everforest',
 		section_separators = { left = '', right = '' },
-		component_separators = { left = '|', right = '|' },
+	    component_separators = { left = '|', right = '|' },
 	},
 }
 
 -- >> Treesitter
 require("nvim-treesitter.configs").setup {
-	highlight = {
-		enable = true
-	}
+	highlight = { enable = true }
 }
 
 -- > Keybinds
@@ -100,12 +108,14 @@ map('n', '<Leader>h', ':split<CR>', opts)
 
 -- >> Tab/buffer management
 --	This uses `barbar.nvim`
---	Go to previous/next tab/buffer.
+-- Go to previous/next tab/buffer.
 map('n', '<C-Left>', '<Cmd>BufferPrevious<CR>', opts)
 map('n', '<C-Right>', '<Cmd>BufferNext<CR>', opts)
---	(Un)pin tab/buffer.
+
+-- (Un)pin tab/buffer.
 map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
---	Close tab/buffer.
+
+-- Close tab/buffer.
 map('n', '<C-q>', '<Cmd>BufferClose<CR>', opts)
 
 -- Keybinds (vimscript)
