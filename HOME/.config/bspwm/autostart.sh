@@ -13,7 +13,7 @@
 exec $HOME/.config/dunst/scripts/startup.sh &
 exec $HOME/.config/polybar/scripts/startup.sh &
 lxpolkit &
-feh --bg-scale "$HOME/Pictures/Backgrounds/wallpaper.png" &
+feh --bg-scale "$HOME/.config/wallpaper.png" &
 pgrep blueman-applet || blueman-applet &
 #pgrep conky || conky &
 pgrep nm-applet || nm-applet &

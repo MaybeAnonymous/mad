@@ -6,7 +6,7 @@
 
 # terminal emulator
 super + Return
-	alacritty
+	kitty
 
 # browser
 super + f

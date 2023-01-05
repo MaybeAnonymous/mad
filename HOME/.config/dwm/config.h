@@ -164,6 +164,7 @@ static const Rule rules[] = {
 	RULE(.class = "Gimp", .tags = 1 << 4)
 	RULE(.class = "Firefox", .tags = 1 << 7)
 	RULE(.class = "Alacritty", .isterminal = 1)
+	RULE(.class = "kitty", .isterminal = 1)
 	RULE(.class = "st", .isterminal = 1)
 	RULE(.title = "Event Tester", .noswallow = 1)
 };
@@ -250,7 +251,7 @@ static const char *dmenucmd[] = {
 	"-sf", selfgcolor,
 	NULL
 };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 static const char *browser[]  = { "librewolf", NULL};
 static const char *filemngr[] = { "thunar", NULL };
 static const char *scsh[]     = { "sh", "-c", "maim -s -u | xclip -selection clipboard -t image/png", NULL};

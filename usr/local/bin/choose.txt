@@ -1,0 +1,2 @@
+These are modifications of Ufetch altered by me.
+The default one is in config.fish.

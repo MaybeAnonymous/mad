@@ -24,9 +24,7 @@ font pango:Jetbrains Mono 11
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3 &
 
-#----------#
-# Start Up #
-#----------#
+# > Start Up
 exec        --no-startup-id blueman-applet &
 #exec        --no-startup-id conky &
 exec        --no-startup-id nm-applet &
@@ -34,7 +32,7 @@ exec        --no-startup-id picom --vsync --backend glx --config $HOME/.config/p
 exec        --no-startup-id redshift-gtk &
 exec        --no-startup-id xfce4-clipman &
 exec        --no-startup-id xss-lock -l env XSECURELOCK_SHOW_USERNAME=0 XSECURELOCK_SHOW_HOSTNAME=0 XSECURELOCK_FONT=Jetbrains\ Mono XSECURELOCK_PASSWORD_PROMPT=time_hex xsecurelock &
-exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Backgrounds/wallpaper.png &
+exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpaper.png &
 exec_always --no-startup-id $HOME/.config/polybar/scripts/startup-i3.sh &
 
 # > Devices
@@ -49,7 +47,7 @@ exec --no-startup-id xset m 0 0
 
 # >> Programs
 bindcode $mod+60              exec --no-startup-id rofi -show emoji
-bindsym $mod+Return           exec --no-startup-id alacritty
+bindsym $mod+Return           exec --no-startup-id kitty
 bindsym $mod+Shift+Return     exec --no-startup-id thunar
 bindsym $mod+Shift+d          exec --no-startup-id rofi -show drun -show-icons
 bindsym $mod+Shift+s          exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png

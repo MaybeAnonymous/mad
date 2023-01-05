@@ -11,7 +11,7 @@
 #------#
 exec $HOME/.config/dunst/scripts/startup.sh & # Start dunst ( notifications )
 lxpolkit &
-feh --bg-scale "$HOME/Pictures/Backgrounds/wallpaper.png" &
+feh --bg-scale "$HOME/.config/wallpaper.png" &
 pgrep blueman-applet || blueman-applet & # Bluetooth applet
 pgrep nm-applet || nm-applet & # Network Manager
 pgrep picom || picom & # Start the compositor

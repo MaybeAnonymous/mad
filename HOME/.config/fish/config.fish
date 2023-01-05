@@ -51,6 +51,6 @@ end
 if status is-interactive
     # If not in TTY:
     if test "$TERM" != "linux"
-        ufetch
+        catfetch
     end
 end

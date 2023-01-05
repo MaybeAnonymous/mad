@@ -32,7 +32,9 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 ** https://awesomewm.org[awesomewm]
 
-* *Terminal:* https://alacritty.org[Alacritty]
+* *Terminal:* https://sw.kovidgoyal.net/kitty/[Kitty]
+
+** https://alacritty.org[Alacritty] config also available!
 
 * *Browser:* https://librewolf.net[Librewolf]
 
@@ -117,6 +119,8 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 == Pictures
 
 * These are still in the Gruvbox colorscheme and I will update them eventually.
+
+** The only one up-to-date is the one of Awesome.
 
 image::screenshots/awesome.png[Screenshot of awesomewm]
 

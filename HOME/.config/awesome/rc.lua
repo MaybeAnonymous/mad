@@ -60,7 +60,7 @@ beautiful.init("~/.config/awesome/theme/theme.lua")
 local browser = "librewolf"
 local editor = os.getenv("EDITOR") or "nvim"
 local file_manager = "thunar"
-local terminal = "alacritty"
+local terminal = "kitty"
 local editor_cmd = terminal .. " -e " .. editor
 
 -- Utilities

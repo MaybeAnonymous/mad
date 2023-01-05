@@ -29,7 +29,7 @@ FULL_SCREENSHOT = "sh -c 'maim | xclip -selection clipboard -t image/png'"
 DMENU = "dmenu_run"
 ROFI_RUN = "rofi -show run -show-icons"
 SCREENSHOT = "sh -c 'maim -s -u | xclip -selection clipboard -t image/png'"
-TERM = "alacritty"
+TERM = "kitty"
 
 # > Control Commands
 RAISE_VOL = "pamixer -i5"
@@ -208,7 +208,7 @@ screens = [
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
-        wallpaper = '~/Pictures/Backgrounds/wallpaper.png',
+        wallpaper = '~/.config/wallpaper.png',
         wallpaper_mode = 'fill',
     ),
 ]
