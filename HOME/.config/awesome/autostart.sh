@@ -6,7 +6,7 @@
 
 # > Main
 lxpolkit &
-feh --bg-scale "$HOME/Pictures/Backgrounds/wallpaper.png" &
+feh --bg-scale "$HOME/.config/wallpaper.png" &
 pgrep blueman-applet || blueman-applet &
 #pgrep conky || conky &
 pgrep xfce4-clipman || xfce4-clipman &
