@@ -46,7 +46,7 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 ** *Icons:* https://github.com/vinceliuice/Tela-circle-icon-theme[Tela Circle Icon Theme] green
 
-** *Cursor:* https://github.com/Apeiros-46B/phinger-cursors-everforest[Phinger Cursors Everforest] light
+** *Cursor:* https://github.com/phisch/phinger-cursors [Phinger Cursors] light
 
 == Requirements
 
