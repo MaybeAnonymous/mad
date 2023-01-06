@@ -1437,8 +1437,8 @@ manage(Window w, XWindowAttributes *wa)
 	updatewmhints(c);
 	updatemotifhints(c);
 
-	c->sfx = -9999;
-	c->sfy = -9999;
+	c->sfx = c->x = c->mon->wx + (c->mon->ww - WIDTH(c)) / 2;
+	c->sfy = c->y = c->mon->wy + (c->mon->wh - HEIGHT(c)) / 2;
 	c->sfw = c->w;
 	c->sfh = c->h;
 

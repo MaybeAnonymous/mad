@@ -12,11 +12,11 @@ static const int showbar                 = 1;
 static const int smartgaps_fact          = 1;
 static const int swallowfloating         = 0; // swallow floating windows? 1 or 0
 static const int topbar                  = 1; // 1 = bar on top; 0 = bar on bottom
-static const unsigned int borderpx       = 2;
-static const unsigned int gappih         = 4; // gap inner horizontal
-static const unsigned int gappiv         = 4; // gap innver vertical
-static const unsigned int gappoh         = 6; // gap outer horizontal
-static const unsigned int gappov         = 6; // gap outer vertical
+static const unsigned int borderpx       = 3;
+static const unsigned int gappih         = 8; // gap inner horizontal
+static const unsigned int gappiv         = 8; // gap innver vertical
+static const unsigned int gappoh         = 10; // gap outer horizontal
+static const unsigned int gappov         = 10; // gap outer vertical
 static const unsigned int snap           = 16;
 
 // Status is to be shown on: -1 = all monitors; 0 = a specific monitor by index; 'A' = active monitor
@@ -44,7 +44,7 @@ static char normfgcolor[]                = "#d3c6aa";
 static char normfloatcolor[]             = "#e67e80";
 
 static char selbgcolor[]                 = "#e67e80";
-static char selbordercolor[]             = "#17c080";
+static char selbordercolor[]             = "#e67e80";
 static char selfgcolor[]                 = "#cdd6f4";
 static char selfloatcolor[]              = "#e67e80";
 
