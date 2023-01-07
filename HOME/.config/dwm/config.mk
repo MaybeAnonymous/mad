@@ -1,5 +1,5 @@
 # dwm version
-VERSION = 6.3
+VERSION = 6.4
 
 # Customize below to fit your system
 
@@ -28,8 +28,8 @@ FREETYPEINC = /usr/include/freetype2
 # OpenBSD - Uncomment this for the swallow patch / SWALLOW_PATCH
 #KVMLIB = -lkvm
 
-# Uncomment this for the alpha patch / BAR_ALPHA_PATCH
-#XRENDER = -lXrender
+# Uncomment this for the alpha patch and the winicon patch (BAR_ALPHA_PATCH, BAR_WINICON_PATCH)
+XRENDER = -lXrender
 
 # Uncomment this for the mdpcontrol patch / MDPCONTROL_PATCH
 #MPDCLIENT = -lmpdclient
@@ -48,12 +48,16 @@ FREETYPEINC = /usr/include/freetype2
 # Uncomment this for the swallow patch / SWALLOW_PATCH
 XCBLIBS = -lX11-xcb -lxcb -lxcb-res
 
-# This is needed for the winicon patch / BAR_WINICON_PATCH
+# This is needed for the winicon and tagpreview patches / BAR_WINICON_PATCH / BAR_TAGPREVIEW_PATCH
 #IMLIB2LIBS = -lImlib2
 
+# Uncomment for the bidi patch
+#BDINC = -I/usr/include/fribidi
+#BDLIBS = -lfribidi
+
 # includes and libs
-INCS = -I${X11INC} -I${FREETYPEINC} ${YAJLINC} ${PANGOINC}
-LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}  ${XRENDER} ${MPDCLIENT} ${XEXTLIB} ${XCBLIBS} ${KVMLIB} ${PANGOLIB} ${YAJLLIBS} ${IMLIB2LIBS}
+INCS = -I${X11INC} -I${FREETYPEINC} ${YAJLINC} ${PANGOINC} ${BDINC}
+LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}  ${XRENDER} ${MPDCLIENT} ${XEXTLIB} ${XCBLIBS} ${KVMLIB} ${PANGOLIB} ${YAJLLIBS} ${IMLIB2LIBS} $(BDLIBS)
 
 # flags
 CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=200809L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}

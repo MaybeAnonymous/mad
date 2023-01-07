@@ -96,7 +96,7 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 === dwm
 
-* Read the https://github.com/bakkeby/flexipatch-finalizer[Flexipatch Finalizer] README.
+* Xlib header files.
 
 === Fonts
 
@@ -117,12 +117,6 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 * Run `:PackerInstall` in Neovim to install the plugins.
 
 === dwm
-
-* Using https://github.com/bakkeby/flexipatch-finalizer[Flexipatch Finalizer]:
-
-** Read their README so you can understand this. This script alters and removes files!
-
-`cd ~/.config/dwm-full && ./flexi-finalizer.sh -o ~/.config/dwm/ --run`
 
 * Building:
 

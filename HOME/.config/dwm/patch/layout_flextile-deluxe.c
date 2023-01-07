@@ -49,16 +49,44 @@ getfactsforrange(Monitor *m, int an, int ai, int size, int *rest, float *fact)
 	facts = 0;
 	for (i = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
 		if (i >= ai && i < (ai + an))
+			#if CFACTS_PATCH
+			facts += c->cfact;
+			#else
 			facts += 1;
+			#endif // CFACTS_PATCH
 
 	for (i = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
 		if (i >= ai && i < (ai + an))
+			#if CFACTS_PATCH
+			total += size * (c->cfact / facts);
+			#else
 			total += size / facts;
+			#endif // CFACTS_PATCH
 
 	*rest = size - total;
 	*fact = facts;
 }
 
+#if IPC_PATCH || DWMC_PATCH
+static void
+setlayoutaxisex(const Arg *arg)
+{
+	int axis, arr;
+
+	axis = arg->i & 0x3; // lower two bytes indicates layout, master or stack1-2
+	arr = ((arg->i & 0xFC) >> 2); // remaining six upper bytes indicate arrangement
+
+	if ((axis == 0 && abs(arr) > LAYOUT_LAST)
+			|| (axis > 0 && (arr > AXIS_LAST || arr < 0)))
+		arr = 0;
+
+	selmon->ltaxis[axis] = arr;
+	#if PERTAG_PATCH
+	selmon->pertag->ltaxis[selmon->pertag->curtag][axis] = selmon->ltaxis[axis];
+	#endif // PERTAG_PATCH
+	arrange(selmon);
+}
+#endif // IPC_PATCH | DWMC_PATCH
 
 static void
 layout_no_split(Monitor *m, int x, int y, int h, int w, int ih, int iv, int n)
@@ -328,6 +356,9 @@ arrange_left_to_right(Monitor *m, int x, int y, int h, int w, int ih, int iv, in
 	getfactsforrange(m, an, ai, w, &rest, &facts);
 	for (i = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++) {
 		if (i >= ai && i < (ai + an)) {
+			#if CFACTS_PATCH
+			fact = c->cfact;
+			#endif // CFACTS_PATCH
 			resize(c, x, y, w * (fact / facts) + ((i - ai) < rest ? 1 : 0) - (2*c->bw), h - (2*c->bw), 0);
 			x += WIDTH(c) + iv;
 		}
@@ -348,6 +379,9 @@ arrange_top_to_bottom(Monitor *m, int x, int y, int h, int w, int ih, int iv, in
 	getfactsforrange(m, an, ai, h, &rest, &facts);
 	for (i = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++) {
 		if (i >= ai && i < (ai + an)) {
+			#if CFACTS_PATCH
+			fact = c->cfact;
+			#endif // CFACTS_PATCH
 			resize(c, x, y, w - (2*c->bw), h * (fact / facts) + ((i - ai) < rest ? 1 : 0) - (2*c->bw), 0);
 			y += HEIGHT(c) + ih;
 		}
@@ -708,7 +742,12 @@ flextile(Monitor *m)
 	unsigned int n;
 	int oh = 0, ov = 0, ih = 0, iv = 0; // gaps outer/inner horizontal/vertical
 
+	#if VANITYGAPS_PATCH
 	getgaps(m, &oh, &ov, &ih, &iv, &n);
+	#else
+	Client *c;
+	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
+	#endif // VANITYGAPS_PATCH
 
 	if (m->lt[m->sellt]->preset.layout != m->ltaxis[LAYOUT] ||
 			m->lt[m->sellt]->preset.masteraxis != m->ltaxis[MASTER] ||
@@ -721,11 +760,13 @@ flextile(Monitor *m)
 	if (n == 0)
 		return;
 
+	#if VANITYGAPS_PATCH && !VANITYGAPS_MONOCLE_PATCH
 	/* No outer gap if full screen monocle */
 	if (abs(m->ltaxis[MASTER]) == MONOCLE && (abs(m->ltaxis[LAYOUT]) == NO_SPLIT || n <= m->nmaster)) {
 		oh = 0;
 		ov = 0;
 	}
+	#endif // VANITYGAPS_PATCH && !VANITYGAPS_MONOCLE_PATCH
 
 	(&flexlayouts[abs(m->ltaxis[LAYOUT])])->arrange(m, m->wx + ov, m->wy + oh, m->wh - 2*oh, m->ww - 2*ov, ih, iv, n);
 	return;
@@ -794,6 +835,9 @@ mirrorlayout(const Arg *arg)
 	if (!selmon->lt[selmon->sellt]->arrange)
 		return;
 	selmon->ltaxis[LAYOUT] *= -1;
+	#if PERTAG_PATCH
+	selmon->pertag->ltaxis[selmon->pertag->curtag][0] = selmon->ltaxis[LAYOUT];
+	#endif // PERTAG_PATCH
 	arrange(selmon);
 }
 
@@ -827,6 +871,9 @@ rotatelayoutaxis(const Arg *arg)
 		else if (selmon->ltaxis[axis] < 0)
 			selmon->ltaxis[axis] = AXIS_LAST - 1;
 	}
+	#if PERTAG_PATCH
+	selmon->pertag->ltaxis[selmon->pertag->curtag][axis] = selmon->ltaxis[axis];
+	#endif // PERTAG_PATCH
 	arrange(selmon);
 	setflexsymbols(selmon, 0);
 }
@@ -834,7 +881,11 @@ rotatelayoutaxis(const Arg *arg)
 void
 incnstack(const Arg *arg)
 {
+	#if PERTAG_PATCH
+	selmon->nstack = selmon->pertag->nstacks[selmon->pertag->curtag] = MAX(selmon->nstack + arg->i, 0);
+	#else
 	selmon->nstack = MAX(selmon->nstack + arg->i, 0);
+	#endif // PERTAG_PATCH
 	arrange(selmon);
 }
 
