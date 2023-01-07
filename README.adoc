@@ -96,7 +96,7 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 === dwm
 
-* Read the https://github.com/bakkeby/dwm-flexipatch[Flexipatch] documentation.
+* Read the https://github.com/bakkeby/flexipatch-finalizer[Flexipatch Finalizer] README.
 
 === Fonts
 
@@ -112,15 +112,33 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 == Notes
 
+=== Neovim
+
 * Run `:PackerInstall` in Neovim to install the plugins.
 
-* Build dwm: `cd ~/.config/dwm && sudo make install; cd ~/.config/dmenu && sudo make install; cd ~/.config/dwmblocks && sudo make install`
+=== dwm
+
+* Using https://github.com/bakkeby/flexipatch-finalizer[Flexipatch Finalizer]:
+
+** Read their README so you can understand this. This script alters and removes files!
+
+`cd ~/.config/dwm-full && ./flexi-finalizer.sh -o ~/.config/dwm/ --run`
+
+* Building:
+
+[,sh]
+----
+cd ~/.config/dwm && sudo make install && make clean
+cd ~/.config/dwmblocks && sudo make install && make clean
+# Optional
+cd ~/.config/dmenu && sudo make install && make clean
+----
 
 == Pictures
 
 * These are still in the Gruvbox colorscheme and I will update them eventually.
 
-** The only one up-to-date is the one of Awesome.
+** The only one up-to-date is the screenshot of awesomewm.
 
 image::screenshots/awesome.png[Screenshot of awesomewm]
 

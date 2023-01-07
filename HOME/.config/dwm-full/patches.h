@@ -225,7 +225,7 @@
  * icon rather than above.
  * Set the tagindicatortype variable in config.h to INDICATOR_BOTTOM_BAR to enable this.
  */
-#define BAR_ACTIVETAGINDICATORBAR_ALT1_PATCH N/A
+#define BAR_ACTIVETAGINDICATORBAR_ALT1_PATCH 1
 
 /* The alpha patch adds transparency for the status bar.
  * You need to uncomment the corresponding line in config.mk to use the -lXrender library
