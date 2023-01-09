@@ -43,19 +43,32 @@ exec --no-startup-id xinput set-prop 'ELAN0504:00 04F3:3091 Touchpad' 'libinput 
 exec --no-startup-id xinput set-prop "Logitech M510" 324 0.45
 exec --no-startup-id xset m 0 0
 
+# > Program definitions
+set $terminal kitty
+set $file_manager $terminal lf
+set $web_browser librewolf
+
+# >> Screen capture
+set $screenshot maim | xclip -selection clipboard -t image/png
+set $select_screenshot maim -s -u | xclip -selection clipboard -t image/png
+
+# >> App menu
+set $show_apps rofi -show drun -show-icons
+set $show_programs rofi -show run -show-icons
+set $show_emojis rofi -show emoji
+
 # > Keybinds
-
 # >> Programs
-bindcode $mod+60              exec --no-startup-id rofi -show emoji
-bindsym $mod+Return           exec --no-startup-id kitty
-bindsym $mod+Shift+Return     exec --no-startup-id thunar
-bindsym $mod+Shift+d          exec --no-startup-id rofi -show drun -show-icons
-bindsym $mod+Shift+s          exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
-bindsym $mod+Shift+z          exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym $mod+d                exec --no-startup-id rofi -show run -show-icons
-bindsym $mod+f                exec --no-startup-id librewolf
+bindcode $mod+60              exec --no-startup-id $show_emojis
+bindsym $mod+Return           exec --no-startup-id $terminal
+bindsym $mod+Shift+Return     exec --no-startup-id $file_manager
+bindsym $mod+Shift+d          exec --no-startup-id $show_apps
+bindsym $mod+Shift+s          exec --no-startup-id $select_screenshot
+bindsym $mod+Shift+z          exec --no-startup-id $screenshot
+bindsym $mod+d                exec --no-startup-id $show_programs
+bindsym $mod+f                exec --no-startup-id $web_browser
 
-# >> Audio control
+# >> Volume control
 bindsym XF86AudioRaiseVolume  exec --no-startup-id pamixer -i5
 bindsym XF86AudioLowerVolume  exec --no-startup-id pamixer -d5
 bindsym XF86AudioMute         exec --no-startup-id pamixer -t

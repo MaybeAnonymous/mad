@@ -14,7 +14,7 @@ super + f
 
 # files
 super + shift + Return
-	thunar
+	kitty lf
 
 # program launcher
 super + {_,shift + }d

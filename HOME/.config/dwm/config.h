@@ -177,7 +177,7 @@ static const Layout layouts[] = {
 };
 
 
-/* key definitions */
+// Key definitions
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
@@ -201,7 +201,7 @@ static const char *dmenucmd[] = {
 
 static const char *terminal[] = { "kitty", NULL };
 static const char *web_browser[] = { "librewolf", NULL};
-static const char *file_manager[] = { "thunar", NULL };
+static const char *file_manager[] = { "kitty", "lf", NULL };
 
 // >> Screenshot utilities
 static const char *select_screenshot[] = { "sh", "-c", "maim -s -u | xclip -selection clipboard -t image/png", NULL};
@@ -221,7 +221,7 @@ static const char *mute_vol[] = { "sh", "-c", "pamixer -t;  kill -44 $(pidof dwm
 static const char *raise_br[] = { "brightnessctl", "s", "5%+", NULL };
 static const char *lower_br[] = { "brightnessctl", "s", "5%-", NULL };
 
-
+// > Keybinds
 static Key keys[] = {
 	/* modifier                     key            function                argument */
 	

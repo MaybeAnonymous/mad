@@ -36,6 +36,8 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 ** https://alacritty.org[Alacritty] config also available!
 
+* *File Manager:* https://github.com/gokcehan/lf[lf]
+
 * *Browser:* https://librewolf.net[Librewolf]
 
 * *Color scheme:* https://github.com/sainnhe/everforest[Everforest]

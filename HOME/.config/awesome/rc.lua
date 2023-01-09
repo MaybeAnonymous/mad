@@ -1,37 +1,34 @@
--- If LuaRocks is installed, make sure that packages installed through it are
--- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
--- Standard awesome library
+-- > Libraries
+-- | Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
 
--- Widget and layout library
+-- | Widget and layout library
 local wibox = require("wibox")
 
--- Theme handling library
+-- | Theme handling library
 local beautiful = require("beautiful")
 
--- Notification library
+-- | Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
--- Enable hotkeys help widget for VIM and other apps
--- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- {{{ Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
+-- > Error handling
+-- |  Check if awesome encountered an error during startup and fell back to
+-- || another config (this code will only ever execute for the fallback config).
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
                      title = "Oops, there were errors during startup!",
                      text = awesome.startup_errors })
 end
 
--- Handle runtime errors after startup
+-- | Handle runtime errors after startup.
 do
     local in_error = false
     awesome.connect_signal("debug::error", function (err)
@@ -45,25 +42,23 @@ do
         in_error = false
     end)
 end
--- }}}
 
--- {{{ Start up
--- Run the initialization script
+-- > Start up
+-- | Run the initialization script.
 awful.util.spawn_with_shell("~/.config/awesome/autostart.sh")
--- }}}
 
--- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
+-- > Variable definitions
+-- | Themes define colours, icons, font and wallpapers.
 beautiful.init("~/.config/awesome/theme/theme.lua")
 
--- Default apps
+-- >> Default apps
 local browser = "librewolf"
 local editor = os.getenv("EDITOR") or "nvim"
-local file_manager = "thunar"
 local terminal = "kitty"
+local file_manager = terminal .. " lf"
 local editor_cmd = terminal .. " -e " .. editor
 
--- Utilities
+-- >> Utilities
 local lock = "xset s activate"
 local screenshot = "bash -c 'maim | xclip -selection clipboard -t image/png'"
 local screenshot_sel = "bash -c 'maim -s -u | xclip -selection clipboard -t image/png'"
@@ -72,14 +67,10 @@ local app_launcher = "rofi -show drun -show-icons"
 local emoji_selector = "rofi -show emoji -show-icons"
 local program_launcher = "rofi -show run -show-icons"
 
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
 local mod = "Mod4"
 
--- Table of layouts to cover with awful.layout.inc, order matters.
+-- |  Table of layouts to cover with awful.layout.inc, 
+-- || order matters.
 awful.layout.layouts = {
     awful.layout.suit.spiral,
     awful.layout.suit.spiral.dwindle,
@@ -98,10 +89,9 @@ awful.layout.layouts = {
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
 }
--- }}}
 
--- {{{ Menu
--- Create a launcher widget and a main menu
+-- > Menu
+-- | Create a launcher widget and a main menu
 local awesome_menu = {
    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
    { "manual", terminal .. " -e man awesome" },
@@ -118,19 +108,19 @@ local main_menu = awful.menu({ items = { { "awesome", awesome_menu, beautiful.aw
 local launcher_widget = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = main_menu })
 
--- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
--- }}}
+-- >> Menubar configuration
+-- | Set the terminal for applications that require it
+menubar.utils.terminal = terminal 
 
--- Keyboard map indicator and switcher
+
+-- > Wibar
+-- >> Keyboard layout widget
 local keyboard_layout = awful.widget.keyboardlayout()
-
--- {{{ Wibar
--- Create a textclock widget
+-- >> Textclock widget
 local clock_widget = wibox.widget.textclock()
 clock_widget.format = " %Y-%m-%d (%a) %H:%M "
-
--- Battery widget, depends on the `acpi` command
+-- >> Battery widget
+-- | Depends on the `acpi` command.
 local battery_widget = require("widgets.batteryarc-widget.batteryarc")
 
 local brightness_widget = require("widgets.brightness-widget.brightness")
@@ -138,7 +128,7 @@ local volume_widget = require("widgets.volume-widget.volume")
 
 local separator = wibox.widget.textbox(" | ")
 
--- Create a wibox for each screen and add it
+-- | Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
                     awful.button({ mod }, 1, function(t)
@@ -190,7 +180,7 @@ local function set_wallpaper(s)
     end
 end
 
--- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
+-- | Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
@@ -273,15 +263,13 @@ awful.screen.connect_for_each_screen(function(s)
         },
     }
 end)
--- }}}
 
--- {{{ Mouse bindings
+-- > Mouse bindings
 root.buttons(gears.table.join(
     awful.button({ }, 3, function () main_menu:toggle() end)
 ))
--- }}}
 
--- {{{ Key bindings
+-- > Key bindings
 globalkeys = gears.table.join(
     awful.key({ mod,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
@@ -327,7 +315,7 @@ globalkeys = gears.table.join(
         end,
         {description = "go back", group = "client"}),
 
-    -- Default apps
+    -- :> Default apps
     awful.key({ mod,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ mod,           }, "f", function () awful.spawn(browser) end,
@@ -335,7 +323,7 @@ globalkeys = gears.table.join(
     awful.key({ mod, "Shift" }, "Return", function () awful.spawn(file_manager) end,
               {description = "open the file manager", group = "launcher"}),
 
-    -- Utilities
+    -- :> Utilities
     awful.key({ mod, "Shift"   }, "d", function () awful.spawn(app_launcher) end,
               {description = "open the app launcher", group = "launcher"}),
     awful.key({ mod,           }, "d", function () awful.spawn(program_launcher) end,
@@ -384,7 +372,7 @@ globalkeys = gears.table.join(
     awful.key({ mod, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
 
-    -- Prompt
+    -- :> Prompt
     awful.key({ mod }, "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
@@ -398,7 +386,7 @@ globalkeys = gears.table.join(
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
-    -- Menubar
+    -- :> Menubar
     awful.key({ mod }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"})
 )
@@ -422,12 +410,12 @@ clientkeys = gears.table.join(
               {description = "toggle keep on top", group = "client"})
 )
 
--- Bind all key numbers to tags.
--- Be careful: we use keycodes to make it work on any keyboard layout.
--- This should map on the top row of your keyboard, usually 1 to 9.
+-- | Bind all key numbers to tags.
+-- | Be careful: we use keycodes to make it work on any keyboard layout.
+-- | This should map on the top row of your keyboard, usually 1 to 9.
 for i = 1, 9 do
     globalkeys = gears.table.join(globalkeys,
-        -- View tag only.
+        -- | View tag only.
         awful.key({ mod }, "#" .. i + 9,
                   function ()
                         local screen = awful.screen.focused()
@@ -437,7 +425,7 @@ for i = 1, 9 do
                         end
                   end,
                   {description = "view tag #"..i, group = "tag"}),
-        -- Toggle tag display.
+        -- | Toggle tag display.
         awful.key({ mod, "Control" }, "#" .. i + 9,
                   function ()
                       local screen = awful.screen.focused()
@@ -447,7 +435,7 @@ for i = 1, 9 do
                       end
                   end,
                   {description = "toggle tag #" .. i, group = "tag"}),
-        -- Move client to tag.
+        -- | Move client to tag.
         awful.key({ mod, "Shift" }, "#" .. i + 9,
                   function ()
                       if client.focus then
@@ -458,7 +446,7 @@ for i = 1, 9 do
                      end
                   end,
                   {description = "move focused client to tag #"..i, group = "tag"}),
-        -- Toggle tag on focused client.
+        -- | Toggle tag on focused client.
         awful.key({ mod, "Control", "Shift" }, "#" .. i + 9,
                   function ()
                       if client.focus then
@@ -486,9 +474,8 @@ clientbuttons = gears.table.join(
     end)
 )
 
--- Set keys
+-- | Set keys
 root.keys(globalkeys)
--- }}}
 
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).

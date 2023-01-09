@@ -24,12 +24,12 @@ MOD = "mod4"
 BROWSER = "librewolf"
 ROFI_DRUN = "rofi -show drun -show-icons"
 EMOJI = "rofi -show emoji"
-FILE_MANAGER = "thunar"
 FULL_SCREENSHOT = "sh -c 'maim | xclip -selection clipboard -t image/png'"
 DMENU = "dmenu_run"
 ROFI_RUN = "rofi -show run -show-icons"
 SCREENSHOT = "sh -c 'maim -s -u | xclip -selection clipboard -t image/png'"
 TERM = "kitty"
+FILE_MANAGER = f"{TERM} lf"
 
 # > Control Commands
 RAISE_VOL = "pamixer -i5"
