@@ -16,6 +16,7 @@ SETUVAR _fish_abbr_ls:exa
 SETUVAR _fish_abbr_pacman:sudo\x20pacman
 SETUVAR _fish_abbr_pacmna:sudo\x20pacman
 SETUVAR _fish_abbr_pamcna:sudo\x20pacman
+SETUVAR _fish_abbr_q:exit
 SETUVAR _fish_abbr_sue:EDITOR\x3dnvim\x20sudoedit
 SETUVAR _fish_abbr_yt_2D_wav:yt\x2ddlp\x20\x2dx\x20\x2d\x2dformat\x20wav
 SETUVAR editor:vim
@@ -47,4 +48,4 @@ SETUVAR fish_pager_color_description:yellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/mainu/\x2eghcup/bin\x1e/home/mainu/\x2elocal/share/gem/ruby/3\x2e0\x2e0/bin\x1e/home/mainu/\x2elocal/bin
+SETUVAR fish_user_paths:/home/mainu/\x2elocal/share/gem/ruby/3\x2e0\x2e0/bin\x1e/home/mainu/\x2elocal/bin

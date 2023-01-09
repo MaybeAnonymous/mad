@@ -28,6 +28,7 @@ abbr "clr" "builtin history --clear && clear"
 abbr "l" "exa -l -a"
 abbr "la" "exa -a"
 abbr "ls" "exa"
+abbr "q" "exit"
 
 # >> Pacman abbreviations
 #   These are for Arch-based distros only.
