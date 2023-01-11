@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # > Startup
-hyprpaper &
 waybar &
+hyprpaper &
 
 # > GTK
 # --- Setup GTK Theme
