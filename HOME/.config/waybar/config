@@ -53,6 +53,7 @@
         "format": "{percent}% ",
     },
     "battery": {
+        "bat": "BAT1", // Change this to your battery, probably BAT0
         "states": {
             "good": 95,
             "warning": 30,
