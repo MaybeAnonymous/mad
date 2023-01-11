@@ -160,3 +160,5 @@ cd ~/.config/dwmblocks && sudo make install && make clean
 
 image::screenshots/awesome.png[Screenshot of awesomewm]
 
+image::screenshots/Hyprland.png[Screenshot of Hyprland]
+
