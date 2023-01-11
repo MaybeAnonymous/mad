@@ -1,0 +1,211 @@
+* {
+    /* Installing `otf-font-awesome` is required for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* > The bar itself */
+window#waybar {
+    background-color: #1e2326;
+    color: #d3c6aa;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+/* > Buttons */
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -2px #d3c6aa;
+}
+
+/* A lot of things here */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#tray,
+#idle_inhibitor {
+    padding: 0 10px;
+    color: #d3c6aa;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* > Workspaces */
+#workspaces button {
+    padding: 0 5px;
+    color: #d3c6aa;
+}
+
+#workspaces button.active {
+    background-color: #272e33;
+    box-shadow: inset 0 -3px #d3c6aa;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* > Battery 
+   >- Shows battery level. */
+#battery {
+    background-color: #272e33;
+    color: #d3c6aa;
+}
+/* >> Charging */
+#battery.charging, #battery.plugged {
+    background-color: #a7c080;
+    color: #3c4841;
+}
+/* >> Other */
+/* --- Blinking animation */
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #1e2326;
+    }
+}
+/* --- When the battery is too low 
+   -- and not charging: */
+#battery.critical:not(.charging) {
+    background-color: #e67e80;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Something, I don't know what this does. */
+label:focus {
+    background-color: #000000;
+}
+
+/* > Idle inhibitor
+   >- Can inhibit idle behavior such as screen blanking, locking, and
+     screensaving, also known as "presentation mode". */
+#idle_inhibitor {
+    background-color: #1e2326; /* bg_dim */
+}
+#idle_inhibitor.activated {
+    background-color: #d3c6aa; /* fg */
+    color: #1e2326; /* bg_dim */
+}
+
+/* > Pulseaudio */
+#pulseaudio {
+    background-color: #e67e80; /* red */
+    color: #493b40; /* bg_red */
+}
+#pulseaudio.muted {
+    background-color: #493b40; /* bg_red */
+    color: #d3c6aa; /* fg */
+}
+
+/* > Network */
+#network {
+    background-color: #dbb37f; /* yellow */
+    color: #45443c; /* bg_yellow */
+}
+#network.disconnected {
+    background-color: #859289; /* grey1 */
+    color: #272e33; /* bg0 */
+}
+
+/* > CPU 
+   >- Shows CPU load. */
+#cpu {
+    background-color: #e69875; /* orange */
+    color: #493b40; /* bg_red */
+}
+
+/* > Memory */
+#memory {
+    background-color: #a7c080; /* green */
+    color: #3c4841; /* bg_green */
+}
+
+/* > Temperature 
+   >- Shows the temperature of a thermal zone in /sys/class/thermal/ */
+#temperature {
+    background-color: #83c092; /* aqua */
+    color: #384b55; /* bg_blue */
+}
+#temperature.critical {
+    background-color: #35a77c; /* aqua - light theme */
+    color: #1e2326; /* bg_dim */
+}
+
+/* > Backlight */
+#backlight {
+    background-color: #7fbbb3; /* blue */
+    color: #384b55; /* bg_blue */
+}
+
+/* Unused below ↓ */
+/* > Disk 
+   >- Shows partition and file system information. */
+#disk {
+    background-color: #4c3743; /* bg_visual */
+}
+
+/* > Tray 
+   >- For applets and such. */
+#tray {
+    background-color: #2980b9;
+}
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+/* > Pipewire audio
+   >- This unchanged as I use PulseAudio. */
+#wireplumber {
+    background-color: #fff0f5;
+    color: #000000;
+}
+#wireplumber.muted {
+    background-color: #f53c3c;
+}

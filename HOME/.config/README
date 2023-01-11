@@ -16,6 +16,7 @@ fish/
 fontconfig/
 gtk-3.0/
 gtk-4.0/
+hypr/
 i3/
 kitty/
 lf/
@@ -27,6 +28,7 @@ qtile/
 redshift/
 rofi/
 sxhkd/
+waybar/
 zathura/
 
 By the way, I drew the wallpaper in Krita.

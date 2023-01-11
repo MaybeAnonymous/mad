@@ -1,0 +1,9 @@
+waybar-hyprland-no-systemd
+
+this is an amalgamation of the AUR packages "waybar-hyprland" and "waybar-no-systemd".
+
+i don't know how to put things in the AUR and don't plan on maintaining this. if you want to maintain it, put it on the AUR and tell me.
+
+installation:
+
+makepkg -si

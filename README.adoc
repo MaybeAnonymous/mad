@@ -18,9 +18,9 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 * *Display manager:* https://github.com/canonical/lightdm[LightDM]
 
-* *Server:* https://www.x.org[Xorg]
+** LightDM doesn't seem to be able to start Wayland, so run Hyprland from TTY to use it.
 
-* *Window managers:*
+* *X window managers:*
 
 ** https://i3wm.org[i3]
 
@@ -31,6 +31,10 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 ** https://www.qtile.org[qtile]
 
 ** https://awesomewm.org[awesomewm]
+
+* *Wayland window managers:*
+
+** https://hyprland.org[Hyprland]
 
 * *Terminal:* https://sw.kovidgoyal.net/kitty/[Kitty]
 
@@ -49,6 +53,8 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 ** *Icons:* https://github.com/vinceliuice/Tela-circle-icon-theme[Tela Circle Icon Theme] green
 
 ** *Cursor:* https://github.com/phisch/phinger-cursors[Phinger Cursors] light
+
+* *Screenshots:* https://github.com/naelstrof/maim[maim] (no Wayland support)
 
 == Requirements
 
@@ -96,9 +102,21 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 * https://github.com/MaybeAnonymous/bspswallow[bspswallow]
 
+* https://polybar.github.io/[Polybar]
+
 === dwm
 
-* Xlib header files.
+* Xlib header files
+
+=== Hyprland
+
+* `waybar-hyprland-no-systemd` by me, it's in this repo.
+
+** This is a PKGBUILD which means your distro has to be Arch-based.
+
+=== i3
+
+* Polybar
 
 === Fonts
 
@@ -110,9 +128,11 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 * https://www.nerdfonts.com/[Symbols Nerd Fonts]
 
+* `otf-font-awesome`
+
 * Ubuntu Font
 
-== Notes
+== Finalizing
 
 === Neovim
 
@@ -127,7 +147,7 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 cd ~/.config/dwm && sudo make install && make clean
 cd ~/.config/dwmblocks && sudo make install && make clean
 # Optional
-cd ~/.config/dmenu && sudo make install && make clean
+# cd ~/.config/dmenu && sudo make install && make clean
 ----
 
 == Pictures
