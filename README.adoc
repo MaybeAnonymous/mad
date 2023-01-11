@@ -158,7 +158,11 @@ cd ~/.config/dwmblocks && sudo make install && make clean
 
 ** The ones shown here are up-to-date.
 
+=== awesomewm
+
 image::screenshots/awesome.png[Screenshot of awesomewm]
+
+=== Hyprland
 
 image::screenshots/Hyprland.png[Screenshot of Hyprland]
 
