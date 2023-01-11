@@ -36,6 +36,12 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 ** https://hyprland.org[Hyprland]
 
+* *Screen temperature:*
+
+** Redshift for Xorg (gammastep might work but I haven't tested it)
+
+** https://gitlab.com/chinstrap/gammastep[gammastep] for Wayland
+
 * *Terminal:* https://sw.kovidgoyal.net/kitty/[Kitty]
 
 ** https://alacritty.org[Alacritty] config also available!
@@ -60,7 +66,7 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 == Requirements
 
-=== Applets
+=== Applets (Xorg)
 
 * nm-applet
 

@@ -3,6 +3,7 @@
 # > Startup
 waybar &
 hyprpaper &
+gammastep &
 
 # > GTK
 # --- Setup GTK Theme
