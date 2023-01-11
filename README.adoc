@@ -56,6 +56,8 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 * *Screenshots:* https://github.com/naelstrof/maim[maim] (no Wayland support)
 
+** I found out about a program called `grim` for Wayland, will add keybinds for it later.
+
 == Requirements
 
 === Applets
@@ -154,11 +156,7 @@ cd ~/.config/dwmblocks && sudo make install && make clean
 
 * These are still in the Gruvbox colorscheme and I will update them eventually.
 
-** The only one up-to-date is the screenshot of awesomewm.
+** The ones shown here are up-to-date.
 
 image::screenshots/awesome.png[Screenshot of awesomewm]
-
-image::screenshots/bspwm.png[Screenshot of bspwm]
-
-image::screenshots/dwm.png[Screenshot of dwm]
 
