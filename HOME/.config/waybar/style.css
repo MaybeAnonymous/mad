@@ -180,24 +180,26 @@ label:focus {
     color: #384b55; /* bg_blue */
 }
 
-/* Unused below ↓ */
-/* > Disk 
-   >- Shows partition and file system information. */
-#disk {
-    background-color: #4c3743; /* bg_visual */
-}
-
 /* > Tray 
    >- For applets and such. */
 #tray {
-    background-color: #2980b9;
+    background-color: #d699b6; /* purple */
+    color: #4c3743; /* bg_visual */
 }
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    background-color: #e69875; /* orange */
+    color: #493b40; /* bg_red */
+}
+
+/* Unused below ↓ */
+/* > Disk 
+   >- Shows partition and file system information. */
+#disk {
+    background-color: #4c3743; /* bg_visual */
 }
 
 /* > Pipewire audio
