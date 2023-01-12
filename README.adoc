@@ -60,9 +60,11 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 ** *Cursor:* https://github.com/phisch/phinger-cursors[Phinger Cursors] light
 
-* *Screenshots:* https://github.com/naelstrof/maim[maim] (no Wayland support)
+* *Screenshots:*
 
-** I found out about a program called `grim` for Wayland, will add keybinds for it later.
+** https://github.com/naelstrof/maim[maim] (Xorg)
+
+** https://sr.ht/~emersion/grim/[grim] and https://github.com/emersion/slurp[slurp] (Wayland)
 
 == Requirements
 
