@@ -1,0 +1,7 @@
+Hyprland Scripts
+
+> autostart.sh
+It is called at startup and executes programs.
+
+> screenshot.sh
+Wrapper around grim and slurp to take screenshots.
