@@ -28,8 +28,6 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 ** https://dwm.suckless.org[dwm]
 
-** https://www.qtile.org[qtile]
-
 ** https://awesomewm.org[awesomewm]
 
 * *Wayland window managers:*
