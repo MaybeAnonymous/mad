@@ -122,6 +122,8 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 ** This is a PKGBUILD which means your distro has to be Arch-based.
 
+** If you're not using Artix then use the AUR package `waybar-hyprland-git` instead.
+
 === i3
 
 * Polybar
