@@ -134,8 +134,8 @@ label:focus {
 
 /* > Network */
 #network {
-    background-color: #dbb37f; /* yellow */
-    color: #45443c; /* bg_yellow */
+    background-color: #e69875; /* orange */
+    color: #493b40; /* bg_red */
 }
 #network.disconnected {
     background-color: #859289; /* grey1 */
@@ -145,8 +145,8 @@ label:focus {
 /* > CPU 
    >- Shows CPU load. */
 #cpu {
-    background-color: #e69875; /* orange */
-    color: #493b40; /* bg_red */
+    background-color: #dbb37f; /* yellow */
+    color: #45443c; /* bg_yellow */
 }
 
 /* > Memory */
