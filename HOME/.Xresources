@@ -2,8 +2,8 @@ Xft.rgba:      rgba
 Xft.antialias: 1
 Xft.hinting:   1
 Xft.autohint:  0
-Xft.hintstyle: hintslight
-Xft.dpi:       120
+Xft.hintstyle: hintmedium
+Xft.dpi:       96
 
 #define WINDOWGEOMETRY 90x20
 ! xterm
