@@ -31,47 +31,38 @@ static const char *fonts[]               = { "Jetbrains\\ Mono:size=8", "Noto\\ 
 static const char dmenufont[]            = "Jetbrains\\ Mono:size=8";
 
 // >> Colors
-// Everforest dark hard
+// Rosé Pine
 static char c0[] = "#000000"; 
 
-static char bg_dim[] = "#1e2326";
-static char bg0[] = "#272e33";
-static char bg1[] = "#2e383c";
-static char bg2[] = "#374145";
-static char bg3[] = "#414b50";
-static char bg4[] = "#495156";
+static char base[] = "#191724";
+static char surface[] = "#1f1d2e";
+static char overlay[] = "#26233a";
+static char muted[] = "#6e6a86";
+static char subtle[] = "#908caa";
+static char text[] = "#e0def4";
 
-static char bg_visual[] = "#4c3743";
-static char bg_red[] = "#493b40";
-static char bg_green[] = "#3c4841";
-static char bg_blue[] = "#384b55";
-static char bg_yellow[] = "#45443c";
+static char love[] = "#eb6f92";
+static char gold[] = "#f6c177";
+static char rose[] = "#ebbcba";
+static char pine[] = "#31748f";
+static char foam[] = "#9ccfd8";
+static char iris[] = "#c4a7e7";
 
-static char fg[] = "#d3c6aa";
-
-static char red[] = "#e67e80";
-static char orange[] = "#e69875";
-static char yellow[] = "#dbbc7f";
-static char green[] = "#a7c080";
-static char aqua[] = "#83c092";
-static char blue[] = "#7fbbb3";
-static char purple[] = "#d699b6";
-
-static char grey0[] = "#7a8478";
-static char grey1[] = "#859289";
-static char grey2[] = "#9da9a0";
+static char highlight_low[] = "#21202e";
+static char highlight_med[] = "#403d52";
+static char highlight_high[] = "#524f67";
 
 static char *colors[][ColCount] = {
-	/*                       fg  bg         border   float */
-	[SchemeNorm]         = { fg, bg_dim,    bg_red,    bg_red },
-	[SchemeSel]          = { fg, bg2,       red,       red },
-	[SchemeTitleNorm]    = { fg, bg1,       bg0,       bg0 },
-	[SchemeTitleSel]     = { fg, bg1,       bg1,       bg1 },
-	[SchemeTagsNorm]     = { fg, bg_dim,    bg0,       bg0 },
-	[SchemeTagsSel]      = { fg, bg2,       bg1,       bg1 },
-	[SchemeHidNorm]      = { fg, bg1,       c0,        c0 },
-	[SchemeHidSel]       = { fg, bg3,       c0,        c0 },
-	[SchemeUrg]          = { fg, bg_visual, bg_visual, bg_visual },
+	/*                       fg       bg             border     float */
+	[SchemeNorm]         = { text,    base,          overlay,   overlay },
+	[SchemeSel]          = { text,    highlight_low, love,       love },
+	[SchemeTitleNorm]    = { text,    surface,       surface,   surface },
+	[SchemeTitleSel]     = { text,    surface,       overlay,   overlay },
+	[SchemeTagsNorm]     = { text,    base,          surface,   surface },
+	[SchemeTagsSel]      = { text,    highlight_low, overlay,   overlay },
+	[SchemeHidNorm]      = { text,    surface,       c0,        c0 },
+	[SchemeHidSel]       = { text,    muted,         c0,        c0 },
+	[SchemeUrg]          = { overlay, love,          love,      love },
 };
 
 
@@ -192,10 +183,10 @@ static const char *dmenucmd[] = {
 	"dmenu_run",
 	"-m", dmenumon,
 	"-fn", dmenufont,
-	"-nb", bg_dim,
-	"-nf", fg,
-	"-sb", bg2,
-	"-sf", fg,
+	"-nb", base,
+	"-nf", text,
+	"-sb", overlay,
+	"-sf", text,
 	NULL
 };
 

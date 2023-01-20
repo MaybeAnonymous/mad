@@ -25,6 +25,7 @@ xterm*highlightSelection: true
 xterm*scrollBar:       false
 xterm*faceName: Jetbrains\ Mono-10
 
+! Still in old colorscheme :(, will add later
 ! special
 *.foreground:   #d8caac
 *.background:   #232a2e

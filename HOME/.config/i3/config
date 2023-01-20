@@ -14,8 +14,8 @@ for_window [class="^.*"] border pixel 1
 
 # > Colors
 # Class                  Border  BG      Text    Indicator Child border
-client.focused           #d699b6 #d699b6 #d3c6aa #d699b6   #d699b6
-client.unfocused         #343f44 #575268 #3d484d #343f44   #343f44
+client.focused           #eb6f92 #eb6f92 #26233a #26233a   #eb6f92
+client.unfocused         #26233a #26233a #e0def4 #e0def4   #26233a
 
 # > Other
 focus_follows_mouse no

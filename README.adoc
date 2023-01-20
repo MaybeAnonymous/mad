@@ -30,7 +30,7 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 ** https://awesomewm.org[awesomewm]
 
-* *Wayland window managers:*
+* *Wayland compositors:*
 
 ** https://hyprland.org[Hyprland]
 
@@ -46,15 +46,19 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 * *File Manager:* https://github.com/gokcehan/lf[lf]
 
+* *Text Editor:* https://neovim.io/[Neovim]
+
+** https://github.com/wbthomason/packer.nvim[Packer]
+
 * *Browser:* https://librewolf.net[Librewolf]
 
-* *Color scheme:* https://github.com/sainnhe/everforest[Everforest]
+* *Color scheme:* https://rosepinetheme.com/[Rosé Pine]
 
 * *GTK and other theming:*
 
-** *Theme:* https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme[Everforest GTK Theme] BL
+** *Theme:* https://github.com/rose-pine/gtk[rose-pine-gtk]
 
-** *Icons:* https://github.com/vinceliuice/Tela-circle-icon-theme[Tela Circle Icon Theme] green
+** *Icons:* https://github.com/rose-pine/gtk[rose-pine-icons]
 
 ** *Cursor:* https://github.com/phisch/phinger-cursors[Phinger Cursors] light
 
@@ -64,17 +68,33 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 ** https://sr.ht/~emersion/grim/[grim] and https://github.com/emersion/slurp[slurp] (Wayland)
 
-== Requirements
+== Other Requirements
 
-=== Applets (Xorg)
-
-* nm-applet
+=== Xorg
 
 * blueman-applet
 
-* xfce4-clipman
+* https://github.com/derf/feh[feh]
+
+* nm-applet
+
+* https://github.com/jonaburg/picom[Picom]
 
 * redshift-gtk
+
+* https://github.com/davatorium/rofi[Rofi]
+
+** https://github.com/Mange/rofi-emoji[Rofi Emoji]
+
+* xfce4-clipman
+
+* https://github.com/google/xsecurelock[xsecurelock]
+
+=== Wayland
+
+* https://hg.sr.ht/~scoopta/wofi[Wofi]
+
+** https://github.com/dln/wofi-emoji[Wofi Emoji]
 
 === General
 
@@ -82,23 +102,9 @@ This repository's focus is to backup my dotfiles, if you're not me or an experie
 
 * https://github.com/brndnmtthws/conky[Conky]
 
-* https://github.com/derf/feh[feh]
-
 * https://github.com/cdemoulins/pamixer[pamixer]
 
-* https://github.com/davatorium/rofi[Rofi]
-
-** https://github.com/Mange/rofi-emoji[Rofi Emoji]
-
-* https://github.com/naelstrof/maim[maim]
-
-* https://neovim.io/[Neovim]
-
-** https://github.com/wbthomason/packer.nvim[Packer]
-
-* https://github.com/jonaburg/picom[Picom]
-
-* https://github.com/google/xsecurelock[xsecurelock]
+== WM-specific requirements
 
 === awesomewm
 
@@ -162,9 +168,7 @@ cd ~/.config/dwmblocks && sudo make install && make clean
 
 == Pictures
 
-* These are still in the Gruvbox colorscheme and I will update them eventually.
-
-** The ones shown here are up-to-date.
+* These are probably outdated...
 
 === awesomewm
 

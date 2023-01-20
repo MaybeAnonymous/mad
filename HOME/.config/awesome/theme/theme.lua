@@ -19,22 +19,22 @@ theme.systray_icon_spacing = dpi(2)
 theme.muted = "#f85552"
 
 -- > Colors
-theme.bg_normal     = "#232a2e"
-theme.bg_focus      = "#2d353b"
-theme.bg_urgent     = "#4c3743"
-theme.bg_minimize   = "#2d353b"
+theme.bg_normal     = "#191724"
+theme.bg_focus      = "#21202e"
+theme.bg_urgent     = "#eb6f92"
+theme.bg_minimize   = "#26233a"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#d3c6aa"
-theme.fg_focus      = "#dbbc7f"
-theme.fg_urgent     = "#e67e80"
+theme.fg_normal     = "#e0def4"
+theme.fg_focus      = theme.fg_normal
+theme.fg_urgent     = theme.bg_normal
 theme.fg_minimize   = theme.fg_normal
 
 theme.useless_gap   = dpi(4)
 theme.border_width  = dpi(2)
-theme.border_normal = "#435047"
-theme.border_focus  = "#a7c080"
-theme.border_marked = "#543a46"
+theme.border_normal = "#26233a"
+theme.border_focus  = "#eb6f92"
+theme.border_marked = "#ebbcba"
 
 -- taglist_[bg|fg]_[focus|urgent|occupied|empty|volatile]
 -- tasklist_[bg|fg]_[focus|urgent]

@@ -12,7 +12,6 @@ return require('packer').startup(function(use)
     use 'fladson/vim-kitty' -- Support for kitty.conf.
     use 'honza/vim-snippets' -- Some snippets.
     use 'mhinz/vim-startify' -- Start screen.
-    use 'sainnhe/everforest' -- Everforest colorscheme.
     use 'preservim/nerdcommenter' -- Automatic text commenter.
     use 'scrooloose/nerdtree' -- Tree file management.
     use 'tmsvg/pear-tree' -- Pair quotes, parentheses, HTML tags, etc.
@@ -43,5 +42,11 @@ return require('packer').startup(function(use)
             local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
             ts_update()
         end
+    }
+
+    -- >> Rosé Pine - A beautiful colorscheme.
+    use {
+        'rose-pine/neovim',
+        as = 'rose-pine'
     }
 end)

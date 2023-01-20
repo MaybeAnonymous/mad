@@ -11,7 +11,7 @@ set EDITOR nvim
 
 # > Fish Variables
 set fish_color_autosuggestion -i brblack
-set fish_color_command brgreen # Known command
+set fish_color_command magenta # Known command
 set fish_color_comment brblack # Comment
 set fish_color_end green
 set fish_color_error -o brred # Unknown command
@@ -20,7 +20,7 @@ set fish_color_param normal
 set fish_color_quote yellow
 set fish_color_redirection -u brblue
 set fish_greeting
-set fish_pager_color_completion -o cyan # Pager autocompletion
+set fish_pager_color_completion -o blue # Pager autocompletion
 set fish_pager_color_description yellow
 
 # > Abbreviations

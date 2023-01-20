@@ -1,28 +1,18 @@
-@define-color bg_dim #1e2326;
-@define-color bg0 #272e33;
-@define-color bg1 #2e383c;
-@define-color bg2 #374145;
-@define-color bg3 #414b50;
-@define-color bg4 #495156;
-@define-color bg5 #4f5b58;
-@define-color bg_visual #4c4743;
-@define-color bg_red #493b40;
-@define-color bg_green #3c4841;
-@define-color bg_blue #384b55;
-@define-color bg_yellow #45443c;
-
-@define-color fg #d3c6aa;
-@define-color red #e67e80;
-@define-color orange #e69875;
-@define-color yellow #dbbc7f;
-@define-color green #a7c080;
-@define-color aqua #83c092;
-@define-color blue #7fbbb3;
-@define-color purple #d699b6;
-
-@define-color grey0 #7a8478;
-@define-color grey1 #859289;
-@define-color grey2 #9da9a0;
+@define-color base #191724;
+@define-color surface #1f1d2e;
+@define-color overlay #26233a;
+@define-color muted #6e6a86;
+@define-color subtle #908caa;
+@define-color text #e0def4;
+@define-color love #eb6f92;
+@define-color gold #f6c177;
+@define-color rose #ebbcba;
+@define-color pine #31748f;
+@define-color foam #9ccfd8;
+@define-color iris #c4a7e7;
+@define-color highlight-low #21202e;
+@define-color highlight-med #403d52;
+@define-color highlight-high #524f67;
 
 * {
     /* Installing `otf-font-awesome` is required for icons */
@@ -32,8 +22,8 @@
 
 /* > The bar itself */
 window#waybar {
-    background-color: @bg_dim;
-    color: @fg;
+    background-color: @base;
+    color: @text;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -48,7 +38,7 @@ button {
 }
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -2px @fg;
+    box-shadow: inset 0 -2px @text;
 }
 
 /* A lot of things here */
@@ -65,7 +55,7 @@ button:hover {
 #tray,
 #idle_inhibitor {
     padding: 0 10px;
-    color: @fg;
+    color: @text;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -73,17 +63,17 @@ button:hover {
 /* > Workspaces */
 #workspaces button {
     padding: 0 5px;
-    color: @fg;
+    color: @text;
 }
 
 #workspaces button.active {
-    background-color: @bg0;
-    box-shadow: inset 0 -3px @fg;
+    background-color: @highlight-low;
+    box-shadow: inset 0 -3px @text;
 }
 
 #workspaces button.urgent {
-    background-color: @red;
-    color: @bg_red;
+    background-color: @love;
+    color: @overlay;
 }
 
 #window,
@@ -104,26 +94,26 @@ button:hover {
 /* > Battery 
    >- Shows battery level. */
 #battery {
-    background-color: @bg_dim;
-    color: @fg;
+    background-color: @base;
+    color: @text;
 }
 /* >> Charging */
 #battery.charging, #battery.plugged {
-    background-color: @green;
-    color: @bg_green
+    background-color: @gold;
+    color: @overlay;
 }
 /* >> Other */
 /* --- Blinking animation */
 @keyframes blink {
     to {
         background-color: white;
-        color: @red;
+        color: @love;
     }
 }
 /* --- When the battery is too low 
    -- and not charging: */
 #battery.critical:not(.charging) {
-    background-color: @red;
+    background-color: @love;
     color: white;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -141,83 +131,83 @@ label:focus {
    >- Can inhibit idle behavior such as screen blanking, locking, and
      screensaving, also known as "presentation mode". */
 #idle_inhibitor {
-    background-color: @bg_dim;
+    background-color: @base;
 }
 #idle_inhibitor.activated {
-    background-color: @fg;
-    color: @bg_dim
+    background-color: @iris;
+    color: @base;
 }
 
 /* > Pulseaudio */
 #pulseaudio {
-    background-color: @red;
-    color: @bg_red;
+    background-color: @love;
+    color: @overlay;
 }
 #pulseaudio.muted {
-    background-color: @bg_dim;
-    color: @red;
+    background-color: @base;
+    color: @love;
 }
 
 /* > Network */
 #network {
-    background-color: @orange;
-    color: @bg_red;
+    background-color: @gold;
+    color: @overlay;
 }
 #network.disconnected {
-    background-color: @bg_dim;
-    color: @orange;
+    background-color: @base;
+    color: @gold;
 }
 
 /* > CPU 
    >- Shows CPU load. */
 #cpu {
-    background-color: @yellow;
-    color: @bg_yellow;
+    background-color: @rose;
+    color: @overlay;
 }
 
 /* > Memory */
 #memory {
-    background-color: @green;
-    color: @bg_green;
+    background-color: @pine;
+    color: @text;
 }
 
 /* > Temperature 
    >- Shows the temperature of a thermal zone in /sys/class/thermal/ */
 #temperature {
-    background-color: @aqua;
-    color: @bg_blue;
+    background-color: @foam;
+    color: @overlay;
 }
 #temperature.critical {
-    background-color: @aqua;
-    color: @bg0;
+    background-color: @foam;
+    color: @base;
 }
 
 /* > Backlight */
 #backlight {
-    background-color: @blue;
-    color: @bg_blue;
+    background-color: @iris;
+    color: @overlay;
 }
 
 /* > Tray 
    >- For applets and such. */
 #tray {
-    background-color: @bg_dim;
-    color: @fg;
+    background-color: @base;
+    color: @text;
 }
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: @bg1;
-    color: @fg;
+    background-color: @surface;
+    color: @text;
 }
 
 /* Unused below ↓ */
 /* > Disk 
    >- Shows partition and file system information. */
 #disk {
-    background-color: @bg_visual;
+    background-color: @surface;
 }
 
 /* > Pipewire audio

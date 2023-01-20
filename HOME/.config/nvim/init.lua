@@ -14,8 +14,6 @@ vim.g['everforest_better_performance'] = 1
 -- > Neovide support
 if vim.g['neovide'] then
 	-- >> Neovide-only settings
-	--  Opaque background.
-	vim.g['everforest_transparent_background'] = 0
 
 	--	Neovide options.
 	vim.g['neovide_confirm_quit'] = true
@@ -27,14 +25,7 @@ if vim.g['neovide'] then
 
 	-- GUI options.
 	set.guifont = 'Jetbrains_Mono:h10'
-else
-	-- >> Only when not in Neovide
-	--	Transparent background.
-	vim.g['everforest_transparent_background'] = 2
 end
-
---	Must be after all colorscheme configuration.
-vim.cmd('colorscheme everforest')
 
 -- > Tab key
 set.expandtab = true -- vim-sleuth
@@ -72,16 +63,22 @@ require('gitsigns').setup {
 -- >> Lualine
 require('lualine').setup {
 	options = {
-		theme = 'everforest',
+		theme = 'rose-pine',
 		section_separators = { left = '', right = '' },
 	    component_separators = { left = '|', right = '|' },
 	},
 }
 
 -- >> Treesitter
-require("nvim-treesitter.configs").setup {
+require('nvim-treesitter.configs').setup {
 	highlight = { enable = true }
 }
+
+-- >> Rosé Pine
+require('rose-pine').setup {
+	dark_variant = 'main'
+}
+vim.cmd('colorscheme rose-pine')
 
 -- > Keybinds
 --[[

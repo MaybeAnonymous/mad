@@ -3,9 +3,9 @@ conky.config = {
     background = true,
     border_width = 1,
     cpu_avg_samples = 2,
-    default_color = 'd3c6aa',
-    default_outline_color = '232a2e',
-    default_shade_color = 'd3c6aa',
+    default_color = 'e0def4',
+    default_outline_color = '191724',
+    default_shade_color = 'e0def4',
     double_buffer = true,
     draw_borders = false,
     draw_graph_borders = true,
@@ -25,7 +25,7 @@ conky.config = {
     out_to_x = true,
     own_window = true,
     own_window_class = 'Conky',
-    own_window_colour = '232a2e',
+    own_window_colour = '191724',
     own_window_transparent = true,
     own_window_type = 'override',
     show_graph_range = false,
@@ -40,14 +40,14 @@ conky.config = {
 conky.text = [[
 
 
-${color e67e80}Uptime:${color d3c6aa} $uptime
-${color e67e80}Frequency (in MHz):${color d3c6aa} $freq
-${color e67e80}Frequency (in GHz):${color d3c6aa} $freq_g
-${color e67e80}RAM Usage:${color d3c6aa} $mem/$memmax - $memperc% ${membar 4}
-${color e67e80}Swap Usage:${color d3c6aa} $swap/$swapmax - $swapperc% ${swapbar 4}
-${color e67e80}CPU Usage:${color d3c6aa} $cpu% ${cpubar 4}
-${color e67e80}Processes:${color d3c6aa} $processes  ${color e67e80}Running:${color d3c6aa} $running_processes
+${color eb6f92}Uptime:${color e0def4} $uptime
+${color eb6f92}Frequency (in MHz):${color e0def4} $freq
+${color eb6f92}Frequency (in GHz):${color e0def4} $freq_g
+${color eb6f92}RAM Usage:${color e0def4} $mem/$memmax - $memperc% ${membar 4}
+${color eb6f92}Swap Usage:${color e0def4} $swap/$swapmax - $swapperc% ${swapbar 4}
+${color eb6f92}CPU Usage:${color e0def4} $cpu% ${cpubar 4}
+${color eb6f92}Processes:${color e0def4} $processes  ${color eb6f92}Running:${color e0def4} $running_processes
 $hr
-${color e67e80}File systems:
- / ${color d3c6aa}${fs_used /}/${fs_size /} ${fs_bar 6 /}
+${color eb6f92}File systems:
+ / ${color e0def4}${fs_used /}/${fs_size /} ${fs_bar 6 /}
 ]]
