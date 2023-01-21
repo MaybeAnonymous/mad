@@ -13,7 +13,7 @@ pgrep bspswallow || bspswallow &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc config border_width            3
+bspc config border_width            2
 bspc config window_gap              6
 bspc config top_padding             32
 bspc config bottom_padding          0

@@ -7,14 +7,15 @@
 set $mod Mod4
 set $alt Mod1
 
-gaps outer 4
+gaps outer 8
 gaps inner 6
-gaps top 27
-for_window [class="^.*"] border pixel 1
+# Polybar
+gaps top 31
+for_window [class="^.*"] border pixel 2
 
 # > Colors
 # Class                  Border  BG      Text    Indicator Child border
-client.focused           #eb6f92 #eb6f92 #26233a #26233a   #eb6f92
+client.focused           #f6c177 #eb6f92 #26233a #26233a   #f6c177
 client.unfocused         #26233a #26233a #e0def4 #e0def4   #26233a
 
 # > Other
