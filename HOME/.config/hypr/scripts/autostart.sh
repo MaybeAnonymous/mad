@@ -1,6 +1,8 @@
 #!/bin/sh
 
 # > Startup
+pipewire &
+wireplumber &
 waybar &
 hyprpaper &
 gammastep &

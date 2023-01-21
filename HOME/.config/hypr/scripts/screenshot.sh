@@ -1,6 +1,5 @@
 #!/bin/sh
 if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-
     printf -- "usage: screenshot.sh [options]\n"
     printf -- "--help -h\tshow this help screen\n"
     printf -- "--select -s\tuse slurp to select screenshot region\n"
