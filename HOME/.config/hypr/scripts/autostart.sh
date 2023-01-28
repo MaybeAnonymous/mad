@@ -6,7 +6,6 @@ wireplumber &
 waybar &
 hyprpaper &
 gammastep &
-
 # > GTK
 # --- Setup GTK Theme
 config="${HOME}/.config/gtk-3.0/settings.ini"
@@ -21,3 +20,7 @@ gsettings set "$gnome_schema" gtk-theme "$gtk_theme"
 gsettings set "$gnome_schema" icon-theme "$icon_theme"
 gsettings set "$gnome_schema" cursor-theme "$cursor_theme"
 gsettings set "$gnome_schema" font-name "$font_name"
+
+# Restart pulseaudio to fix video freeze bug.
+sleep 1
+pulseaudio -k 
