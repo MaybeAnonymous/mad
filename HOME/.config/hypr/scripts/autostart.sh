@@ -23,7 +23,4 @@ gsettings set "$gnome_schema" font-name "$font_name"
 
 # Restart pulseaudio to fix video freeze bug.
 sleep 1
-pulseaudio -k 
-
-# Start waybar after pulseaudio (for pulseaudio module to work)
-waybar &
+killall waybar && pulseaudio -k && waybar &
