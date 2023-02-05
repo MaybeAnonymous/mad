@@ -26,15 +26,20 @@ font pango:Jetbrains Mono 11
 exec --no-startup-id dex --autostart --environment i3 &
 
 # > Start Up
-exec        --no-startup-id blueman-applet &
 #exec        --no-startup-id conky &
+exec        --no-startup-id blueman-applet &
 exec        --no-startup-id nm-applet &
 exec        --no-startup-id picom --vsync --backend glx --config $HOME/.config/picom/picom-i3.conf &
 exec        --no-startup-id redshift-gtk &
 exec        --no-startup-id xfce4-clipman &
 exec        --no-startup-id xss-lock -l env XSECURELOCK_SHOW_USERNAME=0 XSECURELOCK_SHOW_HOSTNAME=0 XSECURELOCK_FONT=Jetbrains\ Mono XSECURELOCK_PASSWORD_PROMPT=time_hex xsecurelock &
-exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpaper.png &
 exec_always --no-startup-id $HOME/.config/polybar/scripts/startup-i3.sh &
+exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpaper.png &
+
+# > Audio
+exec --no-startup-id pipewire &
+exec --no-startup-id pipewire-pulse &
+exec --no-startup-id wireplumber &
 
 # > Devices
 # --- You may want to remove this if you are using a different computer

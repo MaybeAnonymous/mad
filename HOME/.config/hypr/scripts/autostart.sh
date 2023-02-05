@@ -1,10 +1,15 @@
 #!/bin/sh
 
 # > Startup
-pipewire &
-wireplumber &
 hyprpaper &
 gammastep &
+sh ~/.config/dunst/scripts/startup.sh &
+waybar &
+
+# > Audio
+pipewire &
+pipewire-pulse &
+wireplumber &
 
 # > GTK
 # --- Setup GTK Theme
@@ -20,7 +25,3 @@ gsettings set "$gnome_schema" gtk-theme "$gtk_theme"
 gsettings set "$gnome_schema" icon-theme "$icon_theme"
 gsettings set "$gnome_schema" cursor-theme "$cursor_theme"
 gsettings set "$gnome_schema" font-name "$font_name"
-
-# Restart pulseaudio to fix video freeze bug.
-sleep 1
-killall waybar; pulseaudio -k && waybar &

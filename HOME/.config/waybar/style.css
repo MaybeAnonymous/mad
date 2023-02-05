@@ -138,12 +138,24 @@ label:focus {
     color: @base;
 }
 
-/* > Pulseaudio */
+/* > Pulseaudio 
+   >- I'd prefer Pipewire audio, but it crashes Waybar
+     for some reason. */
 #pulseaudio {
     background-color: @love;
     color: @overlay;
 }
 #pulseaudio.muted {
+    background-color: @base;
+    color: @love;
+}
+
+/* > Pipewire audio */
+#wireplumber {
+    background-color: @love;
+    color: @overlay;
+}
+#wireplumber.muted {
     background-color: @base;
     color: @love;
 }
@@ -208,14 +220,4 @@ label:focus {
    >- Shows partition and file system information. */
 #disk {
     background-color: @surface;
-}
-
-/* > Pipewire audio
-   >- This unchanged as I use PulseAudio. */
-#wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
-}
-#wireplumber.muted {
-    background-color: #f53c3c;
 }

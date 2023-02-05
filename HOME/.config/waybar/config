@@ -95,8 +95,11 @@
             "portable": "",
             "car": "",
             "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+        }
+    },
+    "wireplumber": {
+        "format": "{volume}% ",
+        "format-muted": "muted "
     },
 }
 

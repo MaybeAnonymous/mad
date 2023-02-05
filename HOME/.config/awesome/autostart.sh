@@ -4,7 +4,7 @@
 #  (   | \ \  \ /  __/\__ \ (   | |   |   |  __/
 # \__,_|  \_/\_/ \___|____/\___/ _|  _|  _|\___|
 
-# > Main
+# > Startup
 lxpolkit &
 feh --bg-scale "$HOME/.config/wallpaper.png" &
 pgrep blueman-applet || blueman-applet &
@@ -14,6 +14,11 @@ pgrep nm-applet || nm-applet &
 pgrep redshift-gtk || redshift-gtk &
 picom --vsync --backend glx &
 xss-lock -l env XSECURELOCK_SHOW_USERNAME=0 XSECURELOCK_SHOW_HOSTNAME=0 XSECURELOCK_FONT=Jetbrains\ Mono XSECURELOCK_PASSWORD_PROMPT=time_hex xsecurelock &
+
+# > Audio
+pipewire &
+pipewire-pulse &
+wireplumber &
 
 # > Devices
 xinput --set-int-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Natural Scrolling Enabled" 8 1 &
