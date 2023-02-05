@@ -7,7 +7,7 @@
     // Choose the order of the modules.
     "modules-left": ["wlr/workspaces", "battery"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "wireplumber", "network", "cpu", "memory", "temperature", "backlight", "clock", "tray"],
     "wlr/workspaces": {
         "on-click": "activate",
         "format": "{icon}",

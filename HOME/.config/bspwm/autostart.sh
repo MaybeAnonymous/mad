@@ -23,7 +23,7 @@ xss-lock -l env XSECURELOCK_SHOW_USERNAME=0 XSECURELOCK_SHOW_HOSTNAME=0 XSECUREL
 # > Audio
 pipewire &
 pipewire-pulse &
-wireplumber &
+pgrep wireplumber || wireplumber &
 
 # > Devices
 xinput --set-int-prop "ELAN0504:00 04F3:3091 Touchpad" "libinput Natural Scrolling Enabled" 8 1 &
