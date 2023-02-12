@@ -98,8 +98,9 @@
         }
     },
     "wireplumber": {
-        "format": "{volume}% ",
-        "format-muted": "muted "
+        "format": "{volume}% {icon}",
+        "format-muted": "muted ",
+        "format-icons": ["", "", ""]
     },
 }
 
